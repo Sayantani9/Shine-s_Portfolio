@@ -64,8 +64,18 @@ h2,h3,p,span,b,strong,a{transition:color .3s,text-shadow .3s}.section-head{displ
 </style>
 
 
-<style id="profile-entry-fix-css">
-#map.active{display:block !important;visibility:visible !important;opacity:1 !important}
+
+
+
+<style id="final-game-transition-css">
+#flappyCanvas{transition:filter .45s ease,opacity .55s ease,transform .65s cubic-bezier(.22,1,.36,1)}
+.flappy-stage.profile-clearing #flappyCanvas{filter:brightness(1.35);transform:scale(1.018);opacity:.72}
+.flappy-stage.profile-clearing::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(255,255,255,.22),transparent 58%);pointer-events:none;animation:profileFlash .7s ease forwards}
+.flappy-overlay{transition:opacity .45s ease,transform .55s cubic-bezier(.22,1,.36,1)}
+.flappy-overlay.profile-fade{opacity:0;transform:scale(1.025);pointer-events:none}
+@keyframes profileFlash{0%{opacity:0}35%{opacity:1}100%{opacity:0}}
+#map.profile-entering{animation:mapEnter .75s cubic-bezier(.22,1,.36,1) both}
+@keyframes mapEnter{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
 </style>
 
 </head>
@@ -164,10 +174,14 @@ document.addEventListener('pointermove',e=>{document.getElementById('cursorBug')
 
   const ctx=canvas.getContext("2d");
   const W=900,H=480;
-  let running=false, won=false, failed=false, raf=0, last=0;
+  let running=false, won=false, failed=false, raf=0, last=0, stageCleanup=null;
   let bird, pipe;
 
   function reset(){
+    stageCleanup=function(){
+      const stage=canvas.closest(".flappy-stage");
+      if(stage) stage.classList.remove("profile-clearing");
+    };
     cancelAnimationFrame(raf);
     running=false;won=false;failed=false;
     bird={x:145,y:240,r:17,vy:0};
@@ -198,37 +212,59 @@ document.addEventListener('pointermove',e=>{document.getElementById('cursorBug')
   }
 
   function success(){
-    running=false;won=true;
+    running=false;
+    won=true;
     status.textContent="UNLOCKED";
     progress.textContent="LEVEL 1 · 1 / 1";
-    overlay.innerHTML="<div class='flappy-overlay-title'>PROFILE UNLOCKED ✦</div><div class='flappy-overlay-text'>Level 1 cleared. Welcome to Sayantani's portfolio.</div><button type='button' id='enterProfile'>ENTER PROFILE</button>";
-    overlay.style.display="flex";
-    document.getElementById("enterProfile").addEventListener("click",function(e){
-      e.preventDefault();
-      e.stopPropagation();
 
-      // Unlock the portfolio and move the visitor to the actual portfolio map.
-      const home = document.getElementById("home");
-      const map = document.getElementById("map");
+    const stage=canvas.closest(".flappy-stage");
+    if(stage) stage.classList.add("profile-clearing");
 
-      if (home) home.classList.remove("active");
-      if (map) {
-        map.classList.add("active");
-        map.hidden = false;
-        map.style.display = "";
-        map.scrollIntoView({behavior:"smooth", block:"start"});
-      }
+    // Let the completed flight visually settle before presenting the unlock.
+    setTimeout(function(){
+      overlay.innerHTML="<div class='flappy-overlay-title'>LEVEL 1 CLEARED ✦</div><div class='flappy-overlay-text'>That’s it. Your profile is unlocked.</div><button type='button' id='enterProfile'>ENTER PROFILE</button>";
+      overlay.style.display="flex";
+      overlay.classList.remove("profile-fade");
+      const enter=document.getElementById("enterProfile");
+      if(enter) enter.addEventListener("click",enterProfile,{once:true});
+    },420);
 
-      // Also support the portfolio's existing navigation state if present.
+    draw();
+  }
+
+  function enterProfile(e){
+    if(e){e.preventDefault();e.stopPropagation();}
+    const home=document.getElementById("home");
+    const map=document.getElementById("map");
+
+    overlay.classList.add("profile-fade");
+
+    setTimeout(function(){
+      // Use the portfolio's own screen system.
       document.querySelectorAll(".screen").forEach(function(screen){
-        if (screen.id !== "map" && screen.id !== "home") {
-          screen.classList.remove("active");
-        }
+        screen.classList.remove("active");
       });
 
-      window.scrollTo({top: map ? map.offsetTop : 0, behavior:"smooth"});
-    });
-    draw();
+      if(home) home.classList.remove("active");
+
+      if(map){
+        map.hidden=false;
+        map.style.display="";
+        map.classList.add("active","profile-entering");
+        map.scrollIntoView({behavior:"smooth",block:"start"});
+        setTimeout(function(){map.classList.remove("profile-entering");},850);
+      }else{
+        // Absolute fallback: reveal the first portfolio section after landing.
+        const about=document.getElementById("about");
+        if(about){
+          about.classList.add("active");
+          about.scrollIntoView({behavior:"smooth",block:"start"});
+        }
+      }
+
+      overlay.style.display="none";
+      if(stageCleanup) stageCleanup();
+    },380);
   }
 
   function fail(){
@@ -348,29 +384,25 @@ document.addEventListener('pointermove',e=>{document.getElementById('cursorBug')
 </script>
 
 
-<script id="profile-entry-fallback">
+
+
+
+<script id="final-profile-entry-fallback">
 (function(){
-  document.addEventListener("click", function(e){
-    const btn = e.target.closest && e.target.closest("#enterProfile");
-    if(!btn) return;
-
-    e.preventDefault();
-    e.stopImmediatePropagation();
-
-    const home=document.getElementById("home");
+  document.addEventListener("click",function(e){
+    const b=e.target.closest && e.target.closest("#enterProfile");
+    if(!b)return;
     const map=document.getElementById("map");
-
-    if(home) home.classList.remove("active");
-    if(map){
+    if(!map)return;
+    // If the direct handler already ran, map is active; otherwise rescue navigation.
+    if(!map.classList.contains("active")){
       document.querySelectorAll(".screen").forEach(function(s){s.classList.remove("active");});
-      map.classList.add("active");
       map.hidden=false;
       map.style.display="";
-      setTimeout(function(){
-        map.scrollIntoView({behavior:"smooth",block:"start"});
-      },20);
+      map.classList.add("active");
+      setTimeout(function(){map.scrollIntoView({behavior:"smooth",block:"start"});},20);
     }
-  }, true);
+  },false);
 })();
 </script>
 
