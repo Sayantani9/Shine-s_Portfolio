@@ -1,204 +1,92 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#000000" />
-  <meta name="description" content="Sayantani Banerjee — interactive game-fied portfolio." />
-  <title>Sayantani Banerjee // Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#000000">
+<meta name="description" content="Sayantani Banerjee — interactive game-fied portfolio.">
+<title>Sayantani Banerjee // Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#000;--panel:#070707;--panel2:#0d0d0d;--text:#fff;--muted:#a8a8a8;--line:#262626;--accent:#fff;--soft:#151515;--shadow:0 0 28px rgba(255,255,255,.10),0 0 70px rgba(255,255,255,.045)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:"Space Grotesk",sans-serif;min-height:100vh;overflow-x:hidden;transition:background .35s,color .35s}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.055;background-image:linear-gradient(rgba(255,255,255,.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.5) 1px,transparent 1px);background-size:42px 42px;z-index:-1}
+body.light{--bg:#f4f4ef;--panel:#fff;--panel2:#f8f8f3;--text:#090909;--muted:#555;--line:#cfcfc8;--accent:#090909;--soft:#e8e8e0;--shadow:0 0 25px rgba(0,0,0,.12),0 0 60px rgba(0,0,0,.06)}
+body.light:before{opacity:.08;background-image:linear-gradient(rgba(0,0,0,.28) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.28) 1px,transparent 1px)}
+button,a{font:inherit}button{color:inherit}.topbar{height:68px;position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:0 26px;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(16px)}
+.brand{border:0;background:none;padding:0;cursor:pointer;font-weight:700;letter-spacing:.13em;font-size:17px;display:flex;align-items:center;gap:5px;text-shadow:0 0 12px currentColor;transition:transform .2s,text-shadow .25s}.brand:hover{transform:translateY(-1px) scale(1.015);text-shadow:0 0 10px currentColor,0 0 30px currentColor}.brand-mark{font-size:25px;line-height:1}.top-actions{display:flex;align-items:center;gap:10px;font:11px "DM Mono",monospace;letter-spacing:.12em}.status-dot{width:7px;height:7px;border-radius:50%;background:currentColor;box-shadow:0 0 12px currentColor}.icon-btn{width:44px;height:44px;border:1px solid var(--line);border-radius:50%;background:var(--panel);cursor:pointer;display:grid;place-items:center;margin-left:9px;box-shadow:var(--shadow);transition:.25s}.icon-btn:hover{transform:rotate(5deg) scale(1.05)}
+.chandelier{width:31px;height:31px;object-fit:contain;filter:drop-shadow(0 0 6px currentColor) drop-shadow(0 0 13px currentColor)}
+main{padding-top:68px}.screen{display:none;min-height:calc(100vh - 68px);padding:70px clamp(20px,5vw,80px) 80px;max-width:1500px;margin:auto}.screen.active{display:block;animation:screenIn .35s ease both}@keyframes screenIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;min-height:72vh}.eyebrow{font:11px "DM Mono",monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);text-shadow:0 0 10px currentColor}.hero-copy h1{font-size:clamp(58px,9vw,145px);line-height:.82;letter-spacing:-.07em;margin:20px 0 25px;text-shadow:0 0 12px rgba(255,255,255,.28),0 0 38px rgba(255,255,255,.12)}body.light .hero-copy h1{ text-shadow:0 0 8px rgba(0,0,0,.2),0 0 28px rgba(0,0,0,.10)}.hero-copy h1 span{color:transparent;-webkit-text-stroke:1px var(--text);text-shadow:0 0 18px currentColor}.hero-line{font:700 clamp(14px,2vw,21px) "DM Mono",monospace;letter-spacing:.08em;animation:shine 2.8s ease-in-out infinite}.muted{color:var(--muted);font-size:15px;line-height:1.7;text-shadow:0 0 10px color-mix(in srgb,currentColor 35%,transparent)}
+@keyframes shine{0%,100%{text-shadow:0 0 5px currentColor,0 0 12px currentColor;opacity:.85}50%{text-shadow:0 0 7px currentColor,0 0 22px currentColor,0 0 40px currentColor;opacity:1}}
+h2,h3,p,span,b,strong,a{transition:color .3s,text-shadow .3s}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:30px}.section-head h2{font-size:clamp(34px,5vw,68px);line-height:.95;margin:10px 0 0;letter-spacing:-.05em;text-shadow:0 0 8px color-mix(in srgb,currentColor 35%,transparent),0 0 24px color-mix(in srgb,currentColor 16%,transparent)}
+.section-head h2,.achievement-grid strong,.repo-grid b,.project-grid h3,.research-grid h3,.timeline h3,.education-grid b,.leadership-grid b,.yz-hero h3,.contact-card h3,.fact-list b,.quote-card p,.skill-strip span,.skills-cloud span,.map-footer,.level-grid button{ text-shadow:0 0 6px color-mix(in srgb,currentColor 42%,transparent),0 0 18px color-mix(in srgb,currentColor 16%,transparent)}
+.back-btn,.text-btn{border:1px solid var(--line);background:var(--panel);padding:10px 14px;cursor:pointer;box-shadow:var(--shadow)}.back-btn:hover,.text-btn:hover{box-shadow:0 0 14px currentColor,0 0 35px color-mix(in srgb,currentColor 20%,transparent);transform:translateY(-1px)}
+.game-card,.quote-card,.fact-list>div,.achievement-grid article,.stat-card,.repo-grid article,.project-grid article,.research-grid article,.research-roles>div,.timeline article,.leadership-grid article,.education-grid article,.contact-card,.yz-hero,.yz-grid>div{background:var(--panel);border:1px solid var(--line);box-shadow:var(--shadow)}
+.game-card{padding:14px}.game-head{display:flex;justify-content:space-between;gap:12px;font:11px "DM Mono",monospace;letter-spacing:.1em;color:var(--muted);padding:2px 3px 10px}.game-instructions{font:11px "DM Mono",monospace;color:var(--muted);padding:10px 3px 2px}.game-stats{display:flex;justify-content:space-between;font:10px "DM Mono",monospace;color:var(--muted);padding:8px 3px 2px}canvas{display:block;width:100%;height:auto;background:var(--panel2);border:1px solid var(--line)}
+.lock-note{text-align:center;color:var(--muted);font:11px "DM Mono",monospace;letter-spacing:.1em}.level-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.level-grid button{text-align:left;min-height:135px;border:1px solid var(--line);background:var(--panel);padding:20px;cursor:pointer;position:relative;box-shadow:var(--shadow)}.level-grid button:hover{border-color:currentColor;transform:translateY(-3px);box-shadow:0 0 18px currentColor,0 0 50px color-mix(in srgb,currentColor 12%,transparent)}.level-grid small{display:block;color:var(--muted);font:10px "DM Mono",monospace;margin-bottom:20px}.level-grid strong{font-size:22px}.map-progress{font:11px "DM Mono",monospace;color:var(--muted)}.map-footer{margin-top:20px;display:flex;justify-content:space-between;align-items:center;color:var(--muted);font:11px "DM Mono",monospace}
+.about-grid,.arena-grid,.yz-hero{display:grid;grid-template-columns:1fr 1fr;gap:20px}.quote-card{padding:35px;position:relative}.quote-card .big{font-size:80px;line-height:.4}.quote-card p{font-size:clamp(20px,3vw,32px);line-height:1.35}.quote-end{float:right;font-size:80px;line-height:.2}.fact-list{display:grid;gap:12px}.fact-list>div{padding:22px;display:flex;flex-direction:column;gap:9px}.fact-list span,.research-roles b{font:10px "DM Mono",monospace;color:var(--muted);letter-spacing:.12em}.fact-list b{line-height:1.55}.achievement-grid,.repo-grid,.project-grid,.research-grid,.education-grid,.leadership-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}.achievement-grid article,.repo-grid article,.project-grid article,.research-grid article,.education-grid article,.leadership-grid article{padding:22px;min-height:125px}.achievement-grid strong,.repo-grid b,.project-grid h3,.research-grid h3,.education-grid b,.leadership-grid b{display:block;margin-bottom:10px}.achievement-grid span,.repo-grid span,.project-grid p,.research-grid p,.education-grid span,.leadership-grid span{color:var(--muted);line-height:1.55;font-size:14px}.stat-card{padding:28px;display:flex;flex-direction:column;justify-content:center}.huge{font-size:clamp(65px,10vw,130px);font-weight:700;letter-spacing:-.08em;text-shadow:0 0 10px currentColor,0 0 35px currentColor}.stat-card p{line-height:1.6;color:var(--muted)}.external,.project-grid a{display:inline-block;margin-top:16px;color:var(--text);font:11px "DM Mono",monospace;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:4px;text-shadow:0 0 8px currentColor}.external:hover,.project-grid a:hover{ text-shadow:0 0 8px currentColor,0 0 25px currentColor}.skill-strip{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}.skill-strip span,.skills-cloud span{border:1px solid var(--line);padding:8px 10px;background:var(--panel);font:11px "DM Mono",monospace}.github-main{margin-top:22px}
+.project-grid article{min-height:220px}.project-no{font:10px "DM Mono",monospace;color:var(--muted);margin-bottom:25px}.project-grid h3{font-size:23px}.project-grid p{min-height:68px}.research-grid article{min-height:220px}.research-grid article>span{font:11px "DM Mono",monospace;color:var(--muted)}.research-grid h3{font-size:22px}.research-roles{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}.research-roles>div{padding:18px;display:flex;flex-direction:column;gap:8px}.research-roles span{color:var(--muted);font-size:13px;line-height:1.5}.timeline{position:relative;margin-top:20px}.timeline:before{content:"";position:absolute;left:94px;top:0;bottom:0;width:1px;background:var(--line)}.timeline article{display:grid;grid-template-columns:75px 1fr;gap:40px;padding:20px;margin-bottom:12px}.timeline time{font:11px "DM Mono",monospace;color:var(--muted)}.timeline h3{margin:0 0 8px}.timeline p{color:var(--muted);margin:0}.skills-cloud{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.skills-cloud span{padding:11px 13px}.yz-hero{padding:35px;align-items:center}.yz-hero h3{font-size:clamp(42px,6vw,80px);line-height:.9;margin:15px 0}.yz-hero p{color:var(--muted);max-width:720px;line-height:1.65}.yz-mark{font-size:clamp(110px,18vw,250px);font-weight:700;letter-spacing:-.1em;text-align:center;text-shadow:0 0 12px currentColor,0 0 50px currentColor}.yz-mark span{font-size:.45em}.yz-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:15px}.yz-grid>div{padding:23px;min-height:130px}.yz-grid b{display:block;margin-bottom:10px}.yz-grid span{color:var(--muted);line-height:1.5;font-size:14px}.contact-card{padding:40px;display:grid;grid-template-columns:1.3fr .7fr;gap:30px}.contact-card h3{font-size:clamp(45px,6vw,85px);line-height:.9;margin:18px 0}.contact-card p{color:var(--muted);line-height:1.6}.contact-links{display:flex;flex-direction:column;gap:9px}.contact-links a{padding:13px 0;border-bottom:1px solid var(--line);color:var(--text);text-decoration:none;font:12px "DM Mono",monospace;text-shadow:0 0 7px currentColor}.contact-links a:hover{padding-left:8px;text-shadow:0 0 9px currentColor,0 0 24px currentColor}footer{margin-top:45px;padding-top:18px;border-top:1px solid var(--line);font:10px "DM Mono",monospace;color:var(--muted);display:flex;justify-content:space-between}footer a{color:inherit}
+#toast{position:fixed;left:50%;bottom:25px;transform:translate(-50%,20px);opacity:0;z-index:100;background:var(--text);color:var(--bg);padding:11px 16px;font:11px "DM Mono",monospace;box-shadow:0 0 20px color-mix(in srgb,currentColor 30%,transparent);transition:.25s;pointer-events:none}#toast.show{opacity:1;transform:translate(-50%,0)}#cursorBug{position:fixed;z-index:80;pointer-events:none;font-size:19px;transform:translate(-50%,-50%);filter:drop-shadow(0 0 8px rgba(255,255,255,.65));transition:left .08s linear,top .08s linear}.light #cursorBug{filter:drop-shadow(0 0 8px rgba(0,0,0,.35))}
+@media(max-width:900px){.hero-grid,.about-grid,.arena-grid,.yz-hero,.contact-card{grid-template-columns:1fr}.level-grid{grid-template-columns:repeat(2,1fr)}.achievement-grid,.repo-grid,.project-grid,.research-grid,.education-grid,.leadership-grid{grid-template-columns:repeat(2,1fr)}.research-roles,.yz-grid{grid-template-columns:1fr 1fr}.hero-copy h1{font-size:clamp(55px,15vw,100px)}}
+@media(max-width:620px){.topbar{padding:0 15px}.top-actions>span:not(.status-dot){display:none}.screen{padding:45px 15px 60px}.level-grid,.achievement-grid,.repo-grid,.project-grid,.research-grid,.education-grid,.leadership-grid,.research-roles,.yz-grid{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.timeline:before{display:none}.timeline article{grid-template-columns:1fr;gap:8px}.hero-grid{min-height:auto}.hero-copy{padding-top:20px}.contact-card{padding:25px}footer{flex-direction:column;gap:10px}.brand{font-size:15px}}
+</style>
 </head>
 <body>
-  <div id="cursorBug" aria-hidden="true">🐞</div>
-  <div id="toast" role="status"></div>
-
-  <header class="topbar">
-    <button class="brand" id="homeBtn" aria-label="Return home">
-      <span class="brand-mark">𝄞</span><span>AYANTANI</span>
+<div id="cursorBug" aria-hidden="true">🐞</div>
+<div id="toast" role="status"></div>
+<header class="topbar">
+  <button class="brand" id="homeBtn" aria-label="Return to landing page"><span class="brand-mark">𝄞</span><span>AYANTANI</span></button>
+  <div class="top-actions"><span class="status-dot"></span><span id="systemStatus">PROFILE LOCKED</span>
+    <button id="themeBtn" class="icon-btn" title="Switch light / dark mode" aria-label="Switch light and dark mode">
+      <img id="chandelierIcon" class="chandelier" alt="Chandelier theme toggle" />
     </button>
-    <div class="top-actions">
-      <span class="status-dot"></span><span id="systemStatus">PROFILE LOCKED</span>
-      <button id="themeBtn" class="icon-btn" title="Switch light/dark">♢</button>
-    </div>
-  </header>
-
-  <main id="app">
-    <section id="home" class="screen active">
-      <div class="hero-grid">
-        <div class="hero-copy">
-          <div class="eyebrow">PORTFOLIO / INTERACTIVE PROFILE / 2026</div>
-          <h1>SAYANTANI<br><span>BANERJEE</span></h1>
-          <p class="hero-line">BUILD. RESEARCH. COMPETE. LEAD. CREATE.</p>
-          <p class="muted">The profile is locked. The bug knows the way.</p>
-        </div>
-        <div class="game-card" id="bootGame">
-          <div class="game-head"><span>GAME 00</span><span>UNLOCK PROFILE</span></div>
-          <canvas id="bootCanvas" width="760" height="330"></canvas>
-          <div class="game-instructions">CLICK / TAP THE 🐞 — instant unlock</div>
-          <div class="game-stats"><span>STATUS: <b id="bootStatus">LOCKED</b></span><span>LEVEL 1</span></div>
-        </div>
-      </div>
-      <div class="lock-note">Complete the opening game to unlock the portfolio map.</div>
-    </section>
-
-    <section id="map" class="screen">
-      <div class="section-head">
-        <div><div class="eyebrow">PROFILE MAP</div><h2>Choose your next level.</h2></div>
-        <div class="map-progress"><span id="mapCount">0</span>/8 UNLOCKED</div>
-      </div>
-      <div class="level-grid" id="levelGrid"></div>
-      <div class="map-footer">
-        <span>🐞 Cursor companion active</span>
-        <button class="text-btn" data-open="about">OPEN PROFILE →</button>
-      </div>
-    </section>
-
-    <section id="about" class="screen">
-      <div class="section-head"><div><div class="eyebrow">LEVEL 01 / IDENTITY</div><h2>About / Profile</h2></div><button class="back-btn">← MAP</button></div>
-      <div class="about-grid">
-        <div class="quote-card"><span class="big">“</span><p>Computer Science Engineering student building at the intersection of software, AI, research, entrepreneurship, competitive programming and communication.</p><span class="quote-end">”</span></div>
-        <div class="fact-list">
-          <div><span>EDUCATION</span><b>B.E. Computer Science Engineering<br>PEC Anna University, Chennai<br>8.24 / 10 CGPA · 2024–2028</b></div>
-          <div><span>FOCUS</span><b>DSA · AI/ML · LLM Training · Agentic AI · AI Agents · Full-stack development · Research</b></div>
-          <div><span>COMMUNITY</span><b>Open Source + Competitive Programming communities · GSSoC · Outreachy · GSoC · ICPC</b></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="achievements" class="screen">
-      <div class="section-head"><div><div class="eyebrow">LEVEL 02 / ARCADE</div><h2>Achievements</h2></div><button class="back-btn">← MAP</button></div>
-      <div class="game-card mini-game"><div class="game-head"><span>GAME 02 — TARGET RANGE</span><span id="targetScore">0 / 7</span></div><canvas id="targetCanvas" width="900" height="340"></canvas><div class="game-instructions">CLICK ANY TARGET — instant level win.</div></div>
-      <div class="achievement-grid">
-        <article><strong>ICPC 2025</strong><span>Institute Rank 1 · Amritapuri Regionals · South Asia Chapter · Nov 2025</span></article>
-        <article><strong>GENESIS 2026</strong><span>First Place · SRM</span></article>
-        <article><strong>Ideathon PEC × Anna University</strong><span>First Runner Up out of 500+ teams · 15 Feb 2025</span></article>
-        <article><strong>EO Global Student Entrepreneurship Awards</strong><span>Top 80 / 300 Start-Ups from India · Startup TN Finalists</span></article>
-        <article><strong>IIT Madras Incubator + FounderX</strong><span>Ideas To Impact · Top 10 shortlisted start-ups by student entrepreneurs</span></article>
-        <article><strong>Toastmasters International</strong><span>Honorary Pathway Celebrity · Triple Crown · Rockstar · Bronze Medalist, Area A3 International Speech Contest</span></article>
-      </div>
-    </section>
-
-    <section id="leetcode" class="screen">
-      <div class="section-head"><div><div class="eyebrow">LEVEL 03 / ALGORITHM ARENA</div><h2>LeetCode</h2></div><button class="back-btn">← MAP</button></div>
-      <div class="arena-grid">
-        <div class="game-card"><div class="game-head"><span>GAME 03 — BINARY DODGE</span><span id="dodgeStatus">LOCKED</span></div><canvas id="dodgeCanvas" width="760" height="360"></canvas><div class="game-instructions">PRESS ANY KEY — instant level win.</div></div>
-        <div class="stat-card"><span class="eyebrow">ALGORITHMIC COMPETITIONS</span><div class="huge">ICPC</div><p>Institute Rank 1<br>Amritapuri Regionals<br>2025</p><a class="external" id="leetcodeLink" target="_blank" rel="noopener">OPEN LEETCODE ↗</a></div>
-      </div>
-      <div class="skill-strip"><span>DSA</span><span>C</span><span>C++</span><span>JAVA</span><span>PYTHON</span><span>JS</span></div>
-    </section>
-
-    <section id="github" class="screen">
-      <div class="section-head"><div><div class="eyebrow">LEVEL 04 / SOURCE LAB</div><h2>GitHub</h2></div><button class="back-btn">← MAP</button></div>
-      <div class="game-card mini-game"><div class="game-head"><span>GAME 04 — COMMIT RUN</span><span id="commitScore">0 / 10</span></div><canvas id="commitCanvas" width="900" height="300"></canvas><div class="game-instructions">PRESS SPACE ONCE — instant level win.</div></div>
-      <div class="repo-grid">
-        <article><b>CinderPeak</b><span>Modern C++ STL templates · modularity +30% · 20+ successful PR integrations</span></article>
-        <article><b>Open Source Community</b><span>GSSoC · Outreachy · GSoC · Google Summer of Code · project mentoring & contribution</span></article>
-        <article><b>AI / Agentic Work</b><span>AI agents, LLM training, applied AI, product R&D and digital development</span></article>
-      </div>
-      <a class="external github-main" id="githubLink" target="_blank" rel="noopener">OPEN GITHUB ↗</a>
-    </section>
-
-    <section id="projects" class="screen">
-      <div class="section-head"><div><div class="eyebrow">LEVEL 05 / DEPLOYED</div><h2>Projects</h2></div><button class="back-btn">← MAP</button></div>
-      <div class="game-card mini-game"><div class="game-head"><span>GAME 05 — URL RUNNER</span><span id="urlScore">0 / 6</span></div><canvas id="urlCanvas" width="900" height="300"></canvas><div class="game-instructions">PRESS ENTER ONCE — instant project vault unlock.</div></div>
-      <div class="project-grid">
-        <article><div class="project-no">01</div><h3>WHY YZ?</h3><p>Gen-Z company / flagship under Sanghamitra Ventures. Fresh minds, student talent, project ideation, AI solutions and digital development.</p><a href="https://yz-five.vercel.app/" target="_blank">LIVE SITE ↗</a></article>
-        <article><div class="project-no">02</div><h3>MAUSAM</h3><p>Next-gen weather intelligence / India-focused application.</p><a href="https://mausam-blond.vercel.app/" target="_blank">LIVE SITE ↗</a></article>
-        <article><div class="project-no">03</div><h3>NIRIKSH</h3><p>Command Center project. Smart India Hackathon 2026 semi-finalist.</p><a href="https://niriksh-command-center.vercel.app/" target="_blank">LIVE SITE ↗</a></article>
-        <article><div class="project-no">04</div><h3>ROADPULSE</h3><p>Civic / road intelligence project. Government of India Smart India Hackathon 2026 semi-finalist.</p><a href="https://civic-fix-27.preview.emergentagent.com/dashboard" target="_blank">LIVE SITE ↗</a></article>
-        <article><div class="project-no">05</div><h3>VAYUNETRA</h3><p>Government of India Smart India Hackathon 2026 semi-finalist.</p></article>
-        <article><div class="project-no">06</div><h3>SHUDDH</h3><p>Self-sustainable, self-cleaning, smart AI-driven waste segregator and waste-to-wealth generator. SIH 2025 & 2026 semi-finalist. Provisionally patented MVP.</p></article>
-        <article><div class="project-no">07</div><h3>KAARYA [WITH AI]</h3><p>Workspace/product improvement through WHY YZ? AI solutions, integrated AI services and stronger finished-product presentation.</p><a href="https://kaarya-9fn9.vercel.app/" target="_blank">LIVE SITE ↗</a></article>
-        <article><div class="project-no">08</div><h3>RAKSHA : DELHI POLICE</h3><p>Cyber / reporting project.</p><a href="https://rakshak-sand.vercel.app/" target="_blank">LIVE SITE ↗</a></article>
-        <article><div class="project-no">09</div><h3>AUTOPEDIA</h3><p>Interactive automotive knowledge and discovery platform.</p><a href="https://piston-s-autopedia.vercel.app/" target="_blank">LIVE SITE ↗</a></article>
-        <article><div class="project-no">10</div><h3>ECO KADAI</h3><p>Client digital development / market research project. Website and AI / automation roadmap work.</p><a href="https://ecokadai.in/" target="_blank">LIVE SITE ↗</a></article>
-        <article><div class="project-no">11</div><h3>ISRO FINALIST PROJECT</h3><p>Satellite-based AQI forecasting using remote sensing datasets and ML regression models · 87% accuracy.</p></article>
-        <article><div class="project-no">12</div><h3>COGNIZANT FINALIST PROJECT</h3><p>Smart attendance system using OpenCV & IoT · 95% accuracy · 70% manual time saved.</p></article>
-        <article><div class="project-no">13</div><h3>TENDRIX</h3><p>Bio tentacle gripper / robotic arm and ML emergency landing control system for safe descent at power loss.</p></article>
-      </div>
-    </section>
-
-    <section id="research" class="screen">
-      <div class="section-head"><div><div class="eyebrow">LEVEL 06 / RESEARCH DECK</div><h2>Research</h2></div><button class="back-btn">← MAP</button></div>
-      <div class="research-grid">
-        <article><span>01</span><h3>SHUDDH</h3><p>“The Self-sustainable, Self-cleaning, Smart, AI-driven Waste Segregator and Waste to Wealth Generator for a Clean, Green Zero Waste Future” — 5th International Conference Recycle 2025, IIT [G].</p></article>
-        <article><span>02</span><h3>SHIROBEDHAS</h3><p>“Computational Identification and Classification of Shirobedhas using Temporal Dance Features” — International Conference on Indian Knowledge Systems, Tradition, Culture, Technology, IQAC, SSN 2026.</p></article>
-        <article><span>03</span><h3>RFET SRAM</h3><p>“Numerical Investigation of Fin Dual-Doped RFET Based SRAM Circuit under the Effect of Heavy Ion-Irradiation” — International Conference on Multifunctional Materials & Radiation Measurements.</p></article>
-        <article><span>04</span><h3>GENERATIVE DANCE</h3><p>“Generative Model for Extended Dance Sequence Generation from a Video” — MIND-2026, Samarkhand, Uzbekistan.</p></article>
-      </div>
-      <div class="research-roles">
-        <div><b>STEM RESEARCH</b><span>IIT Madras Department of Science & Technology, Gopal Krishna Deshpande Centre for Innovation and Entrepreneurship · Mar–Apr 2026</span></div>
-        <div><b>RESEARCH INTERN</b><span>SSN Engineering College · Dr. R. Srinivasan & Dr. A. Karthika · Bharatnatyam Anthropology, Image & Shirovedhas Processing · Nov 2025–ongoing</span></div>
-        <div><b>PEER REVIEWER</b><span>Journal of Environmental Management · Impact Factor 8.4 · Nov 2025</span></div>
-        <div><b>RESEARCH ASSISTANT</b><span>Reviewing STEM journal & conference research paper works independently under Research Scholar · 2020–2025</span></div>
-      </div>
-    </section>
-
-    <section id="experience" class="screen">
-      <div class="section-head"><div><div class="eyebrow">LEVEL 07 / TIMELINE</div><h2>Experience</h2></div><button class="back-btn">← MAP</button></div>
-      <div class="timeline">
-        <article><time>2026</time><div><h3>Eco Kadai — Market Survey Intern</h3><p>Product validation research to evaluate feasibility · June–August 2026</p></div></article>
-        <article><time>2025–26</time><div><h3>Junior Developer — Nexus Spring of Code / EliteCoder</h3><p>Spring of Code, Summer of Code & Winter of Code · Dec 2025–May 2026</p></div></article>
-        <article><time>2025</time><div><h3>Junior Developer — Sanghamitra Ventures</h3><p>R&D and digital development of start-up · Sep–Dec 2025</p></div></article>
-        <article><time>2025</time><div><h3>Summer Engineering Intern — Infosys Springboard</h3><p>Cohort 5 · Pragati Internship for Women Developers · Apr–Sep 2025</p></div></article>
-      </div>
-      <div class="leadership-grid">
-        <article><b>VICE PRESIDENT — MEMBERSHIPS</b><span>Toastmasters International [PEC] Visionary Communication · Oct 2025–Mar 2026</span></article>
-        <article><b>OPEN SOURCE / CP COMMUNITY</b><span>Presiding over Open Source Coding and Competitive Programming communities · Apr 2025–ongoing</span></article>
-        <article><b>IIT BOMBAY / EDC</b><span>Presiding Girls Chief Coordinator · EDC, PEC · IIT Bombay NEC Finalists · Top 100 Entrepreneurs · Chief Operating Officer, Eureka 2025</span></article>
-      </div>
-    </section>
-
-    <section id="skills" class="screen">
-      <div class="section-head"><div><div class="eyebrow">LEVEL 08 / LOADOUT</div><h2>Skills & Creative Work</h2></div><button class="back-btn">← MAP</button></div>
-      <div class="skills-game"><div class="game-card"><div class="game-head"><span>GAME 08 — SKILL STACK</span><span id="skillStatus">LOCKED</span></div><canvas id="skillCanvas" width="900" height="340"></canvas><div class="game-instructions">CLICK ONCE — instant skill-stack unlock.</div></div></div>
-      <div class="skills-cloud"><span>C</span><span>C++</span><span>Java</span><span>Python</span><span>JavaScript</span><span>HTML</span><span>CSS</span><span>Node</span><span>React</span><span>VS Code</span><span>GitHub</span><span>Power BI</span><span>DSA</span><span>AI</span><span>ML</span><span>LLM Training</span><span>Agentic AI</span><span>AI Agents</span><span>Photography</span><span>Digital Design</span><span>Canva</span><span>Graphic Design</span><span>Content Creation</span><span>Poetry</span><span>Storytelling</span><span>Bharatnatyam</span></div>
-    </section>
-
-    <section id="yz" class="screen">
-      <div class="section-head"><div><div class="eyebrow">BONUS LEVEL / SANGHAMITRA VENTURES</div><h2>WHY YZ?</h2></div><button class="back-btn">← MAP</button></div>
-      <div class="yz-hero"><div><span class="eyebrow">WHY NOT GEN-Z?</span><h3>Fresh minds.<br>Real projects.<br>Built differently.</h3><p>WHY YZ? is the flagship under Sanghamitra Ventures: a Gen-Z company connecting student interns and fresh minds with companies that need youth-driven project ideation, AI solutions and digital development.</p></div><div class="yz-mark">YZ<span>?</span></div></div>
-      <div class="yz-grid">
-        <div><b>PROJECT R&D</b><span>AI agents, digital products, deployed web applications and applied research.</span></div>
-        <div><b>CLIENT WORK</b><span>Eco Kadai, product validation, web development and AI / automation planning.</span></div>
-        <div><b>NETWORK</b><span>Start-ups and company-facing project collaboration, including work associated with Ashok Leyland, Ford and The Invincible Fire.</span></div>
-      </div>
-    </section>
-
-    <section id="education" class="screen">
-      <div class="section-head"><div><div class="eyebrow">BONUS LEVEL / EDUCATION</div><h2>Education & Extra-curricular</h2></div><button class="back-btn">← MAP</button></div>
-      <div class="education-grid">
-        <article><b>PEC ANNA UNIVERSITY</b><span>B.E. Computer Science Engineering · 8.24/10 CGPA · 2024–2028</span></article>
-        <article><b>CENTRAL MODERN SCHOOL</b><span>Indian School Certificate [XII] · 3.19/4.00 GPA · 2021–2022</span></article>
-        <article><b>CENTRAL MODERN SCHOOL</b><span>Certificate of Secondary Education [X] · 3.70/4.00 GPA · 2019–2020</span></article>
-      </div>
-      <div class="education-grid">
-        <article><b>TOASTMASTERS</b><span>Honorary Pathway Celebrity, Triple Crown & Rockstar · April 2026</span></article>
-        <article><b>DEBATE</b><span>ASISC All India Regional Contest · Clifford Hicks Memorial Debate · Frank Anthony Memorial Debate · 2018–2019</span></article>
-        <article><b>BHARATNATYAM</b><span>Senior Diploma · Sarbabharatiya Sangeet O Sanskriti Parishad & Pracheen Kala Kendra · 2010–2024</span></article>
-        <article><b>WRITING / LEADERSHIP</b><span>School House Head Captain · Event Management · Published Writer at Voyage Techno Digest · 2018–2020</span></article>
-      </div>
-    </section>
-
-    <section id="contact" class="screen">
-      <div class="section-head"><div><div class="eyebrow">FINAL LEVEL / EXIT</div><h2>Connect</h2></div><button class="back-btn">← MAP</button></div>
-      <div class="contact-card">
-        <div><span class="eyebrow">SAY HELLO</span><h3>Let's build something<br>worth opening.</h3><p>For collaboration, research, project development, speaking, open source or YZ work.</p></div>
-        <div class="contact-links">
-          <a id="linkedinLink" target="_blank" rel="noopener">LINKEDIN ↗</a>
-          <a id="githubLink2" target="_blank" rel="noopener">GITHUB ↗</a>
-          <a id="leetcodeLink2" target="_blank" rel="noopener">LEETCODE ↗</a>
-          <a href="mailto:its.shines.workspace@gmail.com">EMAIL ↗</a>
-          <a href="https://medium.com/" target="_blank" rel="noopener">MEDIUM ↗</a>
-        </div>
-      </div>
-      <footer>© 2026 SAYANTANI BANERJEE · BUILT AS A GAME · <a href="https://yz-five.vercel.app/" target="_blank">WHY YZ?</a></footer>
-    </section>
-  </main>
-  <script src="config.js"></script>
-  <script src="script.js"></script>
+  </div>
+</header>
+<main id="app">
+<section id="home" class="screen active"><div class="hero-grid"><div class="hero-copy"><div class="eyebrow">PORTFOLIO / INTERACTIVE PROFILE / 2026</div><h1>SAYANTANI<br><span>BANERJEE</span></h1><p class="hero-line">BUILD. RESEARCH. COMPETE. LEAD. CREATE.</p><p class="muted">The profile is locked. The bug knows the way.</p></div><div class="game-card" id="bootGame"><div class="game-head"><span>GAME 00</span><span>UNLOCK PROFILE</span></div><canvas id="bootCanvas" width="760" height="330"></canvas><div class="game-instructions">CLICK / TAP THE 🐞 — instant unlock</div><div class="game-stats"><span>STATUS: <b id="bootStatus">LOCKED</b></span><span>LEVEL 1</span></div></div></div><div class="lock-note">Complete the opening game to unlock the portfolio map.</div></section>
+<section id="map" class="screen"><div class="section-head"><div><div class="eyebrow">PROFILE MAP</div><h2>Choose your next level.</h2></div><div class="map-progress"><span id="mapCount">0</span>/8 UNLOCKED</div></div><div class="level-grid" id="levelGrid"></div><div class="map-footer"><span>🐞 Cursor companion active</span><button class="text-btn" data-open="about">OPEN PROFILE →</button></div></section>
+<section id="about" class="screen"><div class="section-head"><div><div class="eyebrow">LEVEL 01 / IDENTITY</div><h2>About / Profile</h2></div><button class="back-btn">← MAP</button></div><div class="about-grid"><div class="quote-card"><span class="big">“</span><p>Computer Science Engineering student building at the intersection of software, AI, research, entrepreneurship, competitive programming and communication.</p><span class="quote-end">”</span></div><div class="fact-list"><div><span>EDUCATION</span><b>B.E. Computer Science Engineering<br>PEC Anna University, Chennai<br>8.24 / 10 CGPA · 2024–2028</b></div><div><span>FOCUS</span><b>DSA · AI/ML · LLM Training · Agentic AI · AI Agents · Full-stack development · Research</b></div><div><span>COMMUNITY</span><b>Open Source + Competitive Programming communities · GSSoC · Outreachy · GSoC · ICPC</b></div></div></div></section>
+<section id="achievements" class="screen"><div class="section-head"><div><div class="eyebrow">LEVEL 02 / ARCADE</div><h2>Achievements</h2></div><button class="back-btn">← MAP</button></div><div class="game-card mini-game"><div class="game-head"><span>GAME 02 — TARGET RANGE</span><span id="targetScore">0 / 7</span></div><canvas id="targetCanvas" width="900" height="340"></canvas><div class="game-instructions">CLICK ANY TARGET — instant level win.</div></div><div class="achievement-grid"><article><strong>ICPC 2025</strong><span>Institute Rank 1 · Amritapuri Regionals · South Asia Chapter · Nov 2025</span></article><article><strong>GENESIS 2026</strong><span>First Place · SRM</span></article><article><strong>Ideathon PEC × Anna University</strong><span>First Runner Up out of 500+ teams · 15 Feb 2025</span></article><article><strong>EO Global Student Entrepreneurship Awards</strong><span>Top 80 / 300 Start-Ups from India · Startup TN Finalists</span></article><article><strong>IIT Madras Incubator + FounderX</strong><span>Ideas To Impact · Top 10 shortlisted start-ups by student entrepreneurs</span></article><article><strong>Toastmasters International</strong><span>Honorary Pathway Celebrity · Triple Crown · Rockstar · Bronze Medalist, Area A3 International Speech Contest</span></article></div></section>
+<section id="leetcode" class="screen"><div class="section-head"><div><div class="eyebrow">LEVEL 03 / ALGORITHM ARENA</div><h2>LeetCode</h2></div><button class="back-btn">← MAP</button></div><div class="arena-grid"><div class="game-card"><div class="game-head"><span>GAME 03 — BINARY DODGE</span><span id="dodgeStatus">LOCKED</span></div><canvas id="dodgeCanvas" width="760" height="360"></canvas><div class="game-instructions">PRESS ANY KEY — instant level win.</div></div><div class="stat-card"><span class="eyebrow">ALGORITHMIC COMPETITIONS</span><div class="huge">ICPC</div><p>Institute Rank 1<br>Amritapuri Regionals<br>2025</p><a class="external" id="leetcodeLink" target="_blank" rel="noopener">OPEN LEETCODE ↗</a></div></div><div class="skill-strip"><span>DSA</span><span>C</span><span>C++</span><span>JAVA</span><span>PYTHON</span><span>JS</span></div></section>
+<section id="github" class="screen"><div class="section-head"><div><div class="eyebrow">LEVEL 04 / SOURCE LAB</div><h2>GitHub</h2></div><button class="back-btn">← MAP</button></div><div class="game-card mini-game"><div class="game-head"><span>GAME 04 — COMMIT RUN</span><span id="commitScore">0 / 10</span></div><canvas id="commitCanvas" width="900" height="300"></canvas><div class="game-instructions">PRESS SPACE ONCE — instant level win.</div></div><div class="repo-grid"><article><b>CinderPeak</b><span>Modern C++ STL templates · modularity +30% · 20+ successful PR integrations</span></article><article><b>Open Source Community</b><span>GSSoC · Outreachy · GSoC · Google Summer of Code · project mentoring & contribution</span></article><article><b>AI / Agentic Work</b><span>AI agents, LLM training, applied AI, product R&D and digital development</span></article></div><a class="external github-main" id="githubLink" target="_blank" rel="noopener">OPEN GITHUB ↗</a></section>
+<section id="projects" class="screen"><div class="section-head"><div><div class="eyebrow">LEVEL 05 / DEPLOYED</div><h2>Projects</h2></div><button class="back-btn">← MAP</button></div><div class="game-card mini-game"><div class="game-head"><span>GAME 05 — URL RUNNER</span><span id="urlScore">0 / 6</span></div><canvas id="urlCanvas" width="900" height="300"></canvas><div class="game-instructions">PRESS ENTER ONCE — instant project vault unlock.</div></div><div class="project-grid"><article><div class="project-no">01</div><h3>WHY YZ?</h3><p>Gen-Z company / flagship under Sanghamitra Ventures. Fresh minds, student talent, project ideation, AI solutions and digital development.</p><a href="https://yz-five.vercel.app/" target="_blank">LIVE SITE ↗</a></article><article><div class="project-no">02</div><h3>MAUSAM</h3><p>Next-gen weather intelligence / India-focused application.</p><a href="https://mausam-blond.vercel.app/" target="_blank">LIVE SITE ↗</a></article><article><div class="project-no">03</div><h3>NIRIKSH</h3><p>Command Center project. Smart India Hackathon 2026 semi-finalist.</p><a href="https://niriksh-command-center.vercel.app/" target="_blank">LIVE SITE ↗</a></article><article><div class="project-no">04</div><h3>ROADPULSE</h3><p>Civic / road intelligence project. Government of India Smart India Hackathon 2026 semi-finalist.</p><a href="https://civic-fix-27.preview.emergentagent.com/dashboard" target="_blank">LIVE SITE ↗</a></article><article><div class="project-no">05</div><h3>VAYUNETRA</h3><p>Government of India Smart India Hackathon 2026 semi-finalist.</p></article><article><div class="project-no">06</div><h3>SHUDDH</h3><p>Self-sustainable, self-cleaning, smart AI-driven waste segregator and waste-to-wealth generator. SIH 2025 & 2026 semi-finalist. Provisionally patented MVP.</p></article><article><div class="project-no">07</div><h3>KAARYA [WITH AI]</h3><p>Workspace/product improvement through WHY YZ? AI solutions, integrated AI services and stronger finished-product presentation.</p><a href="https://kaarya-9fn9.vercel.app/" target="_blank">LIVE SITE ↗</a></article><article><div class="project-no">08</div><h3>RAKSHA : DELHI POLICE</h3><p>Cyber / reporting project.</p><a href="https://rakshak-sand.vercel.app/" target="_blank">LIVE SITE ↗</a></article><article><div class="project-no">09</div><h3>AUTOPEDIA</h3><p>Interactive automotive knowledge and discovery platform.</p><a href="https://piston-s-autopedia.vercel.app/" target="_blank">LIVE SITE ↗</a></article><article><div class="project-no">10</div><h3>ECO KADAI</h3><p>Client digital development / market research project. Website and AI / automation roadmap work.</p><a href="https://ecokadai.in/" target="_blank">LIVE SITE ↗</a></article><article><div class="project-no">11</div><h3>ISRO FINALIST PROJECT</h3><p>Satellite-based AQI forecasting using remote sensing datasets and ML regression models · 87% accuracy.</p></article><article><div class="project-no">12</div><h3>COGNIZANT FINALIST PROJECT</h3><p>Smart attendance system using OpenCV & IoT · 95% accuracy · 70% manual time saved.</p></article><article><div class="project-no">13</div><h3>TENDRIX</h3><p>Bio tentacle gripper / robotic arm and ML emergency landing control system for safe descent at power loss.</p></article></div></section>
+<section id="research" class="screen"><div class="section-head"><div><div class="eyebrow">LEVEL 06 / RESEARCH DECK</div><h2>Research</h2></div><button class="back-btn">← MAP</button></div><div class="research-grid"><article><span>01</span><h3>SHUDDH</h3><p>“The Self-sustainable, Self-cleaning, Smart, AI-driven Waste Segregator and Waste to Wealth Generator for a Clean, Green Zero Waste Future” — 5th International Conference Recycle 2025, IIT [G].</p></article><article><span>02</span><h3>SHIROBEDHAS</h3><p>“Computational Identification and Classification of Shirobedhas using Temporal Dance Features” — International Conference on Indian Knowledge Systems, Tradition, Culture, Technology, IQAC, SSN 2026.</p></article><article><span>03</span><h3>RFET SRAM</h3><p>“Numerical Investigation of Fin Dual-Doped RFET Based SRAM Circuit under the Effect of Heavy Ion-Irradiation” — International Conference on Multifunctional Materials & Radiation Measurements.</p></article><article><span>04</span><h3>GENERATIVE DANCE</h3><p>“Generative Model for Extended Dance Sequence Generation from a Video” — MIND-2026, Samarkhand, Uzbekistan.</p></article></div><div class="research-roles"><div><b>STEM RESEARCH</b><span>IIT Madras Department of Science & Technology, Gopal Krishna Deshpande Centre for Innovation and Entrepreneurship · Mar–Apr 2026</span></div><div><b>RESEARCH INTERN</b><span>SSN Engineering College · Dr. R. Srinivasan & Dr. A. Karthika · Bharatnatyam Anthropology, Image & Shirovedhas Processing · Nov 2025–ongoing</span></div><div><b>PEER REVIEWER</b><span>Journal of Environmental Management · Impact Factor 8.4 · Nov 2025</span></div><div><b>RESEARCH ASSISTANT</b><span>Reviewing STEM journal & conference research paper works independently under Research Scholar · 2020–2025</span></div></div></section>
+<section id="experience" class="screen"><div class="section-head"><div><div class="eyebrow">LEVEL 07 / TIMELINE</div><h2>Experience</h2></div><button class="back-btn">← MAP</button></div><div class="timeline"><article><time>2026</time><div><h3>Eco Kadai — Market Survey Intern</h3><p>Product validation research to evaluate feasibility · June–August 2026</p></div></article><article><time>2025–26</time><div><h3>Junior Developer — Nexus Spring of Code / EliteCoder</h3><p>Spring of Code, Summer of Code & Winter of Code · Dec 2025–May 2026</p></div></article><article><time>2025</time><div><h3>Junior Developer — Sanghamitra Ventures</h3><p>R&D and digital development of start-up · Sep–Dec 2025</p></div></article><article><time>2025</time><div><h3>Summer Engineering Intern — Infosys Springboard</h3><p>Cohort 5 · Pragati Internship for Women Developers · Apr–Sep 2025</p></div></article></div><div class="leadership-grid"><article><b>VICE PRESIDENT — MEMBERSHIPS</b><span>Toastmasters International [PEC] Visionary Communication · Oct 2025–Mar 2026</span></article><article><b>OPEN SOURCE / CP COMMUNITY</b><span>Presiding over Open Source Coding and Competitive Programming communities · Apr 2025–ongoing</span></article><article><b>IIT BOMBAY / EDC</b><span>Presiding Girls Chief Coordinator · EDC, PEC · IIT Bombay NEC Finalists · Top 100 Entrepreneurs · Chief Operating Officer, Eureka 2025</span></article></div></section>
+<section id="skills" class="screen"><div class="section-head"><div><div class="eyebrow">LEVEL 08 / LOADOUT</div><h2>Skills & Creative Work</h2></div><button class="back-btn">← MAP</button></div><div class="skills-game"><div class="game-card"><div class="game-head"><span>GAME 08 — SKILL STACK</span><span id="skillStatus">LOCKED</span></div><canvas id="skillCanvas" width="900" height="340"></canvas><div class="game-instructions">CLICK ONCE — instant skill-stack unlock.</div></div></div><div class="skills-cloud"><span>C</span><span>C++</span><span>Java</span><span>Python</span><span>JavaScript</span><span>HTML</span><span>CSS</span><span>Node</span><span>React</span><span>VS Code</span><span>GitHub</span><span>Power BI</span><span>DSA</span><span>AI</span><span>ML</span><span>LLM Training</span><span>Agentic AI</span><span>AI Agents</span><span>Photography</span><span>Digital Design</span><span>Canva</span><span>Graphic Design</span><span>Content Creation</span><span>Poetry</span><span>Storytelling</span><span>Bharatnatyam</span></div></section>
+<section id="yz" class="screen"><div class="section-head"><div><div class="eyebrow">BONUS LEVEL / SANGHAMITRA VENTURES</div><h2>WHY YZ?</h2></div><button class="back-btn">← MAP</button></div><div class="yz-hero"><div><span class="eyebrow">WHY NOT GEN-Z?</span><h3>Fresh minds.<br>Real projects.<br>Built differently.</h3><p>WHY YZ? is the flagship under Sanghamitra Ventures: a Gen-Z company connecting student interns and fresh minds with companies that need youth-driven project ideation, AI solutions and digital development.</p></div><div class="yz-mark">YZ<span>?</span></div></div><div class="yz-grid"><div><b>PROJECT R&D</b><span>AI agents, digital products, deployed web applications and applied research.</span></div><div><b>CLIENT WORK</b><span>Eco Kadai, product validation, web development and AI / automation planning.</span></div><div><b>NETWORK</b><span>Start-ups and company-facing project collaboration, including work associated with Ashok Leyland, Ford and The Invincible Fire.</span></div></div></section>
+<section id="education" class="screen"><div class="section-head"><div><div class="eyebrow">BONUS LEVEL / EDUCATION</div><h2>Education & Extra-curricular</h2></div><button class="back-btn">← MAP</button></div><div class="education-grid"><article><b>PEC ANNA UNIVERSITY</b><span>B.E. Computer Science Engineering · 8.24/10 CGPA · 2024–2028</span></article><article><b>CENTRAL MODERN SCHOOL</b><span>Indian School Certificate [XII] · 3.19/4.00 GPA · 2021–2022</span></article><article><b>CENTRAL MODERN SCHOOL</b><span>Certificate of Secondary Education [X] · 3.70/4.00 GPA · 2019–2020</span></article></div><div class="education-grid"><article><b>TOASTMASTERS</b><span>Honorary Pathway Celebrity, Triple Crown & Rockstar · April 2026</span></article><article><b>DEBATE</b><span>ASISC All India Regional Contest · Clifford Hicks Memorial Debate · Frank Anthony Memorial Debate · 2018–2019</span></article><article><b>BHARATNATYAM</b><span>Senior Diploma · Sarbabharatiya Sangeet O Sanskriti Parishad & Pracheen Kala Kendra · 2010–2024</span></article><article><b>WRITING / LEADERSHIP</b><span>School House Head Captain · Event Management · Published Writer at Voyage Techno Digest · 2018–2020</span></article></div></section>
+<section id="contact" class="screen"><div class="section-head"><div><div class="eyebrow">FINAL LEVEL / EXIT</div><h2>Connect</h2></div><button class="back-btn">← MAP</button></div><div class="contact-card"><div><span class="eyebrow">SAY HELLO</span><h3>Let's build something<br>worth opening.</h3><p>For collaboration, research, project development, speaking, open source or YZ work.</p></div><div class="contact-links"><a id="linkedinLink" target="_blank" rel="noopener">LINKEDIN ↗</a><a id="githubLink2" target="_blank" rel="noopener">GITHUB ↗</a><a id="leetcodeLink2" target="_blank" rel="noopener">LEETCODE ↗</a><a href="mailto:its.shines.workspace@gmail.com">EMAIL ↗</a><a href="https://medium.com/" target="_blank" rel="noopener">MEDIUM ↗</a></div></div><footer><span>© 2026 SAYANTANI BANERJEE · BUILT AS A GAME</span><a href="https://yz-five.vercel.app/" target="_blank">WHY YZ? ↗</a></footer></section>
+</main>
+<script>
+const CONFIG={linkedin:'https://www.linkedin.com/in/g-sayantani-mb-65337230b/?isSelfProfile=true',github:'https://github.com/Sayantani9',leetcode:'https://leetcode.com/u/the_invincible_fire/'};
+const chandelierDark='data:image/svg+xml;charset=UTF-8,'+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><g fill="none" stroke="white" stroke-width="4" stroke-linecap="round"><path d="M60 8v18M45 20h30M60 26v12M32 38c15 8 41 8 56 0M42 40c-2 18-16 25-26 31M78 40c2 18 16 25 26 31M30 70c10 3 17 10 18 23M90 70c-10 3-17 10-18 23M51 93h18"/><path d="M20 71c-7 6-6 14 3 16M100 71c7 6 6 14-3 16"/><path d="M39 93c-7 6-6 13 2 16M81 93c7 6 6 13-2 16"/></g><g fill="white"><path d="M19 88c-7-5-9 6-4 10 5 3 9-4 4-10M101 88c7-5 9 6 4 10-5 3-9-4-4-10M41 108c-6-5-8 5-3 9 5 3 8-4 3-9M79 108c6-5 8 5 3 9-5 3-8-4-3-9"/></g></svg>`);
+const chandelierLight='data:image/svg+xml;charset=UTF-8,'+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><g fill="none" stroke="#111" stroke-width="4" stroke-linecap="round"><path d="M60 8v18M45 20h30M60 26v12M32 38c15 8 41 8 56 0M42 40c-2 18-16 25-26 31M78 40c2 18 16 25 26 31M30 70c10 3 17 10 18 23M90 70c-10 3-17 10-18 23M51 93h18"/><path d="M20 71c-7 6-6 14 3 16M100 71c7 6 6 14-3 16"/><path d="M39 93c-7 6-6 13 2 16M81 93c7 6 6 13-2 16"/></g><g fill="#111"><path d="M19 88c-7-5-9 6-4 10 5 3 9-4 4-10M101 88c7-5 9 6 4 10-5 3-9-4-4-10M41 108c-6-5-8 5-3 9 5 3 8-4 3-9M79 108c6-5 8 5-3 9-5 3-8-4-3-9"/></g></svg>`);
+const body=document.body, toast=document.getElementById('toast'), icon=document.getElementById('chandelierIcon');
+let unlocked=false, current='home', unlockedLevels=new Set();
+function setTheme(light){body.classList.toggle('light',light);icon.src=light?chandelierLight:chandelierDark;localStorage.setItem('sayantani-theme',light?'light':'dark')}
+setTheme(localStorage.getItem('sayantani-theme')==='light');
+document.getElementById('themeBtn').onclick=()=>setTheme(!body.classList.contains('light'));
+function notify(t){toast.textContent=t;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),1400)}
+function go(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));const el=document.getElementById(id);if(el){el.classList.add('active');current=id;window.scrollTo({top:0,behavior:'smooth'});if(id!=='home'&&!unlocked)unlockHome();}}
+document.getElementById('homeBtn').onclick=()=>go('home');
+document.querySelectorAll('.back-btn').forEach(b=>b.onclick=()=>go('map'));
+document.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>go(b.dataset.open));
+function unlockHome(){unlocked=true;document.getElementById('systemStatus').textContent='PROFILE UNLOCKED';document.getElementById('bootStatus').textContent='UNLOCKED';renderMap()}
+const levels=[['about','01','PROFILE'],['achievements','02','ACHIEVEMENTS'],['leetcode','03','LEETCODE'],['github','04','GITHUB'],['projects','05','PROJECTS'],['research','06','RESEARCH'],['experience','07','EXPERIENCE'],['skills','08','SKILLS'],['yz','+','WHY YZ?'],['education','+','EDUCATION'],['contact','+','CONTACT']];
+function renderMap(){const grid=document.getElementById('levelGrid');grid.innerHTML='';levels.forEach(([id,n,name],i)=>{const b=document.createElement('button');b.innerHTML=`<small>${n==='+'?'BONUS':'LEVEL '+n}</small><strong>${name}</strong>`;b.onclick=()=>{if(i<8){unlockedLevels.add(id);document.getElementById('mapCount').textContent=Math.min(8,unlockedLevels.size)}go(id)};grid.appendChild(b)})}renderMap();
+function drawCanvas(id,label){const c=document.getElementById(id),x=c.getContext('2d');function paint(){const r=c.getBoundingClientRect(),d=window.devicePixelRatio||1,w=c.width,h=c.height;x.clearRect(0,0,w,h);x.fillStyle=getComputedStyle(document.body).getPropertyValue('--panel2');x.fillRect(0,0,w,h);x.strokeStyle=getComputedStyle(document.body).getPropertyValue('--line');for(let i=0;i<w;i+=45){x.beginPath();x.moveTo(i,0);x.lineTo(i,h);x.stroke()}for(let i=0;i<h;i+=45){x.beginPath();x.moveTo(0,i);x.lineTo(w,i);x.stroke()}x.fillStyle=getComputedStyle(document.body).getPropertyValue('--text');x.font='700 24px Space Grotesk';x.textAlign='center';x.fillText(label,w/2,h/2);x.font='12px DM Mono';x.fillStyle=getComputedStyle(document.body).getPropertyValue('--muted');x.fillText('ONE ACTION • INSTANT UNLOCK',w/2,h/2+30)}paint();return paint}
+const paints=[drawCanvas('bootCanvas','CLICK 🐞'),drawCanvas('targetCanvas','CLICK ANYWHERE'),drawCanvas('dodgeCanvas','PRESS ANY KEY'),drawCanvas('commitCanvas','PRESS SPACE'),drawCanvas('urlCanvas','PRESS ENTER'),drawCanvas('skillCanvas','CLICK ONCE')];
+window.addEventListener('resize',()=>paints.forEach(f=>f()));
+function oneClick(id,status,score,msg){const c=document.getElementById(id);c.addEventListener('click',()=>{if(!unlocked)unlockHome();document.getElementById(status).textContent=score;notify(msg);});}
+document.getElementById('bootCanvas').onclick=()=>{unlockHome();go('map');notify('PROFILE UNLOCKED ✦')};
+oneClick('targetCanvas','targetScore','7 / 7','ACHIEVEMENTS UNLOCKED ✦');
+document.getElementById('dodgeCanvas').addEventListener('keydown',()=>{});document.addEventListener('keydown',e=>{if(current==='leetcode'){document.getElementById('dodgeStatus').textContent='UNLOCKED';notify('LEETCODE LEVEL CLEARED ✦')}if(current==='github'&&e.code==='Space'){e.preventDefault();document.getElementById('commitScore').textContent='10 / 10';notify('GITHUB LEVEL CLEARED ✦')}if(current==='projects'&&e.code==='Enter'){document.getElementById('urlScore').textContent='6 / 6';notify('PROJECT VAULT UNLOCKED ✦')}});
+document.getElementById('skillCanvas').onclick=()=>{document.getElementById('skillStatus').textContent='UNLOCKED';notify('SKILL STACK UNLOCKED ✦')};
+['leetcodeLink','leetcodeLink2'].forEach(id=>document.getElementById(id).href=CONFIG.leetcode);['githubLink','githubLink2'].forEach(id=>document.getElementById(id).href=CONFIG.github);document.getElementById('linkedinLink').href=CONFIG.linkedin;
+document.addEventListener('pointermove',e=>{document.getElementById('cursorBug').style.left=e.clientX+'px';document.getElementById('cursorBug').style.top=e.clientY+'px'});
+</script>
 </body>
 </html>
