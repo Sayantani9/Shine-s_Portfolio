@@ -63,6 +63,11 @@ h2,h3,p,span,b,strong,a{transition:color .3s,text-shadow .3s}.section-head{displ
 }
 </style>
 
+
+<style id="profile-entry-fix-css">
+#map.active{display:block !important;visibility:visible !important;opacity:1 !important}
+</style>
+
 </head>
 <body>
 <div id="cursorBug" aria-hidden="true">🐞</div>
@@ -198,9 +203,30 @@ document.addEventListener('pointermove',e=>{document.getElementById('cursorBug')
     progress.textContent="LEVEL 1 · 1 / 1";
     overlay.innerHTML="<div class='flappy-overlay-title'>PROFILE UNLOCKED ✦</div><div class='flappy-overlay-text'>Level 1 cleared. Welcome to Sayantani's portfolio.</div><button type='button' id='enterProfile'>ENTER PROFILE</button>";
     overlay.style.display="flex";
-    document.getElementById("enterProfile").addEventListener("click",function(){
-      const map=document.querySelector("#map");
-      if(map)map.scrollIntoView({behavior:"smooth",block:"start"});
+    document.getElementById("enterProfile").addEventListener("click",function(e){
+      e.preventDefault();
+      e.stopPropagation();
+
+      // Unlock the portfolio and move the visitor to the actual portfolio map.
+      const home = document.getElementById("home");
+      const map = document.getElementById("map");
+
+      if (home) home.classList.remove("active");
+      if (map) {
+        map.classList.add("active");
+        map.hidden = false;
+        map.style.display = "";
+        map.scrollIntoView({behavior:"smooth", block:"start"});
+      }
+
+      // Also support the portfolio's existing navigation state if present.
+      document.querySelectorAll(".screen").forEach(function(screen){
+        if (screen.id !== "map" && screen.id !== "home") {
+          screen.classList.remove("active");
+        }
+      });
+
+      window.scrollTo({top: map ? map.offsetTop : 0, behavior:"smooth"});
     });
     draw();
   }
@@ -318,6 +344,33 @@ document.addEventListener('pointermove',e=>{document.getElementById('cursorBug')
   });
 
   reset();
+})();
+</script>
+
+
+<script id="profile-entry-fallback">
+(function(){
+  document.addEventListener("click", function(e){
+    const btn = e.target.closest && e.target.closest("#enterProfile");
+    if(!btn) return;
+
+    e.preventDefault();
+    e.stopImmediatePropagation();
+
+    const home=document.getElementById("home");
+    const map=document.getElementById("map");
+
+    if(home) home.classList.remove("active");
+    if(map){
+      document.querySelectorAll(".screen").forEach(function(s){s.classList.remove("active");});
+      map.classList.add("active");
+      map.hidden=false;
+      map.style.display="";
+      setTimeout(function(){
+        map.scrollIntoView({behavior:"smooth",block:"start"});
+      },20);
+    }
+  }, true);
 })();
 </script>
 
