@@ -68,13 +68,13 @@ img{max-width:100%;display:block}
 .hero{position:relative;min-height:100svh;padding-top:76px;display:flex;flex-direction:column;justify-content:flex-end;border-bottom:1px solid var(--line);overflow:hidden}
 .stage{position:relative;padding-inline:var(--pad);padding-top:3rem}
 .name{position:relative;z-index:1;font-family:var(--display);font-weight:800;font-size:min(17.5vw,31svh);line-height:.84;letter-spacing:-.05em;text-align:center;color:var(--ink);cursor:default}
-.name .ln{display:block}
+.name .ln{display:table;margin-inline:auto;white-space:nowrap}
 .name .l{display:inline-block;transition:color .5s ease var(--td,0s)}
 .name:hover .l{color:var(--h)}
-.portrait{position:absolute;z-index:2;left:50%;bottom:0;height:118%;transform:translateX(-50%);width:auto;max-width:none;pointer-events:none;user-select:none}
-.hero-copy{position:absolute;z-index:3;left:var(--pad);bottom:2rem;max-width:21rem;font-size:.95rem;color:var(--muted)}
+.portrait{position:absolute;z-index:2;left:50%;bottom:0;height:90%;transform:translateX(-50%);width:auto;max-width:none;pointer-events:none;user-select:none}
+.hero-copy{position:relative;z-index:3;max-width:min(24rem,max(15rem,28vw));margin-top:2rem;padding-bottom:2rem;font-size:.95rem;color:var(--muted)}
 .hero-copy strong{color:var(--ink);font-weight:600}
-.hero-spacer{height:3.5rem}
+.hero-spacer{height:0}
 
 /* intro-driven entrance (only when JS plays the intro) */
 .hero-go .l{animation:letterIn 1.1s cubic-bezier(.2,.7,.2,1) backwards;animation-delay:calc(.55s + var(--i) * .055s)}
@@ -82,6 +82,7 @@ img{max-width:100%;display:block}
 .hero-go .portrait{animation:riseIn 1.4s cubic-bezier(.2,.7,.2,1) backwards;animation-delay:1.35s}
 @keyframes riseIn{from{opacity:0;transform:translateX(-50%) translateY(7%);filter:blur(10px)}}
 .hero-go .nav,.hero-go .hero-copy,.hero-go .stats{animation:fadeUp .9s ease backwards;animation-delay:1.7s}
+@keyframes riseInM{from{opacity:0;transform:translateY(7%);filter:blur(10px)}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}}
 
 /* ---------- STATS ---------- */
@@ -166,6 +167,28 @@ textarea{min-height:110px;resize:vertical}
 footer{padding:1.75rem var(--pad) 2.25rem;display:flex;flex-wrap:wrap;gap:.5rem 2rem;justify-content:space-between;font-size:.82rem;color:var(--muted)}
 footer b{font-family:var(--display);color:var(--ink)}
 
+
+mark{background:linear-gradient(transparent 38%,var(--lemon) 38%);color:inherit;font-weight:600;padding:0 .15em}
+.soc{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}
+.soc a{font-size:.85rem;font-weight:600;text-decoration:none;padding:.4rem 1rem;border-radius:999px;background:var(--cyan);color:var(--ink);transition:background .3s,transform .3s}
+.soc a:nth-child(2){background:var(--lemon)}
+.soc a:nth-child(3){background:var(--lime)}
+.soc a:hover{transform:translateY(-2px);background:#fff}
+.socbig{display:flex;flex-direction:column;margin-bottom:2rem;border-bottom:1px solid var(--line)}
+.socbig a{display:grid;grid-template-columns:7rem 1fr auto;align-items:center;gap:1rem;padding:1.15rem 0;border-top:1px solid var(--line);text-decoration:none;position:relative;overflow:hidden;transition:padding .35s ease}
+.socbig a:nth-child(1){--b:var(--cyan)}.socbig a:nth-child(2){--b:var(--lemon)}.socbig a:nth-child(3){--b:var(--lime)}
+.socbig a::before{content:"";position:absolute;inset:0;background:var(--b);clip-path:inset(100% 0 0 0);transition:clip-path .45s cubic-bezier(.7,0,.2,1);z-index:0}
+.socbig a:hover::before,.socbig a:focus-visible::before{clip-path:inset(0)}
+.socbig a>*{position:relative;z-index:1}
+.socbig a:hover{padding-inline:1rem}
+.socbig span{font-family:var(--display);font-weight:800;font-size:1.35rem;letter-spacing:-.02em}
+.socbig em{font-style:normal;color:var(--muted);font-size:.95rem}
+.socbig a:hover em{color:var(--ink)}
+.socbig i{font-style:normal;font-size:1.2rem}
+.fsoc a{text-decoration:none;font-weight:600;color:var(--ink)}
+.fsoc a:hover{text-decoration:underline}
+@media(max-width:700px){.socbig a{grid-template-columns:6rem 1fr auto}}
+
 /* ---------- MODAL ---------- */
 .modal{position:fixed;inset:0;z-index:90;background:var(--bg);display:grid;place-items:center;padding:2rem;visibility:hidden;opacity:0;transition:opacity .4s ease,visibility .4s}
 .modal.open{visibility:visible;opacity:1}
@@ -191,9 +214,9 @@ footer b{font-family:var(--display);color:var(--ink)}
   .nav ul.open{display:flex}
   .nav ul a{display:inline-block;padding:.75rem 0;font-size:1.05rem}
   .name{font-size:23vw}
-  .portrait{height:100%}
-  .hero-copy{position:static;max-width:none;padding:0 var(--pad) 1.75rem;margin-top:1.25rem}
-  .hero-spacer{display:none}
+  .portrait{position:relative;left:auto;bottom:auto;transform:none;height:auto;width:min(78%,340px);margin:-7vw auto 0;display:block}
+  .hero-go .portrait{animation-name:riseInM}
+  .hero-copy{max-width:none;margin-top:1rem;padding-bottom:1.75rem}
   .pgrid{grid-template-columns:1fr}
   section.sec{padding:4.5rem var(--pad)}
 }
@@ -240,14 +263,20 @@ footer b{font-family:var(--display);color:var(--ink)}
         <span class="ln" aria-hidden="true">Banerjee</span>
       </h1>
       <img class="portrait" src="photos/shine.png" alt="Sayantani Banerjee" onerror="this.remove()">
-      <p class="hero-copy">Computer Science student at PEC Anna University building <strong>AI products, research and open source communities</strong>. ICPC 2025 Institute Rank 1, four research papers and one provisionally patented system.</p>
+      <div class="hero-copy"><p>Computer Science student at PEC Anna University building <strong>AI products, research and open source communities</strong>. ICPC 2025 Institute Rank 1, four research papers and one provisionally patented system.</p>
+        <div class="soc">
+          <a href="https://github.com/Sayantani9" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/g-sayantani-mb-65337230b/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.instagram.com/the.invincible_fire/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </div>
+      </div>
     </div>
     <div class="hero-spacer"></div>
   </section>
 
   <!-- STATS -->
   <div class="stats">
-    <div class="stat"><h3 data-target="13" data-suffix="+">13+</h3><p>Projects built across AI, IoT, web and cyber security, most of them live.</p></div>
+    <div class="stat"><h3 data-target="16" data-suffix="+">16+</h3><p>Projects built across AI, IoT, web and cyber security, each with a live link or repo.</p></div>
     <div class="stat"><h3 data-target="4">4</h3><p>Research papers presented at conferences from IIT Guwahati to SSN and MIND-2026.</p></div>
     <div class="stat"><h3 data-target="20" data-suffix="+">20+</h3><p>Successful pull requests merged while mentoring contributors on CinderPeak.</p></div>
     <div class="stat"><h3 data-prefix="#" data-target="1">#1</h3><p>Institute rank at ICPC 2025 Amritapuri Regionals, South Asia Chapter.</p></div>
@@ -308,18 +337,20 @@ footer b{font-family:var(--display);color:var(--ink)}
     <div class="pgrid">
       <a class="pi" href="https://yz-five.vercel.app/" target="_blank" rel="noopener noreferrer"><div class="ptag"><b>AI & Innovation</b><span>Sanghamitra Ventures</span></div><h3>WHY YZ?</h3><p>Gen-Z innovation and project network connecting student talent and corporates, building real-world AI, software and IoT.</p><span class="go">Open live site ↗</span></a>
       <a class="pi" href="https://github.com/Sayantani9" target="_blank" rel="noopener noreferrer"><div class="ptag"><b>Open Source</b><span>C++</span></div><h3>CinderPeak</h3><p>Modern C++ STL templates. Improved modularity by 30% while mentoring 20+ successful PR integrations.</p><span class="go">View on GitHub ↗</span></a>
-      <div class="pi"><div class="ptag"><b>Sustainability</b><span>SIH 2025 & 2026</span></div><h3>Shuddh</h3><p>Self-sustainable, self-cleaning, AI-driven waste segregator and waste-to-wealth generator. Provisionally patented MVP, 79% accurate.</p></div>
-      <a class="pi" href="https://mausam-blond.vercel.app/" target="_blank" rel="noopener noreferrer"><div class="ptag"><b>Weather</b><span>India-focused</span></div><h3>Mausam</h3><p>Next-generation weather intelligence application built for India.</p><span class="go">Open live site ↗</span></a>
+      <a class="pi" href="https://shuddh-main-2.vercel.app/" target="_blank" rel="noopener noreferrer"><div class="ptag"><b>Sustainability</b><span>SIH 2025 &amp; 2026</span></div><h3>Shuddh</h3><p>Self-sustainable, self-cleaning, AI-driven waste segregator and waste-to-wealth generator. Provisionally patented MVP, 79% accurate.</p><span class="go">Open live site ↗</span></a>
+      <a class="pi" href="https://vayunetra-five.vercel.app/" target="_blank" rel="noopener noreferrer"><div class="ptag"><b>Remote Sensing</b><span>ISRO Finalist</span></div><h3>Vayunetra</h3><p>Air quality forecasting from remote sensing datasets and ML regression models, reaching 87% accuracy, done for <mark>ISRO</mark>.</p><span class="go">Open live site ↗</span></a>
       <a class="pi" href="https://niriksh-command-center.vercel.app/" target="_blank" rel="noopener noreferrer"><div class="ptag"><b>Command Center</b><span>SIH 2026 Semi-finalist</span></div><h3>Niriksh</h3><p>Command center project selected as a Smart India Hackathon 2026 semi-finalist.</p><span class="go">Open live site ↗</span></a>
       <a class="pi" href="https://civic-fix-27.preview.emergentagent.com/dashboard" target="_blank" rel="noopener noreferrer"><div class="ptag"><b>Civic Tech</b><span>SIH 2026 Semi-finalist</span></div><h3>RoadPulse</h3><p>Civic and road intelligence project for the Government of India Smart India Hackathon 2026.</p><span class="go">Open live demo ↗</span></a>
-      <div class="pi"><div class="ptag"><b>Civic Tech</b><span>SIH 2026 Semi-finalist</span></div><h3>Vayunetra</h3><p>Government of India Smart India Hackathon 2026 semi-finalist project.</p></div>
-      <a class="pi" href="https://kaarya-9fn9.vercel.app/" target="_blank" rel="noopener noreferrer"><div class="ptag"><b>AI Workspace</b><span>WHY YZ?</span></div><h3>Kaarya</h3><p>Workspace and product improvement using WHY YZ? AI solutions, integrated AI services and a stronger finished product.</p><span class="go">Open live site ↗</span></a>
-      <a class="pi" href="https://rakshak-sand.vercel.app/" target="_blank" rel="noopener noreferrer"><div class="ptag"><b>Cyber Security</b><span>Bihar</span></div><h3>Rakshak</h3><p>Real-time cyber threat reporting with Python and Flask, reducing manual triage time by 40%.</p><span class="go">Open live site ↗</span></a>
-      <a class="pi" href="https://piston-s-autopedia.vercel.app/" target="_blank" rel="noopener noreferrer"><div class="ptag"><b>Automotive</b><span>Web platform</span></div><h3>Autopedia</h3><p>Interactive automotive knowledge and discovery platform.</p><span class="go">Open live site ↗</span></a>
-      <a class="pi" href="https://ecokadai.in/" target="_blank" rel="noopener noreferrer"><div class="ptag"><b>Client Work</b><span>Eco Kadai</span></div><h3>Eco Kadai</h3><p>Client digital development and market research: website build plus an AI and automation roadmap.</p><span class="go">Open live site ↗</span></a>
-      <div class="pi"><div class="ptag"><b>Remote Sensing</b><span>ISRO Finalist</span></div><h3>Satellite AQI Forecasting</h3><p>Air quality forecasting from remote sensing datasets and ML regression models, reaching 87% accuracy.</p></div>
-      <div class="pi"><div class="ptag"><b>Computer Vision</b><span>Cognizant Finalist</span></div><h3>Smart Attendance System</h3><p>OpenCV and IoT attendance with 95% accuracy, saving 70% of manual time.</p></div>
-      <div class="pi"><div class="ptag"><b>Robotics</b><span>L&T Project</span></div><h3>Tendrix</h3><p>Bio tentacle gripper robotic arm with an ML emergency landing control system that enables safe descent at power loss.</p></div>
+      <a class="pi" href="https://mausam-blond.vercel.app/" target="_blank" rel="noopener noreferrer"><div class="ptag"><b>Weather</b><span>India-focused</span></div><h3>Mausam Webapp</h3><p>Next-generation weather intelligence application built for India.</p><span class="go">Open live site ↗</span></a>
+      <a class="pi" href="https://kaarya-9fn9.vercel.app/" target="_blank" rel="noopener noreferrer"><div class="ptag"><b>With AI</b><span>WHY YZ?</span></div><h3>Kaarya</h3><p>Workspace and product improvement using WHY YZ? AI solutions, integrated AI services and a stronger finished product.</p><span class="go">Open live site ↗</span></a>
+      <a class="pi" href="https://rakshak-sand.vercel.app/" target="_blank" rel="noopener noreferrer"><div class="ptag"><b>Cyber Security</b><span>Delhi Police</span></div><h3>Raksha</h3><p>Cyber security project built for Delhi Police.</p><span class="go">Open live site ↗</span></a>
+      <a class="pi" href="https://rakshak-weld.vercel.app/" target="_blank" rel="noopener noreferrer"><div class="ptag"><b>Cyber Security</b><span>Bihar</span></div><h3>Rakshak</h3><p>Bihar cyber project for real-time cyber threat reporting with Python and Flask, reducing manual triage time by 40%.</p><span class="go">Open live site ↗</span></a>
+      <a class="pi" href="https://piston-s-autopedia.vercel.app/" target="_blank" rel="noopener noreferrer"><div class="ptag"><b>Automotive</b><span>Web platform</span></div><h3>Piston’s Autopedia</h3><p>Interactive automotive knowledge and discovery platform.</p><span class="go">Open live site ↗</span></a>
+      <a class="pi" href="https://ecokadai.in/" target="_blank" rel="noopener noreferrer"><div class="ptag"><b>Client Work</b><span>Eco Kadai</span></div><h3>EcoKadai</h3><p>Client digital development and market research: website build plus an AI and automation roadmap.</p><span class="go">Open live site ↗</span></a>
+      <a class="pi" href="https://runway-nine-green.vercel.app/" target="_blank" rel="noopener noreferrer"><div class="ptag"><b>Road Safety</b><span>Proof of concept</span></div><h3>Runway</h3><p>Sensor-fusion overtaking advisory that makes uncertainty visible instead of assuming the road ahead of a truck is clear.</p><span class="go">Open live site ↗</span></a>
+      <a class="pi" href="https://freshy-alpha.vercel.app/" target="_blank" rel="noopener noreferrer"><div class="ptag"><b>AI &amp; Retail</b><span>Concept demo</span></div><h3>Freshy</h3><p>AI-powered grocery inventory intelligence platform that reduces food waste, protects freshness and improves profitability.</p><span class="go">Open live site ↗</span></a>
+      <a class="pi" href="https://tendrix-site.vercel.app/" target="_blank" rel="noopener noreferrer"><div class="ptag"><b>Robotics</b><span>L&amp;T Project</span></div><h3>Tendrix</h3><p>Bio tentacle gripper robotic arm with an ML emergency landing control system that enables safe descent at power loss.</p><span class="go">Open live site ↗</span></a>
+      <a class="pi" href="https://sayantani9.github.io/SMART-ATTENDANCE-SYSTEM_COGNIZANT" target="_blank" rel="noopener noreferrer"><div class="ptag"><b>Computer Vision</b><span>Cognizant Finalist</span></div><h3>Present, Proof!</h3><p>Smart attendance system using OpenCV and IoT with 95% accuracy, saving 70% of manual time.</p><span class="go">Open live site ↗</span></a>
       <a class="pi cta" href="#contact"><div class="ptag"><b>Open to collaborate</b><span>Next</span></div><h3>Let's build the next one</h3><p>Looking for teammates, mentors or clients for AI products, research and open source work.</p><span class="go">Start a conversation ↓</span></a>
     </div>
   </section>
@@ -365,11 +396,12 @@ footer b{font-family:var(--display);color:var(--ink)}
         <p class="s">Open to collaboration on research, project development, speaking, open source and WHY YZ? work.</p>
         <div class="clinks">
           <a href="mailto:its.shines.workspace@gmail.com"><small>Email</small>its.shines.workspace@gmail.com</a>
-          <a href="tel:+918240858965"><small>Phone</small>+91 8240858965</a>
           <span><small>Location</small>Chennai, Tamil Nadu, India</span>
-          <a href="https://www.linkedin.com/in/g-sayantani-mb-65337230b/" target="_blank" rel="noopener noreferrer"><small>LinkedIn</small>g-sayantani-mb</a>
-          <a href="https://github.com/Sayantani9" target="_blank" rel="noopener noreferrer"><small>GitHub</small>Sayantani9</a>
-          <a href="https://www.instagram.com/the.invincible_fire/" target="_blank" rel="noopener noreferrer"><small>Instagram</small>@the.invincible_fire</a>
+        </div>
+        <div class="socbig">
+          <a href="https://github.com/Sayantani9" target="_blank" rel="noopener noreferrer"><span>GitHub</span><em>@Sayantani9</em><i>↗</i></a>
+          <a href="https://www.linkedin.com/in/g-sayantani-mb-65337230b/" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span><em>Sayantani Banerjee</em><i>↗</i></a>
+          <a href="https://www.instagram.com/the.invincible_fire/" target="_blank" rel="noopener noreferrer"><span>Instagram</span><em>@the.invincible_fire</em><i>↗</i></a>
         </div>
         <a class="btn" href="resume/Sayantani_Banerjee_Resume.pdf" target="_blank" rel="noopener" download>Download resume</a>
       </div>
@@ -387,7 +419,7 @@ footer b{font-family:var(--display);color:var(--ink)}
 
 <footer>
   <span><b>SAYANTANI BANERJEE</b> · Developer · Researcher · Entrepreneur</span>
-  <span>© 2026 Sayantani Banerjee. All rights reserved.</span>
+  <span class="fsoc"><a href="https://github.com/Sayantani9" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="https://www.linkedin.com/in/g-sayantani-mb-65337230b/" target="_blank" rel="noopener noreferrer">LinkedIn</a> · <a href="https://www.instagram.com/the.invincible_fire/" target="_blank" rel="noopener noreferrer">Instagram</a> · © 2026 Sayantani Banerjee</span>
 </footer>
 
 <!-- EXPERIENCE DETAIL -->
@@ -423,6 +455,19 @@ footer b{font-family:var(--display);color:var(--ink)}
       line.appendChild(s); idx++;
     });
   });
+
+  /* ---- name always fits the screen, whatever font loads ---- */
+  var nameEl = document.getElementById('name');
+  function fitName(){
+    nameEl.style.fontSize = '100px';
+    var widest = 0;
+    lines.forEach(function(l){ widest = Math.max(widest, l.offsetWidth); });
+    var avail = nameEl.parentElement.clientWidth - 2 * parseFloat(getComputedStyle(nameEl.parentElement).paddingLeft);
+    var size = Math.min(100 * avail * 0.96 / widest, window.innerHeight * 0.31);
+    nameEl.style.fontSize = size + 'px';
+  }
+  fitName(); window.addEventListener('resize', fitName);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitName);
 
   /* ---- intro: words blur in, hold, then hand over to the name ---- */
   var intro = document.getElementById('intro');
