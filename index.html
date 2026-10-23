@@ -189,6 +189,17 @@ mark{background:linear-gradient(transparent 38%,var(--lemon) 38%);color:inherit;
 .fsoc a:hover{text-decoration:underline}
 @media(max-width:700px){.socbig a{grid-template-columns:6rem 1fr auto}}
 
+
+.sh{font-family:var(--display);font-weight:700;font-size:1.3rem;margin:3.75rem 0 1.1rem}
+.sh.first{margin-top:0}
+.xlist.num{counter-reset:n}
+.xlist.num>li{counter-increment:n}
+.xlist.num .xt::before{content:counter(n,decimal-leading-zero);font-family:var(--body);font-size:.34em;font-weight:600;letter-spacing:.06em;color:var(--teal);margin-right:1rem;position:relative;top:-.35em}
+.xlist.how{border-bottom:0}
+.xlist.how .xrow{background:rgba(246,239,170,.5);border:0;border-radius:16px;padding:1.9rem 1.5rem}
+.xlist.how .xt{font-size:clamp(1.5rem,3.8vw,3rem)}
+.nav ul{gap:1.4rem}
+
 /* ---------- MODAL ---------- */
 .modal{position:fixed;inset:0;z-index:90;background:var(--bg);display:grid;place-items:center;padding:2rem;visibility:hidden;opacity:0;transition:opacity .4s ease,visibility .4s}
 .modal.open{visibility:visible;opacity:1}
@@ -248,6 +259,8 @@ mark{background:linear-gradient(transparent 38%,var(--lemon) 38%);color:inherit;
         <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#research">Research</a></li>
+        <li><a href="#cocurricular">Co-curricular</a></li>
+        <li><a href="#startup">Start-up work</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -387,9 +400,109 @@ mark{background:linear-gradient(transparent 38%,var(--lemon) 38%);color:inherit;
     </div>
   </section>
 
+  <!-- CO-CURRICULAR -->
+  <section class="sec" id="cocurricular">
+    <div class="lab"><span class="n">05</span><span class="t">Co-curricular</span></div>
+    <h2 class="lead rv">Beyond code: stage, speech and community.</h2>
+    <h3 class="sh first">Toastmasters International</h3>
+    <ul class="xlist num">
+      <li><button class="xrow" data-title="Visionary Communication Pathway" data-org="Toastmasters International, PEC" data-date="2025 – 2026"><span class="xt">Visionary Communication Pathway</span><span class="xm">Toastmasters International, PEC · 2025 – 2026</span><span class="band" aria-hidden="true"></span>
+        <template><li>Followed the Visionary Communication pathway with the Toastmasters International club at PEC Anna University.</li></template></button></li>
+      <li><button class="xrow" data-title="Vice President, Memberships" data-org="Toastmasters International, PEC" data-date="Oct 2025 – Mar 2026"><span class="xt">Vice President, Memberships</span><span class="xm">Toastmasters International, PEC · 2025 – 2026</span><span class="band" aria-hidden="true"></span>
+        <template><li>Vice President of Memberships for the Visionary Communication club at PEC.</li></template></button></li>
+      <li><button class="xrow" data-title="Pathway Celebrity Completion" data-org="Toastmasters International" data-date="Apr 2026"><span class="xt">Pathway Celebrity Completion</span><span class="xm">Honorary Pathway Celebrity · Apr 2026</span><span class="band" aria-hidden="true"></span>
+        <template><li>Honorary Pathway Celebrity recognition from Toastmasters International for Visionary Communication.</li></template></button></li>
+      <li><button class="xrow" data-title="Triple Crown" data-org="Toastmasters International" data-date="Apr 2026"><span class="xt">Triple Crown</span><span class="xm">Toastmasters International · Apr 2026</span><span class="band" aria-hidden="true"></span>
+        <template><li>Earned the Toastmasters Triple Crown in April 2026.</li></template></button></li>
+      <li><button class="xrow" data-title="Rockstar Champion" data-org="Toastmasters International" data-date="Apr 2026"><span class="xt">Rockstar Champion</span><span class="xm">Toastmasters International · 2026</span><span class="band" aria-hidden="true"></span>
+        <template><li>Toastmasters Rockstar recognition (April 2026).</li><li>Bronze Medalist at the Area A3 International Speech Contest (March 2026).</li></template></button></li>
+    </ul>
+    <h3 class="sh">Dance, debate and writing</h3>
+    <ul class="xlist num">
+      <li><button class="xrow" data-title="Bharatnatyam" data-org="Sarbabharatiya Sangeet O Sanskriti Parishad &amp; Pracheen Kala Kendra" data-date="2010 – 2024"><span class="xt">Bharatnatyam</span><span class="xm">Senior Diploma · 2010 – 2024</span><span class="band" aria-hidden="true"></span>
+        <template><li>Senior Diploma in Bharatnatyam from Sarbabharatiya Sangeet O Sanskriti Parishad and Pracheen Kala Kendra.</li><li>Her research now studies Bharatnatyam computationally, from Shirobedha classification to dance sequence generation.</li></template></button></li>
+      <li><button class="xrow" data-title="Debate" data-org="ASISC and memorial debates" data-date="2018 &amp; 2019"><span class="xt">Debate</span><span class="xm">ASISC · Clifford Hicks · Frank Anthony · 2018 – 2019</span><span class="band" aria-hidden="true"></span>
+        <template><li>ASISC All India Regional Contest.</li><li>Clifford Hicks Memorial Debate.</li><li>Frank Anthony Memorial Debate.</li></template></button></li>
+      <li><button class="xrow" data-title="House Head Captain &amp; Writer" data-org="Central Modern School, West Bengal" data-date="2018 – 2020"><span class="xt">House Head Captain &amp; Writer</span><span class="xm">School House Head Captain · 2018 – 2020</span><span class="band" aria-hidden="true"></span>
+        <template><li>School House Head Captain (Class X), leading event management.</li><li>Published writer at Voyage Techno Digest.</li></template></button></li>
+      <li><button class="xrow" data-title="Visual Creativity &amp; Storytelling" data-org="Photography, design and writing" data-date="Ongoing"><span class="xt">Visual Creativity &amp; Storytelling</span><span class="xm">Photography · Design · Poetry · Ongoing</span><span class="band" aria-hidden="true"></span>
+        <template><li>Photography, digital design in Canva and graphic design.</li><li>Content creation: writing poetry and storytelling.</li></template></button></li>
+    </ul>
+    <h3 class="sh">Events &amp; competitions</h3>
+    <div class="cols">
+      <div>
+        <ul class="rl">
+          <li><em>Nov 2025</em><b>ICPC 2025, Amritapuri Regionals</b><span>Institute Rank 1, South Asia Chapter.</span></li>
+          <li><em>Nov 2025</em><b>Start Up TN × Entrepreneurs' Organisation Global Student Entrepreneurship Awards</b><span>Finalist, top 80 of 300 start-ups from India.</span></li>
+          <li><em>Jan 2025</em><b>IIT Madras Incubator's Summit &amp; FounderX Entrepreneurs Summit</b><span>Ideas to Impact, top 10 shortlisted start-ups.</span></li>
+          <li><em>2026</em><b>GENESIS 2026, SRM</b><span>First place.</span></li>
+          <li><em>Feb 2025</em><b>Ideathon, PEC Anna University</b><span>First runner-up out of 500+ teams.</span></li>
+          <li><em>2025 &amp; 2026</em><b>Smart India Hackathon</b><span>Semi-finalist.</span></li>
+          <li><em>Finalist</em><b>ISRO and Cognizant challenges</b><span>Vayunetra for ISRO and Present, Proof! for Cognizant.</span></li>
+          <li><em>Mar 2026</em><b>Toastmasters Area A3 International Speech Contest</b><span>Bronze Medalist.</span></li>
+          <li><em>2018 – 2019</em><b>ASISC Regionals, Clifford Hicks and Frank Anthony Memorial Debates</b><span>Debater.</span></li>
+        </ul>
+      </div>
+      <div>
+        <ul class="rl">
+          <li><em>Jun 2025</em><b>RECYCLE 2025, IIT Guwahati</b><span>Shortlisted presenter, abstract on SHUDDH published.</span></li>
+          <li><em>2026</em><b>Indian Knowledge Systems, Tradition, Culture, Technology (IQAC, SSN)</b><span>Paper on Shirobedha classification.</span></li>
+          <li><em>2026</em><b>MIND-2026, Samarkand, Uzbekistan</b><span>8th International Conference on ML, Internet Protocols, Network Systems &amp; DS. Paper on dance sequence generation.</span></li>
+          <li><em>Conference</em><b>International Conference on Multifunctional Materials &amp; Radiation Measurements</b><span>Paper on Fin Dual-Doped RFET based SRAM circuits.</span></li>
+          <li><em>2025</em><b>Eureka &amp; Ignite, IIT Bombay</b><span>Chief Coordinating Officer.</span></li>
+          <li><em>2025</em><b>NEC, IIT Bombay</b><span>Top 100 Entrepreneurs finalist, EDC Chief Operating Officer.</span></li>
+          <li><em>Mar – Apr 2026</em><b>IIT Madras DST Gopal Krishna Deshpande Centre</b><span>STEM research with the Centre for Innovation and Entrepreneurship.</span></li>
+          <li><em>Aug – Nov 2025</em><b>Girl Script Summer of Code</b><span>Campus Ambassador, mentor and coding intern.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- START-UP WORK (after the co-curriculars) -->
+  <section class="sec" id="startup">
+    <div class="lab"><span class="n">06</span><span class="t">Start-up work</span></div>
+    <h2 class="lead rv">Ten internships, one direction.</h2>
+    <ul class="xlist how">
+      <li><button class="xrow" data-title="How did I complete 10 internships?" data-org="The short answer" data-date="Apr 2025 – Aug 2026"><span class="xt">How did I complete 10 internships?</span><span class="xm">Apr 2025 – Aug 2026 · tap to read</span><span class="band" aria-hidden="true"></span>
+        <template><li>Most were program-based and time-boxed. Summer, Winter and Spring of Code, GSSoC and the Pragati cohort each run for a few months, so they could be stacked in sequence instead of competing for the same hours.</li><li>They ran from April 2025 to August 2026 alongside a full B.E. Computer Science schedule, with open source, research and start-up work overlapping.</li><li>Three of the ten sat inside one program, GSSoC, as mentor, coding intern and campus ambassador.</li><li>Each one left something checkable behind: merged pull requests, a research paper, a deployed product or a market survey.</li></template></button></li>
+    </ul>
+    <h3 class="sh">The ten</h3>
+    <ul class="xlist num">
+      <li><button class="xrow" data-title="EcoKadai Market Survey Intern" data-org="Eco Kadai" data-date="Jun – Aug 2026"><span class="xt">EcoKadai Market Survey Intern</span><span class="xm">Eco Kadai · Jun – Aug 2026</span><span class="band" aria-hidden="true"></span>
+        <template><li>Conducted product validation research to evaluate feasibility.</li><li>Client work covering the website build and an AI and automation roadmap.</li></template></button></li>
+      <li><button class="xrow" data-title="Elite Coders Summer of Code Mentor" data-org="EliteCoders" data-date="2025 – 2026"><span class="xt">Elite Coders Summer of Code Mentor</span><span class="xm">EliteCoders · Summer of Code</span><span class="band" aria-hidden="true"></span>
+        <template><li>Mentor in EliteCoders' Summer of Code program.</li></template></button></li>
+      <li><button class="xrow" data-title="Elite Coders Winter of Code Developer" data-org="EliteCoders" data-date="Dec 2025 – May 2026"><span class="xt">Elite Coders Winter of Code Developer</span><span class="xm">EliteCoders · Winter of Code</span><span class="band" aria-hidden="true"></span>
+        <template><li>Developer in EliteCoders' Winter of Code program.</li></template></button></li>
+      <li><button class="xrow" data-title="Nexus Spring of Code Developer" data-org="Nexus Spring of Code" data-date="Dec 2025 – May 2026"><span class="xt">Nexus Spring of Code Developer</span><span class="xm">Nexus Spring of Code · 2026</span><span class="band" aria-hidden="true"></span>
+        <template><li>Developer in the Nexus Spring of Code program.</li></template></button></li>
+      <li><button class="xrow" data-title="Research Intern at SSN" data-org="SSN Engineering College" data-date="Nov 2025 – Present"><span class="xt">Research Intern at SSN</span><span class="xm">SSN Engineering College · 2025 – Present</span><span class="band" aria-hidden="true"></span>
+        <template><li>Supervised by Dr. R. Srinivasan and Dr. A. Karthika.</li><li>Bharatnatyam anthropology, image and Shirovedhas processing.</li><li>Resulting paper: Computational Identification and Classification of Shirobedhas using Temporal Dance Features, IQAC SSN 2026.</li></template></button></li>
+      <li><button class="xrow" data-title="Program Coordinator Apprenticeship" data-org="IIT Bombay" data-date="May – Dec 2025"><span class="xt">Program Coordinator Apprenticeship</span><span class="xm">IIT Bombay EDC · 2025</span><span class="band" aria-hidden="true"></span>
+        <template><li>Apprenticeship as Program Coordinator with the Entrepreneurship Development Cell at IIT Bombay.</li><li>Presiding Girls Chief Coordinator of EDC at PEC.</li></template></button></li>
+      <li><button class="xrow" data-title="GSSoC Mentor Intern" data-org="Girl Script Summer of Code" data-date="Aug – Nov 2025"><span class="xt">GSSoC Mentor Intern</span><span class="xm">GSSoC · 2025</span><span class="band" aria-hidden="true"></span>
+        <template><li>Open source project mentor on CinderPeak.</li><li>Mentored 20+ successful PR integrations and improved modularity by 30%.</li></template></button></li>
+      <li><button class="xrow" data-title="GSSoC Coding Intern" data-org="Girl Script Summer of Code" data-date="Aug – Nov 2025"><span class="xt">GSSoC Coding Intern</span><span class="xm">GSSoC · 2025</span><span class="band" aria-hidden="true"></span>
+        <template><li>Contributor on open source projects through Girl Script Summer of Code.</li></template></button></li>
+      <li><button class="xrow" data-title="GSSoC Campus Ambassador" data-org="Girl Script Summer of Code" data-date="Aug – Nov 2025"><span class="xt">GSSoC Campus Ambassador</span><span class="xm">GSSoC · 2025</span><span class="band" aria-hidden="true"></span>
+        <template><li>Gold Trailblazer Campus Ambassador for GSSoC at PEC.</li></template></button></li>
+      <li><button class="xrow" data-title="Infosys Springboard Pragati Intern" data-org="Infosys Springboard" data-date="Apr – Sep 2025"><span class="xt">Infosys Springboard Pragati Intern</span><span class="xm">Infosys Springboard · Cohort 5 · 2025</span><span class="band" aria-hidden="true"></span>
+        <template><li>Summer Engineering Intern in Cohort 5 of the Pragati Internship for Women Developers.</li></template></button></li>
+    </ul>
+    <h3 class="sh">Leadership</h3>
+    <ul class="xlist">
+      <li><button class="xrow" data-title="COO, Entrepreneurship Development Cell" data-org="NEC, IIT Bombay" data-date="May – Dec 2025"><span class="xt">COO, Entrepreneurship Development Cell</span><span class="xm">NEC IIT Bombay · 2025</span><span class="band" aria-hidden="true"></span>
+        <template><li>Chief Operating Officer, Entrepreneurship Development Cell (NEC, IIT Bombay).</li><li>IIT Bombay NEC Finalists, Top 100 Entrepreneurs.</li></template></button></li>
+      <li><button class="xrow" data-title="Vice President, Memberships" data-org="Toastmasters International Club" data-date="Oct 2025 – Mar 2026"><span class="xt">Vice President, Memberships</span><span class="xm">Toastmasters International · 2025 – 2026</span><span class="band" aria-hidden="true"></span>
+        <template><li>Vice President of Memberships for the Visionary Communication club at PEC.</li></template></button></li>
+      <li><button class="xrow" data-title="Chief Coordinating Officer" data-org="Eureka &amp; Ignite, IIT Bombay" data-date="2025"><span class="xt">Chief Coordinating Officer</span><span class="xm">Eureka &amp; Ignite, IIT Bombay · 2025</span><span class="band" aria-hidden="true"></span>
+        <template><li>Chief Coordinating Officer for Eureka and Ignite at IIT Bombay.</li></template></button></li>
+    </ul>
+  </section>
+
   <!-- CONTACT -->
   <section class="sec" id="contact" style="border-bottom:0;padding-bottom:2rem">
-    <div class="lab"><span class="n">05</span><span class="t">Contact</span></div>
+    <div class="lab"><span class="n">07</span><span class="t">Contact</span></div>
     <div class="contact">
       <div>
         <h3>Let's build something worth opening.</h3>
