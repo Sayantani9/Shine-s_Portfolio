@@ -215,6 +215,90 @@ mark{background:linear-gradient(transparent 38%,var(--lemon) 38%);color:inherit;
 .mclose{position:absolute;top:1.25rem;right:1.5rem;width:44px;height:44px;border:0;border-radius:50%;background:var(--lemon);font-size:1.5rem;line-height:1;cursor:pointer;transition:background .3s}
 .mclose:hover{background:var(--lime)}
 
+
+[hidden]{display:none!important}
+/* achievements redesign */
+.nowbar{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:2rem}
+.np{display:inline-flex;align-items:center;gap:.6rem;font-size:.88rem;font-weight:600;padding:.5rem 1rem;border-radius:999px;background:var(--card);border:1px solid var(--line)}
+.dot{width:.6rem;height:.6rem;border-radius:50%;background:#7fcf6b;box-shadow:0 0 0 0 rgba(127,207,107,.6);animation:pulse 2.2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 .6rem rgba(127,207,107,0)}100%{box-shadow:0 0 0 0 rgba(127,207,107,0)}}
+.wins{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+.wincard{position:relative;overflow:hidden;text-align:left;border:0;border-radius:24px;padding:2rem 2rem 1.75rem;min-height:290px;display:flex;flex-direction:column;cursor:pointer;background:var(--cyan);transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.wincard:hover{transform:translateY(-5px) rotate(-.4deg)}
+.wincard.c2{background:var(--lemon)}.wincard.c3{background:var(--lime)}.wincard.c4{background:#e4f1ee}
+.wincard>*{position:relative;z-index:1}
+.cover{position:absolute!important;inset:0;z-index:0!important;background-size:cover;background-position:center;opacity:0;transition:opacity .7s}
+.has>.cover{opacity:.3;mix-blend-mode:multiply}
+.wd{display:flex;align-items:baseline;gap:.8rem;margin-bottom:auto}
+.wd b{font-family:var(--display);font-weight:800;font-size:clamp(3.4rem,7vw,6rem);line-height:.9;letter-spacing:-.05em}
+.wd i{font-style:normal;font-weight:600;font-size:.9rem}
+.wt{font-family:var(--display);font-weight:700;font-size:clamp(1.35rem,2.4vw,1.85rem);line-height:1.1;letter-spacing:-.02em;margin-top:2rem}
+.wp{font-size:.95rem;margin-top:.4rem;color:rgba(18,58,64,.8)}
+.wtag{align-self:flex-start;margin-top:1.1rem;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.3rem .8rem;border-radius:999px;background:rgba(255,255,255,.7)}
+.bstats{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;padding:3rem 0;margin-top:2.5rem;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.bstats h3{font-family:var(--display);font-weight:800;font-size:clamp(2.4rem,4.4vw,3.6rem);line-height:1;letter-spacing:-.03em;color:var(--teal)}
+.bstats p{font-size:.92rem;color:var(--muted);margin-top:.5rem;max-width:14rem}
+.orcid{display:inline-flex;align-items:center;gap:1rem;margin-bottom:1.5rem;padding:.7rem 1.4rem .7rem .8rem;border-radius:999px;background:var(--card);border:1px solid var(--line);text-decoration:none;transition:border-color .3s,transform .3s}
+.orcid:hover{border-color:#a6ce39;transform:translateY(-2px)}
+.oi{display:grid;place-items:center;width:2.4rem;height:2.4rem;border-radius:50%;background:#a6ce39;color:#fff;font-weight:800;font-size:.95rem}
+.ot small{display:block;font-size:.66rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.ot b{font-family:var(--display);font-weight:700;letter-spacing:.02em}
+.papers{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+.paper{position:relative;overflow:hidden;text-align:left;cursor:pointer;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:1.6rem;display:flex;flex-direction:column;gap:.55rem;transition:border-color .3s,transform .4s cubic-bezier(.2,.7,.2,1)}
+.paper:hover{border-color:var(--teal);transform:translateY(-4px)}
+.paper>*{position:relative;z-index:1}
+.pn{font-family:var(--display);font-weight:800;font-size:2.6rem;line-height:1;letter-spacing:-.04em;color:var(--cyan);-webkit-text-stroke:1.5px var(--teal)}
+.pv{font-size:.68rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--teal)}
+.ptt{font-family:var(--display);font-weight:700;font-size:1.2rem;line-height:1.2;letter-spacing:-.015em}
+.ps{font-size:.88rem;color:var(--muted)}
+.minis{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.1rem}
+.mini{cursor:pointer;font-size:.88rem;font-weight:600;padding:.55rem 1.1rem;border-radius:999px;background:var(--lemon);border:0;transition:background .3s,transform .3s}
+.mini:nth-child(2){background:var(--lime)}.mini:nth-child(3){background:var(--cyan)}.mini:nth-child(4){background:#e4f1ee}
+.mini:hover{transform:translateY(-2px)}
+.filters{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.75rem}
+.fchip{cursor:pointer;font-size:.88rem;font-weight:600;padding:.5rem 1.1rem;border-radius:999px;background:transparent;border:1.5px solid var(--line);transition:background .3s,color .3s,border-color .3s}
+.fchip:hover{border-color:var(--ink)}
+.fchip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tl{list-style:none}
+.yr{font-family:var(--display);font-weight:800;font-size:clamp(2rem,4vw,3rem);letter-spacing:-.04em;color:var(--teal);padding:2.5rem 0 .75rem}
+.ev{border-top:1px solid var(--line)}
+.evb{position:relative;overflow:hidden;display:grid;grid-template-columns:7.5rem 1fr auto;align-items:center;gap:1.25rem;width:100%;text-align:left;background:none;border:0;padding:1.15rem 0;cursor:pointer;transition:padding .4s cubic-bezier(.2,.7,.2,1),background .4s}
+.evb:hover{padding-inline:1.1rem;background:rgba(166,225,227,.28)}
+.evb>*{position:relative;z-index:1}
+.evd b{display:block;font-family:var(--display);font-weight:800;font-size:1.9rem;line-height:1;letter-spacing:-.035em}
+.evd i{display:block;font-style:normal;font-size:.78rem;font-weight:600;color:var(--muted);margin-top:.2rem}
+.evt strong{display:block;font-family:var(--display);font-weight:700;font-size:1.2rem;line-height:1.2;letter-spacing:-.015em}
+.evt small{display:block;color:var(--muted);font-size:.9rem;margin-top:.15rem}
+.evtag{font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.3rem .8rem;border-radius:999px;white-space:nowrap}
+.t-wins{background:var(--lime)}.t-research{background:var(--cyan)}.t-lead{background:var(--lemon)}.t-events{background:#fff;border:1px solid var(--line)}
+.pointer{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center;margin-top:3.5rem;padding:1.4rem 1.6rem;border-radius:18px;background:var(--lemon);text-decoration:none;font-family:var(--display);font-weight:700;font-size:1.15rem;transition:background .3s}
+.pointer:hover{background:var(--lime)}
+.pointer i{font-style:normal;font-family:var(--body);font-size:.9rem;font-weight:600}
+/* project cards: stretched link + code */
+.pi{position:relative}
+.stretch{text-decoration:none;color:inherit}
+.stretch::after{content:"";position:absolute;inset:0}
+.pi:hover h3{box-shadow:inset 0 -.5em 0 var(--lime)}
+.pi:has(.stretch:focus-visible){outline:3px solid var(--teal);outline-offset:8px;border-radius:6px}
+.links{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1.1rem}
+.gh{position:relative;z-index:2;font-size:.82rem;font-weight:600;text-decoration:none;border-bottom:2px solid var(--lime)}
+.gh:hover{background:var(--lime)}
+/* modal media */
+.modal{display:flex;overflow-y:auto;padding:4.5rem 2rem}
+.mbox{margin:auto}
+.mgallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.6rem;margin-top:1.75rem}
+.mgallery::before,.mcert::before{content:attr(data-h);grid-column:1/-1;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal)}
+.mgallery a{display:block;border-radius:12px;overflow:hidden;aspect-ratio:4/3;background:var(--cyan)}
+.mgallery img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.mgallery a:hover img{transform:scale(1.05)}
+.mcert{display:flex;flex-direction:column;gap:.6rem;margin-top:1.75rem}
+.mcert a.cimg{display:block;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+.mcert img{width:100%;display:block}
+.mcert a.cbtn{align-self:flex-start;font-weight:600;font-size:.92rem;text-decoration:none;padding:.65rem 1.2rem;border-radius:999px;background:var(--lime);transition:background .3s}
+.mcert a.cbtn:hover{background:var(--lemon)}
+@media(max-width:900px){.wins,.papers{grid-template-columns:1fr}.bstats{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.evb{grid-template-columns:5.5rem 1fr;gap:.9rem}.evtag{grid-column:2;justify-self:start}.wincard{min-height:250px;padding:1.6rem}.modal{padding:4.5rem 1.25rem}}
+
 /* ---------- RESPONSIVE ---------- */
 @media(max-width:900px){
   .about,.cols,.contact{grid-template-columns:1fr;gap:2.5rem}
@@ -324,6 +408,8 @@ mark{background:linear-gradient(transparent 38%,var(--lemon) 38%);color:inherit;
   <section class="sec" id="experience">
     <div class="lab"><span class="n">02</span><span class="t">Experience</span></div>
     <ul class="xlist">
+      <li><button class="xrow" data-title="Intern" data-org="Drudow" data-date="Now"><span class="xt">Intern</span><span class="xm">Drudow · Now</span><span class="band" aria-hidden="true"></span>
+        <template><li>Currently interning at Drudow.</li></template></button></li>
       <li><button class="xrow" data-title="Market Survey Intern" data-org="Eco Kadai" data-date="Jun – Aug 2026"><span class="xt">Market Survey Intern</span><span class="xm">Eco Kadai · 2026</span><span class="band" aria-hidden="true"></span>
         <template><li>Conducted product validation research to evaluate feasibility.</li><li>Client work covering the website and an AI and automation roadmap.</li></template></button></li>
       <li><button class="xrow" data-title="Junior Developer Intern" data-org="Nexus Spring of Code & EliteCoder" data-date="Dec 2025 – May 2026"><span class="xt">Junior Developer Intern</span><span class="xm">Nexus Spring of Code & EliteCoder · 2025 – 2026</span><span class="band" aria-hidden="true"></span>
@@ -350,58 +436,187 @@ mark{background:linear-gradient(transparent 38%,var(--lemon) 38%);color:inherit;
     <div class="lab"><span class="n">03</span><span class="t">Projects</span></div>
     <h2 class="lead rv">Products and hackathon builds with measurable results.</h2>
     <div class="pgrid">
-      <a class="pi" href="https://yz-five.vercel.app/" target="_blank" rel="noopener noreferrer"><div class="ptag"><b>AI &amp; Innovation</b><span>Sanghamitra Ventures</span></div><h3>WHY YZ?</h3><p>Gen-Z innovation and project network connecting student talent and corporates, building real-world AI, software and IoT.</p><span class="go">Open live site ↗</span></a>
-      <a class="pi" href="https://sanghamitra-xi.vercel.app/" target="_blank" rel="noopener noreferrer"><div class="ptag"><b>Internship Platform</b><span>WHY YZ?</span></div><h3>Sanghamitra Ventures &amp; YZ?</h3><p>Internship program for the WHY YZ? flagship: ten focused tracks, strict shortlisting, a 15-day first level and a 30-day second level built around real deliverables.</p><span class="go">Open live site ↗</span></a>
-      <a class="pi" href="https://shuddh-main-2.vercel.app/" target="_blank" rel="noopener noreferrer"><div class="ptag"><b>Clean-Tech &amp; Sustainability</b><span>IIT Madras</span></div><h3>Shuddh</h3><p>Self-sustainable, self-cleaning, AI-driven waste segregator and waste-to-wealth generator. Provisionally patented MVP, 79% accurate.</p><span class="go">Open live site ↗</span></a>
-      <a class="pi" href="https://vayunetra-five.vercel.app/" target="_blank" rel="noopener noreferrer"><div class="ptag"><b>Environmental Intelligence</b><span><mark>ISRO</mark></span></div><h3>Vayunetra</h3><p>Air quality forecasting from remote sensing datasets and ML regression models, reaching 87% accuracy, done for <mark>ISRO</mark>.</p><span class="go">Open live site ↗</span></a>
-      <a class="pi" href="https://tendrix-site.vercel.app/" target="_blank" rel="noopener noreferrer"><div class="ptag"><b>Robotics</b><span>L&amp;T Project</span></div><h3>Tendrix</h3><p>Bio tentacle gripper robotic arm with an ML emergency landing control system that enables safe descent at power loss.</p><span class="go">Open live site ↗</span></a>
-      <a class="pi" href="https://piston-s-autopedia.vercel.app/" target="_blank" rel="noopener noreferrer"><div class="ptag"><b>Automotive</b><span>Web platform</span></div><h3>Piston’s Autopedia</h3><p>Interactive automotive knowledge and discovery platform.</p><span class="go">Open live site ↗</span></a>
-      <a class="pi" href="https://civic-fix-27.preview.emergentagent.com/dashboard" target="_blank" rel="noopener noreferrer"><div class="ptag"><b>Intelligent Civic Infrastructure</b><span>SIH 2026 Semi-finalist</span></div><h3>RoadPulse</h3><p>Civic and road intelligence project for the Government of India Smart India Hackathon 2026.</p><span class="go">Open live demo ↗</span></a>
-      <a class="pi" href="https://niriksh-command-center.vercel.app/" target="_blank" rel="noopener noreferrer"><div class="ptag"><b>Intelligent Command Centre</b><span>SIH 2026 Semi-finalist</span></div><h3>Niriksh</h3><p>Command center project selected as a Smart India Hackathon 2026 semi-finalist.</p><span class="go">Open live site ↗</span></a>
-      <a class="pi" href="https://kaarya-9fn9.vercel.app/" target="_blank" rel="noopener noreferrer"><div class="ptag"><b>AI-Powered Solutions</b><span>With AI</span></div><h3>Kaarya</h3><p>Workspace and product improvement using WHY YZ? AI solutions, integrated AI services and a stronger finished product.</p><span class="go">Open live site ↗</span></a>
-      <a class="pi" href="https://rakshak-sand.vercel.app/" target="_blank" rel="noopener noreferrer"><div class="ptag"><b>Delhi Police</b><span>Live project</span></div><h3>Raksha</h3><p>Cyber security project built for Delhi Police.</p><span class="go">Open live site ↗</span></a>
-      <a class="pi" href="https://rakshak-weld.vercel.app/" target="_blank" rel="noopener noreferrer"><div class="ptag"><b>Intelligent Safety &amp; Security</b><span>Bihar</span></div><h3>Rakshak</h3><p>Bihar cyber project for real-time cyber threat reporting with Python and Flask, reducing manual triage time by 40%.</p><span class="go">Open live site ↗</span></a>
-      <a class="pi" href="https://ecokadai.in/" target="_blank" rel="noopener noreferrer"><div class="ptag"><b>Sustainable Commerce</b><span>Client work</span></div><h3>EcoKadai</h3><p>Client digital development and market research: website build plus an AI and automation roadmap.</p><span class="go">Open live site ↗</span></a>
-      <a class="pi" href="https://runway-nine-green.vercel.app/" target="_blank" rel="noopener noreferrer"><div class="ptag"><b>Intelligent Overtaking Safety System</b><span>Proof of concept</span></div><h3>Runway</h3><p>Sensor-fusion overtaking advisory that makes uncertainty visible instead of assuming the road ahead of a truck is clear.</p><span class="go">Open live site ↗</span></a>
-      <a class="pi" href="https://freshy-alpha.vercel.app/" target="_blank" rel="noopener noreferrer"><div class="ptag"><b>AI-Powered Grocery Inventory Intelligence</b><span>Concept demo</span></div><h3>Freshy</h3><p>AI-powered grocery inventory intelligence platform that reduces food waste, protects freshness and improves profitability.</p><span class="go">Open live site ↗</span></a>
-      <a class="pi" href="https://sayantani9.github.io/SMART-ATTENDANCE-SYSTEM_COGNIZANT" target="_blank" rel="noopener noreferrer"><div class="ptag"><b>Smart Attendance System</b><span>Cognizant Finalist</span></div><h3>Present, Proof!</h3><p>Smart attendance system using OpenCV and IoT with 95% accuracy, saving 70% of manual time.</p><span class="go">Open live site ↗</span></a>
-      <a class="pi" href="https://mausam-blond.vercel.app/" target="_blank" rel="noopener noreferrer"><div class="ptag"><b>Weather Intelligence Webapp</b><span>India-focused</span></div><h3>Mousami</h3><p>Next-generation weather intelligence web application built for India.</p><span class="go">Open live site ↗</span></a>
-      <a class="pi" href="https://app.emergent.sh/share-preview?app=exp%3A%2F%2Fmausam-family.preview.emergentagent.com%3Fexpo_go_prompt_device_auth%3D1%26expo_go_device_auth_verification_uri_override%3Dapp.emergent.sh&amp;job_id=6b70cfb8-bd7e-45c2-8d37-de104c44b559" target="_blank" rel="noopener noreferrer"><div class="ptag"><b>Weather Intelligence Mobile App</b><span>Expo preview</span></div><h3>Mousami App</h3><p>Mobile app version of Mousami, shared as an Expo preview.</p><span class="go">Open app preview ↗</span></a>
-      <a class="pi" href="https://github.com/Sayantani9" target="_blank" rel="noopener noreferrer"><div class="ptag"><b>Open Source</b><span>C++</span></div><h3>CinderPeak</h3><p>Modern C++ STL templates. Improved modularity by 30% while mentoring 20+ successful PR integrations.</p><span class="go">View on GitHub ↗</span></a>
-      <a class="pi cta" href="#contact"><div class="ptag"><b>Open to collaborate</b><span>Next</span></div><h3>Let's build the next one</h3><p>Looking for teammates, mentors or clients for AI products, research and open source work.</p><span class="go">Start a conversation ↓</span></a>
+      <article class="pi"><div class="ptag"><b>AI &amp; Innovation</b><span>Sanghamitra Ventures</span></div><h3><a class="stretch" href="https://yz-five.vercel.app/" target="_blank" rel="noopener noreferrer">WHY YZ?</a></h3><p>Gen-Z innovation and project network connecting student talent and corporates, building real-world AI, software and IoT.</p><div class="links"><span class="go">Open live site ↗</span></div></article>
+      <article class="pi"><div class="ptag"><b>Internship Platform</b><span>WHY YZ?</span></div><h3><a class="stretch" href="https://sanghamitra-xi.vercel.app/" target="_blank" rel="noopener noreferrer">Sanghamitra Ventures &amp; YZ?</a></h3><p>Internship program for the WHY YZ? flagship: ten focused tracks, strict shortlisting, a 15-day first level and a 30-day second level built around real deliverables.</p><div class="links"><span class="go">Open live site ↗</span></div></article>
+      <article class="pi"><div class="ptag"><b>Clean-Tech &amp; Sustainability</b><span>IIT Madras</span></div><h3><a class="stretch" href="https://shuddh-main-2.vercel.app/" target="_blank" rel="noopener noreferrer">Shuddh</a></h3><p>Self-sustainable, self-cleaning, AI-driven waste segregator and waste-to-wealth generator. Provisionally patented MVP, 79% accurate.</p><div class="links"><span class="go">Open live site ↗</span></div></article>
+      <article class="pi"><div class="ptag"><b>Environmental Intelligence</b><span><mark>ISRO</mark></span></div><h3><a class="stretch" href="https://vayunetra-five.vercel.app/" target="_blank" rel="noopener noreferrer">Vayunetra</a></h3><p>Air quality forecasting from remote sensing datasets and ML regression models, reaching 87% accuracy, done for <mark>ISRO</mark>.</p><div class="links"><span class="go">Open live site ↗</span></div></article>
+      <article class="pi"><div class="ptag"><b>Robotics</b><span>L&amp;T Project</span></div><h3><a class="stretch" href="https://tendrix-site.vercel.app/" target="_blank" rel="noopener noreferrer">Tendrix</a></h3><p>Bio tentacle gripper robotic arm with an ML emergency landing control system that enables safe descent at power loss.</p><div class="links"><span class="go">Open live site ↗</span></div></article>
+      <article class="pi"><div class="ptag"><b>Automotive</b><span>Web platform</span></div><h3><a class="stretch" href="https://piston-s-autopedia.vercel.app/" target="_blank" rel="noopener noreferrer">Piston’s Autopedia</a></h3><p>Interactive automotive knowledge and discovery platform.</p><div class="links"><span class="go">Open live site ↗</span></div></article>
+      <article class="pi"><div class="ptag"><b>Intelligent Civic Infrastructure</b><span>SIH 2026 Semi-finalist</span></div><h3><a class="stretch" href="https://civic-fix-27.preview.emergentagent.com/dashboard" target="_blank" rel="noopener noreferrer">RoadPulse</a></h3><p>Civic and road intelligence project for the Government of India Smart India Hackathon 2026.</p><div class="links"><span class="go">Open live demo ↗</span></div></article>
+      <article class="pi"><div class="ptag"><b>Intelligent Command Centre</b><span>SIH 2026 Semi-finalist</span></div><h3><a class="stretch" href="https://niriksh-command-center.vercel.app/" target="_blank" rel="noopener noreferrer">Niriksh</a></h3><p>Command center project selected as a Smart India Hackathon 2026 semi-finalist.</p><div class="links"><span class="go">Open live site ↗</span></div></article>
+      <article class="pi"><div class="ptag"><b>AI-Powered Solutions</b><span>With AI</span></div><h3><a class="stretch" href="https://kaarya-9fn9.vercel.app/" target="_blank" rel="noopener noreferrer">Kaarya</a></h3><p>Workspace and product improvement using WHY YZ? AI solutions, integrated AI services and a stronger finished product.</p><div class="links"><span class="go">Open live site ↗</span></div></article>
+      <article class="pi"><div class="ptag"><b>Delhi Police</b><span>Live project</span></div><h3><a class="stretch" href="https://rakshak-sand.vercel.app/" target="_blank" rel="noopener noreferrer">Raksha</a></h3><p>Cyber security project built for Delhi Police.</p><div class="links"><span class="go">Open live site ↗</span></div></article>
+      <article class="pi"><div class="ptag"><b>Intelligent Safety &amp; Security</b><span>Bihar</span></div><h3><a class="stretch" href="https://rakshak-weld.vercel.app/" target="_blank" rel="noopener noreferrer">Rakshak</a></h3><p>Bihar cyber project for real-time cyber threat reporting with Python and Flask, reducing manual triage time by 40%.</p><div class="links"><span class="go">Open live site ↗</span></div></article>
+      <article class="pi"><div class="ptag"><b>Sustainable Commerce</b><span>Client work</span></div><h3><a class="stretch" href="https://ecokadai.in/" target="_blank" rel="noopener noreferrer">EcoKadai</a></h3><p>Client digital development and market research: website build plus an AI and automation roadmap.</p><div class="links"><span class="go">Open live site ↗</span></div></article>
+      <article class="pi"><div class="ptag"><b>Intelligent Overtaking Safety System</b><span>Proof of concept</span></div><h3><a class="stretch" href="https://runway-nine-green.vercel.app/" target="_blank" rel="noopener noreferrer">Runway</a></h3><p>Sensor-fusion overtaking advisory that makes uncertainty visible instead of assuming the road ahead of a truck is clear.</p><div class="links"><span class="go">Open live site ↗</span></div></article>
+      <article class="pi"><div class="ptag"><b>AI-Powered Grocery Inventory Intelligence</b><span>Concept demo</span></div><h3><a class="stretch" href="https://freshy-alpha.vercel.app/" target="_blank" rel="noopener noreferrer">Freshy</a></h3><p>AI-powered grocery inventory intelligence platform that reduces food waste, protects freshness and improves profitability.</p><div class="links"><span class="go">Open live site ↗</span></div></article>
+      <article class="pi"><div class="ptag"><b>Smart Attendance System</b><span>Cognizant Finalist</span></div><h3><a class="stretch" href="https://sayantani9.github.io/SMART-ATTENDANCE-SYSTEM_COGNIZANT" target="_blank" rel="noopener noreferrer">Present, Proof!</a></h3><p>Smart attendance system using OpenCV and IoT with 95% accuracy, saving 70% of manual time.</p><div class="links"><span class="go">Open live site ↗</span></div></article>
+      <article class="pi"><div class="ptag"><b>Weather Intelligence Webapp</b><span>India-focused</span></div><h3><a class="stretch" href="https://mausam-blond.vercel.app/" target="_blank" rel="noopener noreferrer">Mousami</a></h3><p>Next-generation weather intelligence web application built for India.</p><div class="links"><span class="go">Open live site ↗</span></div></article>
+      <article class="pi"><div class="ptag"><b>Weather Intelligence Mobile App</b><span>Expo preview</span></div><h3><a class="stretch" href="https://app.emergent.sh/share-preview?app=exp%3A%2F%2Fmausam-family.preview.emergentagent.com%3Fexpo_go_prompt_device_auth%3D1%26expo_go_device_auth_verification_uri_override%3Dapp.emergent.sh&amp;job_id=6b70cfb8-bd7e-45c2-8d37-de104c44b559" target="_blank" rel="noopener noreferrer">Mousami App</a></h3><p>Mobile app version of Mousami, shared as an Expo preview.</p><div class="links"><span class="go">Open app preview ↗</span></div></article>
+      <article class="pi"><div class="ptag"><b>Open Source</b><span>C++</span></div><h3><a class="stretch" href="https://github.com/Sayantani9" target="_blank" rel="noopener noreferrer">CinderPeak</a></h3><p>Modern C++ STL templates. Improved modularity by 30% while mentoring 20+ successful PR integrations.</p><div class="links"><span class="go">View on GitHub ↗</span></div></article>
+      <article class="pi cta"><div class="ptag"><b>Open to collaborate</b><span>Next</span></div><h3><a class="stretch" href="#contact">Let's build the next one</a></h3><p>Looking for teammates, mentors or clients for AI products, research and open source work.</p><div class="links"><span class="go">Start a conversation ↓</span></div></article>
     </div>
   </section>
 
-  <!-- RESEARCH -->
+  <!-- RESEARCH & ACHIEVEMENTS -->
   <section class="sec" id="research">
-    <div class="lab"><span class="n">04</span><span class="t">Research & achievements</span></div>
-    <div class="cols">
-      <div>
-        <h3>Research</h3>
-        <ul class="rl">
-          <li><em>RECYCLE 2025 · IIT Guwahati</em><b>Shuddh: AI-driven waste segregator and waste-to-wealth generator</b><span>5th International Conference. Abstract published June 2025. Provisionally patented, MVP stage (Feb 2025).</span></li>
-          <li><em>IQAC, SSN 2026</em><b>Computational identification and classification of Shirobedhas using temporal dance features</b><span>International Conference on Indian Knowledge Systems, Tradition, Culture, Technology.</span></li>
-          <li><em>Radiation Measurements</em><b>Fin Dual-Doped RFET based SRAM circuit under heavy ion irradiation</b><span>International Conference on Multifunctional Materials & Radiation Measurements.</span></li>
-          <li><em>MIND-2026 · Samarkand</em><b>Generative model for extended dance sequence generation from a video</b><span>8th International Conference on ML, Internet Protocols, Network Systems & DS.</span></li>
-          <li><em>Nov 2025</em><b>Peer Reviewer, Journal of Environmental Management</b><span>Impact Factor 8.4.</span></li>
-          <li><em>Mar – Apr 2026</em><b>STEM Research, IIT Madras</b><span>Department of Science & Technology, Gopal Krishna Deshpande Centre for Innovation and Entrepreneurship.</span></li>
-          <li><em>2020 – 2025</em><b>Research Assistant Intern</b><span>Reviewing STEM journal and conference papers independently under a Research Scholar.</span></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Achievements</h3>
-        <ul class="rl">
-          <li><em>Nov 2025</em><b>ICPC 2025, Institute Rank 1</b><span>Amritapuri Regionals, South Asia Chapter.</span></li>
-          <li><em>Nov 2025</em><b>Top 80 of 300 start-ups from India</b><span>Start Up TN, Entrepreneurs' Organisation Global Student Entrepreneurship Awards finalist.</span></li>
-          <li><em>Jan 2025</em><b>Top 10 shortlisted start-ups</b><span>IIT Madras Incubator's Summit and FounderX Entrepreneurs Summit, Ideas to Impact.</span></li>
-          <li><em>2026</em><b>First place, GENESIS 2026</b><span>SRM.</span></li>
-          <li><em>Feb 2025</em><b>First runner-up of 500+ teams</b><span>Ideathon, PEC Anna University.</span></li>
-          <li><em>Apr 2026</em><b>Toastmasters: Pathway Celebrity, Triple Crown, Rockstar</b><span>Plus Bronze Medalist at the Area A3 International Speech Contest (Mar 2026).</span></li>
-          <li><em>2018 – 2019</em><b>Debate</b><span>ASISC All India Regional Contest, Clifford Hicks Memorial Debate, Frank Anthony Memorial Debate.</span></li>
-        </ul>
-        <div class="chips" aria-label="Skills"><span>C++</span><span>Python</span><span>Java</span><span>React</span><span>Node</span><span>DSA</span><span>AI/ML</span><span>LLM training</span><span>Agentic AI</span><span>Power BI</span></div>
-      </div>
+    <div class="lab"><span class="n">04</span><span class="t">Research &amp; achievements</span></div>
+    <h2 class="lead rv">A very full year, with receipts.</h2>
+    <p class="sublead">Tap anything for the details, the photos and the certificate.</p>
+
+    <div class="nowbar" aria-label="Right now">
+      <span class="np"><i class="dot"></i>Now · Intern at Drudow</span>
+      <span class="np"><i class="dot"></i>Research Intern · SSN Engineering College</span>
+      <span class="np"><i class="dot"></i>Community lead · Open source &amp; ICPC</span>
     </div>
+
+    <div class="wins">
+      <button class="wincard c1" data-detail data-cover data-slug="seattle-global-social-business-pitch" data-title="Won the Global Social Business Pitch" data-org="The City University of Seattle" data-date="26 Jul 2026"><span class="cover"></span>
+        <span class="wd"><b>26</b><i>July 2026</i></span><span class="wt">Won the Global Social Business Pitch</span><span class="wp">The City University of Seattle</span><span class="wtag">Winner · Global stage</span>
+        <template><li>Won the Global Social Business Pitch at The City University of Seattle.</li></template></button>
+      <button class="wincard c2" data-detail data-cover data-slug="icpc-2025-institute-rank-1" data-title="ICPC 2025, Institute Rank 1" data-org="Amritapuri Regionals · South Asia Chapter" data-date="Nov 2025"><span class="cover"></span>
+        <span class="wd"><b>#1</b><i>Nov 2025</i></span><span class="wt">ICPC 2025, Institute Rank 1</span><span class="wp">Amritapuri Regionals · South Asia Chapter</span><span class="wtag">Rank 1 · Competitive programming</span>
+        <template><li>Institute Rank 1 at the ICPC 2025 Amritapuri Regionals, South Asia Chapter.</li></template></button>
+      <button class="wincard c3" data-detail data-cover data-slug="toastmasters-triple-crown-rockstar-pathway-champion" data-title="Triple Crown, Rockstar &amp; Pathway Champion" data-org="Toastmasters International" data-date="Apr 2026"><span class="cover"></span>
+        <span class="wd"><b>3×</b><i>Apr 2026</i></span><span class="wt">Triple Crown, Rockstar &amp; Pathway Champion</span><span class="wp">Toastmasters International</span><span class="wtag">Honours · From the CAO, principal, secretary &amp; mentor</span>
+        <template><li>Honorary Triple Crown, Rockstar and Pathway Champion honours.</li><li>Presented by the CAO, principal, secretary and mentor.</li></template></button>
+      <button class="wincard c4" data-detail data-cover data-slug="genesis-2026-srm-vadapalani" data-title="Won GENESIS at SRM Vadapalani" data-org="The day after winning Clash of Coders" data-date="2–3 Sep 2026"><span class="cover"></span>
+        <span class="wd"><b>1st</b><i>2–3 Sep 2026</i></span><span class="wt">Won GENESIS at SRM Vadapalani</span><span class="wp">The day after winning Clash of Coders</span><span class="wtag">Winner · Back-to-back</span>
+        <template><li>First place at GENESIS 2026, SRM Vadapalani.</li><li>Won the day after winning Clash of Coders.</li></template></button>
+    </div>
+
+    <div class="bstats">
+      <div><h3 data-target="17">17</h3><p>websites brought to life, this portfolio being one</p></div>
+      <div><h3 data-target="10">10</h3><p>events attended or won since 25 July 2026</p></div>
+      <div><h3 data-target="4">4</h3><p>research papers across IIT Guwahati, SSN, MIND and radiation measurements</p></div>
+      <div><h3 data-target="1">1</h3><p>provisional patent, plus a peer-review seat at an Impact Factor 8.4 journal</p></div>
+    </div>
+
+    <h3 class="sh">Research &amp; publications</h3>
+    <a class="orcid" href="https://orcid.org/0009-0009-7861-484X" target="_blank" rel="noopener noreferrer"><span class="oi">iD</span><span class="ot"><small>ORCID iD</small><b>0009-0009-7861-484X</b></span><i>↗</i></a>
+    <div class="papers">
+      <button class="paper" data-detail data-cover data-slug="recycle-2025-iit-guwahati" data-title="Shuddh: AI-driven waste segregator and waste-to-wealth generator" data-org="IIT Guwahati" data-date="Jun 2025"><span class="cover"></span>
+        <span class="pn">01</span><span class="pv">RECYCLE 2025 · IIT Guwahati</span><span class="ptt">Shuddh: AI-driven waste segregator and waste-to-wealth generator</span><span class="ps">Abstract published · Jun 2025</span>
+        <template><li>5th International Conference on Waste Management, IIT Guwahati.</li><li>Shortlisted presenter. Abstract titled SHUDDH published June 2025.</li><li>Provisionally patented, MVP stage (Feb 2025).</li></template></button>
+      <button class="paper" data-detail data-cover data-slug="iqac-ssn-2026" data-title="Computational identification and classification of Shirobedhas using temporal dance features" data-org="SSN Engineering College" data-date="2026"><span class="cover"></span>
+        <span class="pn">02</span><span class="pv">IQAC · SSN 2026</span><span class="ptt">Computational identification and classification of Shirobedhas using temporal dance features</span><span class="ps">Indian Knowledge Systems conference</span>
+        <template><li>International Conference on Indian Knowledge Systems, Tradition, Culture, Technology, IQAC, SSN 2026.</li><li>Research under Dr. R. Srinivasan and Dr. A. Karthika at SSN Engineering College.</li></template></button>
+      <button class="paper" data-detail data-cover data-slug="multifunctional-materials-radiation-measurements" data-title="Fin Dual-Doped RFET based SRAM circuit under heavy ion irradiation" data-org="Multifunctional Materials &amp; Radiation Measurements" data-date="Conference paper"><span class="cover"></span>
+        <span class="pn">03</span><span class="pv">Radiation Measurements</span><span class="ptt">Fin Dual-Doped RFET based SRAM circuit under heavy ion irradiation</span><span class="ps">International conference paper</span>
+        <template><li>International Conference on Multifunctional Materials &amp; Radiation Measurements.</li></template></button>
+      <button class="paper" data-detail data-cover data-slug="mind-2026-samarkand" data-title="Generative model for extended dance sequence generation from a video" data-org="Samarkand, Uzbekistan" data-date="2026"><span class="cover"></span>
+        <span class="pn">04</span><span class="pv">MIND-2026 · Samarkand</span><span class="ptt">Generative model for extended dance sequence generation from a video</span><span class="ps">8th International Conference, Uzbekistan</span>
+        <template><li>8th International Conference on ML, Internet Protocols, Network Systems &amp; DS, Samarkand, Uzbekistan.</li></template></button>
+    </div>
+    <div class="minis">
+      <button class="mini" data-detail data-slug="shuddh-provisional-patent" data-title="Provisional Patent, SHUDDH" data-org="Waste to Wealth Generator" data-date="Feb 2025">Provisional patent · SHUDDH<template><li>Provisionally patented SHUDDH at MVP stage.</li></template></button>
+      <button class="mini" data-detail data-slug="peer-reviewer-journal-of-environmental-management" data-title="Peer Reviewer" data-org="Journal of Environmental Management" data-date="Nov 2025">Peer reviewer · Impact Factor 8.4<template><li>Peer reviewer for the Journal of Environmental Management (Impact Factor 8.4).</li><li>ORCID iD 0009-0009-7861-484X.</li></template></button>
+      <button class="mini" data-detail data-slug="iit-madras-stem-research" data-title="STEM Research, IIT Madras" data-org="Gopal Krishna Deshpande Centre" data-date="Mar – Apr 2026">STEM research · IIT Madras<template><li>Department of Science &amp; Technology, Gopal Krishna Deshpande Centre for Innovation and Entrepreneurship.</li></template></button>
+      <button class="mini" data-detail data-slug="research-assistant-intern" data-title="Research Assistant Intern" data-org="Under a Research Scholar" data-date="2020 – 2025">Research assistant · 2020 – 2025<template><li>Reviewed STEM journal and conference research papers, working independently under a Research Scholar.</li></template></button>
+    </div>
+
+    <h3 class="sh" id="events">Every event, dated</h3>
+    <div class="filters" role="group" aria-label="Filter events">
+      <button class="fchip" data-f="all" aria-pressed="true">All</button><button class="fchip" data-f="wins" aria-pressed="false">Wins &amp; honours</button><button class="fchip" data-f="research" aria-pressed="false">Research</button><button class="fchip" data-f="lead" aria-pressed="false">Work &amp; leading</button><button class="fchip" data-f="events" aria-pressed="false">Events &amp; speaking</button>
+    </div>
+    <ol class="tl" id="tl">
+        <li class="yr">2026</li>
+        <li class="ev" data-cat="lead"><button class="evb" data-detail data-cover data-slug="drudow-intern" data-title="Intern at Drudow" data-org="Drudow" data-date="Now 2026">
+          <span class="cover"></span><span class="evd"><b>Now</b><i>2026</i></span><span class="evt"><strong>Intern at Drudow</strong><small>Drudow</small></span><span class="evtag t-lead">Now</span>
+          <template><li>Currently interning at Drudow.</li></template></button></li>
+        <li class="ev" data-cat="events"><button class="evb" data-detail data-cover data-slug="windenergy-india" data-title="Windenergy India" data-org="Chennai Trade Centre" data-date="08 Oct 2026">
+          <span class="cover"></span><span class="evd"><b>08</b><i>Oct 2026</i></span><span class="evt"><strong>Windenergy India</strong><small>Chennai Trade Centre</small></span><span class="evtag t-events">Guest</span>
+          <template><li>Attended as a guest at Chennai Trade Centre.</li></template></button></li>
+        <li class="ev" data-cat="events"><button class="evb" data-detail data-cover data-slug="codesy-dhanalaxmi-shrinivasan-college" data-title="Codesy" data-org="Dhanalaxmi Shrinivasan College" data-date="18 Sep 2026">
+          <span class="cover"></span><span class="evd"><b>18</b><i>Sep 2026</i></span><span class="evt"><strong>Codesy</strong><small>Dhanalaxmi Shrinivasan College</small></span><span class="evtag t-events">Event</span>
+          <template><li>Codesy at Dhanalaxmi Shrinivasan College.</li></template></button></li>
+        <li class="ev" data-cat="events"><button class="evb" data-detail data-cover data-slug="yuci-global-event-srm-easwari" data-title="YUCI, Global Event" data-org="SRM Easwari" data-date="11 Sep 2026">
+          <span class="cover"></span><span class="evd"><b>11</b><i>Sep 2026</i></span><span class="evt"><strong>YUCI, Global Event</strong><small>SRM Easwari</small></span><span class="evtag t-events">Event</span>
+          <template><li>Global event YUCI at SRM Easwari.</li></template></button></li>
+        <li class="ev" data-cat="events"><button class="evb" data-detail data-cover data-slug="srm-kattankulathur" data-title="SRM Kattankulathur" data-org="SRM Kattankulathur" data-date="09 Sep 2026">
+          <span class="cover"></span><span class="evd"><b>09</b><i>Sep 2026</i></span><span class="evt"><strong>SRM Kattankulathur</strong><small>SRM Kattankulathur</small></span><span class="evtag t-events">Event</span>
+          <template><li>Event at SRM Kattankulathur.</li></template></button></li>
+        <li class="ev" data-cat="wins"><button class="evb" data-detail data-cover data-slug="genesis-2026-srm-vadapalani" data-title="Winner, GENESIS" data-org="SRM Vadapalani" data-date="02–03 Sep 2026">
+          <span class="cover"></span><span class="evd"><b>02–03</b><i>Sep 2026</i></span><span class="evt"><strong>Winner, GENESIS</strong><small>SRM Vadapalani</small></span><span class="evtag t-wins">Winner</span>
+          <template><li>First place at GENESIS 2026, SRM Vadapalani.</li><li>Won the day after winning Clash of Coders.</li></template></button></li>
+        <li class="ev" data-cat="wins"><button class="evb" data-detail data-cover data-slug="clash-of-coders" data-title="Winner, Clash of Coders" data-org="Coders Forum" data-date="01 Sep 2026">
+          <span class="cover"></span><span class="evd"><b>01</b><i>Sep 2026</i></span><span class="evt"><strong>Winner, Clash of Coders</strong><small>Coders Forum</small></span><span class="evtag t-wins">Winner</span>
+          <template><li>Won Clash of Coders, organised by Coders Forum.</li></template></button></li>
+        <li class="ev" data-cat="events"><button class="evb" data-detail data-cover data-slug="parts2power" data-title="Parts2Power" data-org="Chennai Trade Centre" data-date="01 Aug 2026">
+          <span class="cover"></span><span class="evd"><b>01</b><i>Aug 2026</i></span><span class="evt"><strong>Parts2Power</strong><small>Chennai Trade Centre</small></span><span class="evtag t-events">Guest</span>
+          <template><li>Attended as a guest at Chennai Trade Centre.</li></template></button></li>
+        <li class="ev" data-cat="wins"><button class="evb" data-detail data-cover data-slug="seattle-global-social-business-pitch" data-title="Winner, Global Social Business Pitch" data-org="The City University of Seattle" data-date="26 Jul 2026">
+          <span class="cover"></span><span class="evd"><b>26</b><i>Jul 2026</i></span><span class="evt"><strong>Winner, Global Social Business Pitch</strong><small>The City University of Seattle</small></span><span class="evtag t-wins">Winner</span>
+          <template><li>Won the Global Social Business Pitch at The City University of Seattle.</li></template></button></li>
+        <li class="ev" data-cat="events"><button class="evb" data-detail data-cover data-slug="makeai-and-medicall" data-title="MakeAI &amp; Medicall" data-org="Chennai Trade Centre" data-date="25 Jul 2026">
+          <span class="cover"></span><span class="evd"><b>25</b><i>Jul 2026</i></span><span class="evt"><strong>MakeAI &amp; Medicall</strong><small>Chennai Trade Centre</small></span><span class="evtag t-events">Guest</span>
+          <template><li>Attended MakeAI and Medicall as a guest at Chennai Trade Centre.</li><li>The first of four Chennai Trade Centre events in under three months.</li></template></button></li>
+        <li class="ev" data-cat="lead"><button class="evb" data-detail data-cover data-slug="ecokadai-market-survey" data-title="Market Survey Intern" data-org="Eco Kadai" data-date="Jun–Aug 2026">
+          <span class="cover"></span><span class="evd"><b>Jun–Aug</b><i>2026</i></span><span class="evt"><strong>Market Survey Intern</strong><small>Eco Kadai</small></span><span class="evtag t-lead">Work</span>
+          <template><li>Conducted product validation research to evaluate feasibility.</li><li>Client work covering the website build and an AI and automation roadmap.</li></template></button></li>
+        <li class="ev" data-cat="events"><button class="evb" data-detail data-cover data-slug="techgium-lnt" data-title="Techgium at L&amp;T" data-org="L&amp;T" data-date="2026">
+          <span class="cover"></span><span class="evd"><b>2026</b><i></i></span><span class="evt"><strong>Techgium at L&amp;T</strong><small>L&amp;T</small></span><span class="evtag t-events">Event</span>
+          <template><li>Techgium at L&amp;T, with Smart India Hackathon projects cooking alongside.</li></template></button></li>
+        <li class="ev" data-cat="wins"><button class="evb" data-detail data-cover data-slug="toastmasters-triple-crown-rockstar-pathway-champion" data-title="Triple Crown, Rockstar &amp; Pathway Champion" data-org="Toastmasters International" data-date="Apr 2026">
+          <span class="cover"></span><span class="evd"><b>Apr</b><i>2026</i></span><span class="evt"><strong>Triple Crown, Rockstar &amp; Pathway Champion</strong><small>Toastmasters International</small></span><span class="evtag t-wins">Honour</span>
+          <template><li>Honorary Triple Crown, Rockstar and Pathway Champion honours.</li><li>Presented by the CAO, principal, secretary and mentor.</li></template></button></li>
+        <li class="ev" data-cat="research"><button class="evb" data-detail data-cover data-slug="iit-madras-stem-research" data-title="STEM Research, IIT Madras" data-org="Gopal Krishna Deshpande Centre" data-date="Mar–Apr 2026">
+          <span class="cover"></span><span class="evd"><b>Mar–Apr</b><i>2026</i></span><span class="evt"><strong>STEM Research, IIT Madras</strong><small>Gopal Krishna Deshpande Centre</small></span><span class="evtag t-research">Research</span>
+          <template><li>Department of Science &amp; Technology, Gopal Krishna Deshpande Centre for Innovation and Entrepreneurship.</li></template></button></li>
+        <li class="ev" data-cat="wins"><button class="evb" data-detail data-cover data-slug="area-a3-international-speech-contest" data-title="Bronze Medalist, Area A3 Speech Contest" data-org="Toastmasters International" data-date="Mar 2026">
+          <span class="cover"></span><span class="evd"><b>Mar</b><i>2026</i></span><span class="evt"><strong>Bronze Medalist, Area A3 Speech Contest</strong><small>Toastmasters International</small></span><span class="evtag t-wins">Medal</span>
+          <template><li>Bronze Medalist at the Area A3 International Speech Contest.</li></template></button></li>
+        <li class="ev" data-cat="research"><button class="evb" data-detail data-cover data-slug="mind-2026-samarkand" data-title="MIND-2026, Samarkand" data-org="Uzbekistan" data-date="2026">
+          <span class="cover"></span><span class="evd"><b>2026</b><i></i></span><span class="evt"><strong>MIND-2026, Samarkand</strong><small>Uzbekistan</small></span><span class="evtag t-research">Paper</span>
+          <template><li>Generative Model for Extended Dance Sequence Generation from a Video.</li><li>8th International Conference on ML, Internet Protocols, Network Systems &amp; DS.</li></template></button></li>
+        <li class="ev" data-cat="research"><button class="evb" data-detail data-cover data-slug="iqac-ssn-2026" data-title="Shirobedhas, IQAC SSN 2026" data-org="SSN Engineering College" data-date="2026">
+          <span class="cover"></span><span class="evd"><b>2026</b><i></i></span><span class="evt"><strong>Shirobedhas, IQAC SSN 2026</strong><small>SSN Engineering College</small></span><span class="evtag t-research">Paper</span>
+          <template><li>Computational Identification and Classification of Shirobedhas using Temporal Dance Features.</li><li>International Conference on Indian Knowledge Systems, Tradition, Culture, Technology.</li></template></button></li>
+        <li class="yr">2025</li>
+        <li class="ev" data-cat="wins"><button class="evb" data-detail data-cover data-slug="icpc-2025-institute-rank-1" data-title="ICPC 2025, Institute Rank 1" data-org="Amritapuri Regionals" data-date="#1 Nov 2025">
+          <span class="cover"></span><span class="evd"><b>#1</b><i>Nov 2025</i></span><span class="evt"><strong>ICPC 2025, Institute Rank 1</strong><small>Amritapuri Regionals</small></span><span class="evtag t-wins">Winner</span>
+          <template><li>Institute Rank 1 at the ICPC 2025 Amritapuri Regionals, South Asia Chapter.</li></template></button></li>
+        <li class="ev" data-cat="wins"><button class="evb" data-detail data-cover data-slug="start-up-tn-global-student-entrepreneurship-awards" data-title="Finalist, Global Student Entrepreneurship Awards" data-org="Start Up TN × EO" data-date="Top 80 Nov 2025">
+          <span class="cover"></span><span class="evd"><b>Top 80</b><i>Nov 2025</i></span><span class="evt"><strong>Finalist, Global Student Entrepreneurship Awards</strong><small>Start Up TN × EO</small></span><span class="evtag t-wins">Finalist</span>
+          <template><li>Top 80 of 300 start-ups from India.</li><li>Entrepreneurs' Organisation Global Student Entrepreneurship Awards.</li></template></button></li>
+        <li class="ev" data-cat="research"><button class="evb" data-detail data-cover data-slug="peer-reviewer-journal-of-environmental-management" data-title="Peer Reviewer" data-org="Journal of Environmental Management" data-date="Nov 2025">
+          <span class="cover"></span><span class="evd"><b>Nov</b><i>2025</i></span><span class="evt"><strong>Peer Reviewer</strong><small>Journal of Environmental Management</small></span><span class="evtag t-research">Review</span>
+          <template><li>Peer reviewer for the Journal of Environmental Management (Impact Factor 8.4).</li><li>ORCID iD 0009-0009-7861-484X.</li></template></button></li>
+        <li class="ev" data-cat="lead"><button class="evb" data-detail data-cover data-slug="toastmasters-vp-memberships-oath" data-title="Took the oath as Vice President, Memberships" data-org="Toastmasters International, PEC Chapter" data-date="Oct 2025">
+          <span class="cover"></span><span class="evd"><b>Oct</b><i>2025</i></span><span class="evt"><strong>Took the oath as Vice President, Memberships</strong><small>Toastmasters International, PEC Chapter</small></span><span class="evtag t-lead">Leading</span>
+          <template><li>Vice President of Memberships for the PEC chapter, Oct 2025 – Mar 2026.</li></template></button></li>
+        <li class="ev" data-cat="lead"><button class="evb" data-detail data-cover data-slug="entrepreneurship-development-cell" data-title="Leading the Entrepreneurship Development Cell" data-org="NEC, IIT Bombay · Eureka &amp; Ignite" data-date="May–Dec 2025">
+          <span class="cover"></span><span class="evd"><b>May–Dec</b><i>2025</i></span><span class="evt"><strong>Leading the Entrepreneurship Development Cell</strong><small>NEC, IIT Bombay · Eureka &amp; Ignite</small></span><span class="evtag t-lead">Leading</span>
+          <template><li>Led the Entrepreneurship Development Cell through inputs, interactions, incubation and development.</li><li>Chief Operating Officer, EDC (NEC, IIT Bombay). IIT Bombay NEC Finalists, Top 100 Entrepreneurs.</li><li>Chief Coordinating Officer for Eureka and Ignite, IIT Bombay.</li><li>Invited as a Guest Speaker of Honour.</li></template></button></li>
+        <li class="ev" data-cat="research"><button class="evb" data-detail data-cover data-slug="recycle-2025-iit-guwahati" data-title="RECYCLE 2025" data-org="IIT Guwahati" data-date="Jun 2025">
+          <span class="cover"></span><span class="evd"><b>Jun</b><i>2025</i></span><span class="evt"><strong>RECYCLE 2025</strong><small>IIT Guwahati</small></span><span class="evtag t-research">Paper</span>
+          <template><li>Shortlisted presenter at the 5th International Conference on Waste Management.</li><li>Abstract on SHUDDH published.</li></template></button></li>
+        <li class="ev" data-cat="wins"><button class="evb" data-detail data-cover data-slug="ideathon-pec-anna-university" data-title="First Runner-up of 500+ teams" data-org="Ideathon, PEC Anna University" data-date="15 Feb 2025">
+          <span class="cover"></span><span class="evd"><b>15</b><i>Feb 2025</i></span><span class="evt"><strong>First Runner-up of 500+ teams</strong><small>Ideathon, PEC Anna University</small></span><span class="evtag t-wins">Runner-up</span>
+          <template><li>First runner-up out of 500+ teams.</li></template></button></li>
+        <li class="ev" data-cat="research"><button class="evb" data-detail data-cover data-slug="shuddh-provisional-patent" data-title="Provisional Patent, SHUDDH" data-org="Waste to Wealth Generator" data-date="Feb 2025">
+          <span class="cover"></span><span class="evd"><b>Feb</b><i>2025</i></span><span class="evt"><strong>Provisional Patent, SHUDDH</strong><small>Waste to Wealth Generator</small></span><span class="evtag t-research">Patent</span>
+          <template><li>Provisionally patented SHUDDH, a waste segregator and waste-to-wealth generator, at MVP stage.</li></template></button></li>
+        <li class="ev" data-cat="wins"><button class="evb" data-detail data-cover data-slug="iit-madras-incubators-summit-founderx" data-title="Ideas to Impact, Top 10 Start-ups" data-org="IIT Madras Incubator's Summit &amp; FounderX" data-date="Top 10 Jan 2025">
+          <span class="cover"></span><span class="evd"><b>Top 10</b><i>Jan 2025</i></span><span class="evt"><strong>Ideas to Impact, Top 10 Start-ups</strong><small>IIT Madras Incubator's Summit &amp; FounderX</small></span><span class="evtag t-wins">Shortlisted</span>
+          <template><li>Top 10 shortlisted start-ups by student entrepreneurs.</li></template></button></li>
+        <li class="yr">Along the way</li>
+        <li class="ev" data-cat="wins"><button class="evb" data-detail data-cover data-slug="smart-india-hackathon" data-title="Smart India Hackathon" data-org="Government of India" data-date="SIH 2025 &amp; 2026">
+          <span class="cover"></span><span class="evd"><b>SIH</b><i>2025 &amp; 2026</i></span><span class="evt"><strong>Smart India Hackathon</strong><small>Government of India</small></span><span class="evtag t-wins">Semi-finalist</span>
+          <template><li>Semi-finalist with Shuddh (Smart Waste System) and the 2026 builds Niriksh and RoadPulse.</li></template></button></li>
+        <li class="ev" data-cat="wins"><button class="evb" data-detail data-cover data-slug="isro-finalist" data-title="Vayunetra for ISRO" data-org="Remote sensing and ML" data-date="ISRO Finalist">
+          <span class="cover"></span><span class="evd"><b>ISRO</b><i>Finalist</i></span><span class="evt"><strong>Vayunetra for ISRO</strong><small>Remote sensing and ML</small></span><span class="evtag t-wins">Finalist</span>
+          <template><li>Air quality forecasting from remote sensing datasets and ML regression models, 87% accuracy.</li></template></button></li>
+        <li class="ev" data-cat="wins"><button class="evb" data-detail data-cover data-slug="cognizant-finalist" data-title="Present, Proof!" data-org="Smart attendance system" data-date="Cognizant Finalist">
+          <span class="cover"></span><span class="evd"><b>Cognizant</b><i>Finalist</i></span><span class="evt"><strong>Present, Proof!</strong><small>Smart attendance system</small></span><span class="evtag t-wins">Finalist</span>
+          <template><li>OpenCV and IoT attendance with 95% accuracy, saving 70% of manual time.</li></template></button></li>
+        <li class="ev" data-cat="research"><button class="evb" data-detail data-cover data-slug="multifunctional-materials-radiation-measurements" data-title="Fin Dual-Doped RFET SRAM Circuit" data-org="Multifunctional Materials &amp; Radiation Measurements" data-date="Paper">
+          <span class="cover"></span><span class="evd"><b>Paper</b><i></i></span><span class="evt"><strong>Fin Dual-Doped RFET SRAM Circuit</strong><small>Multifunctional Materials &amp; Radiation Measurements</small></span><span class="evtag t-research">Paper</span>
+          <template><li>Numerical Investigation of Fin Dual-Doped RFET Based SRAM Circuit under the Effect of Heavy Ion-Irradiation.</li><li>International Conference on Multifunctional Materials &amp; Radiation Measurements.</li></template></button></li>
+        <li class="ev" data-cat="events"><button class="evb" data-detail data-cover data-slug="asisc-and-memorial-debates" data-title="ASISC, Clifford Hicks &amp; Frank Anthony Debates" data-org="Debate circuit" data-date="2018–19">
+          <span class="cover"></span><span class="evd"><b>2018–19</b><i></i></span><span class="evt"><strong>ASISC, Clifford Hicks &amp; Frank Anthony Debates</strong><small>Debate circuit</small></span><span class="evtag t-events">Debater</span>
+          <template><li>ASISC All India Regional Contest.</li><li>Clifford Hicks Memorial Debate and Frank Anthony Memorial Debate.</li></template></button></li>
+    </ol>
   </section>
 
   <!-- CO-CURRICULAR -->
@@ -432,34 +647,7 @@ mark{background:linear-gradient(transparent 38%,var(--lemon) 38%);color:inherit;
       <li><button class="xrow" data-title="Visual Creativity &amp; Storytelling" data-org="Photography, design and writing" data-date="Ongoing"><span class="xt">Visual Creativity &amp; Storytelling</span><span class="xm">Photography · Design · Poetry · Ongoing</span><span class="band" aria-hidden="true"></span>
         <template><li>Photography, digital design in Canva and graphic design.</li><li>Content creation: writing poetry and storytelling.</li></template></button></li>
     </ul>
-    <h3 class="sh">Events &amp; competitions</h3>
-    <div class="cols">
-      <div>
-        <ul class="rl">
-          <li><em>Nov 2025</em><b>ICPC 2025, Amritapuri Regionals</b><span>Institute Rank 1, South Asia Chapter.</span></li>
-          <li><em>Nov 2025</em><b>Start Up TN × Entrepreneurs' Organisation Global Student Entrepreneurship Awards</b><span>Finalist, top 80 of 300 start-ups from India.</span></li>
-          <li><em>Jan 2025</em><b>IIT Madras Incubator's Summit &amp; FounderX Entrepreneurs Summit</b><span>Ideas to Impact, top 10 shortlisted start-ups.</span></li>
-          <li><em>2026</em><b>GENESIS 2026, SRM</b><span>First place.</span></li>
-          <li><em>Feb 2025</em><b>Ideathon, PEC Anna University</b><span>First runner-up out of 500+ teams.</span></li>
-          <li><em>2025 &amp; 2026</em><b>Smart India Hackathon</b><span>Semi-finalist.</span></li>
-          <li><em>Finalist</em><b>ISRO and Cognizant challenges</b><span>Vayunetra for ISRO and Present, Proof! for Cognizant.</span></li>
-          <li><em>Mar 2026</em><b>Toastmasters Area A3 International Speech Contest</b><span>Bronze Medalist.</span></li>
-          <li><em>2018 – 2019</em><b>ASISC Regionals, Clifford Hicks and Frank Anthony Memorial Debates</b><span>Debater.</span></li>
-        </ul>
-      </div>
-      <div>
-        <ul class="rl">
-          <li><em>Jun 2025</em><b>RECYCLE 2025, IIT Guwahati</b><span>Shortlisted presenter, abstract on SHUDDH published.</span></li>
-          <li><em>2026</em><b>Indian Knowledge Systems, Tradition, Culture, Technology (IQAC, SSN)</b><span>Paper on Shirobedha classification.</span></li>
-          <li><em>2026</em><b>MIND-2026, Samarkand, Uzbekistan</b><span>8th International Conference on ML, Internet Protocols, Network Systems &amp; DS. Paper on dance sequence generation.</span></li>
-          <li><em>Conference</em><b>International Conference on Multifunctional Materials &amp; Radiation Measurements</b><span>Paper on Fin Dual-Doped RFET based SRAM circuits.</span></li>
-          <li><em>2025</em><b>Eureka &amp; Ignite, IIT Bombay</b><span>Chief Coordinating Officer.</span></li>
-          <li><em>2025</em><b>NEC, IIT Bombay</b><span>Top 100 Entrepreneurs finalist, EDC Chief Operating Officer.</span></li>
-          <li><em>Mar – Apr 2026</em><b>IIT Madras DST Gopal Krishna Deshpande Centre</b><span>STEM research with the Centre for Innovation and Entrepreneurship.</span></li>
-          <li><em>Aug – Nov 2025</em><b>Girl Script Summer of Code</b><span>Campus Ambassador, mentor and coding intern.</span></li>
-        </ul>
-      </div>
-    </div>
+    <a class="pointer" href="#events"><span>Every event, competition and guest appearance, dated</span><i>↑ See the timeline</i></a>
   </section>
 
   <!-- START-UP WORK (after the co-curriculars) -->
@@ -514,6 +702,7 @@ mark{background:linear-gradient(transparent 38%,var(--lemon) 38%);color:inherit;
         <div class="clinks">
           <a href="mailto:its.shines.workspace@gmail.com"><small>Email</small>its.shines.workspace@gmail.com</a>
           <span><small>Location</small>Chennai, Tamil Nadu, India</span>
+          <a href="https://orcid.org/0009-0009-7861-484X" target="_blank" rel="noopener noreferrer"><small>ORCID</small>0009-0009-7861-484X</a>
         </div>
         <div class="socbig">
           <a href="https://github.com/Sayantani9" target="_blank" rel="noopener noreferrer"><span>GitHub</span><em>@Sayantani9</em><i>↗</i></a>
@@ -547,6 +736,8 @@ mark{background:linear-gradient(transparent 38%,var(--lemon) 38%);color:inherit;
     <h3 id="mTitle"></h3>
     <div class="morg" id="mOrg"></div>
     <ul id="mList"></ul>
+    <div class="mgallery" id="mGallery" hidden></div>
+    <div class="mcert" id="mCert" hidden></div>
   </div>
 </div>
 
@@ -712,14 +903,50 @@ mark{background:linear-gradient(transparent 38%,var(--lemon) 38%);color:inherit;
   var modal = document.getElementById('modal');
   var mClose = document.getElementById('mClose');
   var opener = null;
+  function slugify(t){ return t.toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,''); }
+  var mediaToken = 0;
+  function loadMedia(slug){
+    var token = ++mediaToken;
+    var gal = document.getElementById('mGallery'), cert = document.getElementById('mCert');
+    gal.innerHTML = ''; gal.hidden = true; cert.innerHTML = ''; cert.hidden = true;
+    (function next(i){
+      if (i > 12 || token !== mediaToken) return;
+      var url = 'events/' + slug + '/' + i + '.jpg', im = new Image();
+      im.alt = 'Photo ' + i;
+      im.onload = function(){
+        if (token !== mediaToken) return;
+        if (gal.hidden) { gal.hidden = false; gal.setAttribute('data-h', 'Photos'); }
+        var a = document.createElement('a'); a.href = url; a.target = '_blank'; a.rel = 'noopener'; a.appendChild(im);
+        gal.appendChild(a); next(i + 1);
+      };
+      im.src = url;
+    })(1);
+    var exts = ['jpg','png','pdf'];
+    (function tryCert(k){
+      if (k >= exts.length || token !== mediaToken) return;
+      var url = 'certificates/' + slug + '.' + exts[k];
+      function show(html){ if (token !== mediaToken) return; cert.hidden = false; cert.setAttribute('data-h','Certificate'); cert.innerHTML = html; }
+      if (exts[k] === 'pdf') {
+        fetch(url, {method:'HEAD'}).then(function(r){ if (r.ok) show('<a class="cbtn" href="' + url + '" target="_blank" rel="noopener">Open certificate (PDF) ↗</a>'); }).catch(function(){});
+        return;
+      }
+      var im = new Image();
+      im.onload = function(){ show('<a class="cimg" href="' + url + '" target="_blank" rel="noopener"><img src="' + url + '" alt="Certificate"></a><a class="cbtn" href="' + url + '" target="_blank" rel="noopener">Open full certificate ↗</a>'); };
+      im.onerror = function(){ tryCert(k + 1); };
+      im.src = url;
+    })(0);
+  }
   function openModal(row){
     opener = row;
-    document.getElementById('mDate').textContent = row.dataset.date;
+    document.getElementById('mDate').textContent = row.dataset.date || '';
     document.getElementById('mTitle').textContent = row.dataset.title;
-    document.getElementById('mOrg').textContent = row.dataset.org;
+    document.getElementById('mOrg').textContent = row.dataset.org || '';
     var list = document.getElementById('mList'); list.innerHTML = '';
-    list.appendChild(row.querySelector('template').content.cloneNode(true));
+    var tpl = row.querySelector('template');
+    if (tpl) list.appendChild(tpl.content.cloneNode(true));
+    loadMedia(row.dataset.slug || slugify(row.dataset.title));
     modal.classList.add('open'); modal.setAttribute('aria-hidden', 'false');
+    modal.scrollTop = 0;
     body.classList.add('locked');
     setTimeout(function(){ mClose.focus(); }, 60);
   }
@@ -728,12 +955,52 @@ mark{background:linear-gradient(transparent 38%,var(--lemon) 38%);color:inherit;
     body.classList.remove('locked');
     if (opener) opener.focus({preventScroll:true});
   }
-  document.querySelectorAll('.xrow').forEach(function(r){ r.addEventListener('click', function(){ openModal(r); }); });
+  document.querySelectorAll('.xrow,[data-detail]').forEach(function(r){ r.addEventListener('click', function(){ openModal(r); }); });
   mClose.addEventListener('click', closeModal);
   modal.addEventListener('click', function(e){ if (e.target === modal) closeModal(); });
   window.addEventListener('keydown', function(e){
     if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
     if (e.key === 'Tab' && modal.classList.contains('open')) { e.preventDefault(); mClose.focus(); }
+  });
+
+  /* ---- event covers (first photo, if one exists) ---- */
+  var coverObs = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if (!e.isIntersecting) return;
+      coverObs.unobserve(e.target);
+      var el = e.target, url = 'events/' + (el.dataset.slug || slugify(el.dataset.title)) + '/1.jpg', im = new Image();
+      im.onload = function(){ var c = el.querySelector('.cover'); if (c) { c.style.backgroundImage = 'url("' + url + '")'; el.classList.add('has'); } };
+      im.src = url;
+    });
+  }, { rootMargin: '250px' });
+  document.querySelectorAll('[data-cover]').forEach(function(el){ coverObs.observe(el); });
+
+  /* ---- timeline filters ---- */
+  var chips = document.querySelectorAll('.fchip');
+  chips.forEach(function(c){
+    c.addEventListener('click', function(){
+      chips.forEach(function(x){ x.setAttribute('aria-pressed', x === c ? 'true' : 'false'); });
+      var f = c.dataset.f;
+      document.querySelectorAll('#tl > li.ev').forEach(function(li){ li.hidden = !(f === 'all' || li.dataset.cat === f); });
+      document.querySelectorAll('#tl > li.yr').forEach(function(y){
+        var n = y.nextElementSibling, vis = false;
+        while (n && !n.classList.contains('yr')) { if (!n.hidden) vis = true; n = n.nextElementSibling; }
+        y.hidden = !vis;
+      });
+    });
+  });
+
+  /* ---- GitHub links: add a repo URL here and a "Code" link appears on that project ---- */
+  var REPOS = {
+    // "Shuddh": "https://github.com/Sayantani9/your-repo-name",
+  };
+  document.querySelectorAll('.pi').forEach(function(card){
+    var h = card.querySelector('h3'), key = h && h.textContent.trim();
+    if (key && REPOS[key]) {
+      var a = document.createElement('a');
+      a.className = 'gh'; a.href = REPOS[key]; a.target = '_blank'; a.rel = 'noopener noreferrer'; a.textContent = 'Code ↗';
+      card.querySelector('.links').appendChild(a);
+    }
   });
 
   /* ---- giant footer name fits the page width ---- */
