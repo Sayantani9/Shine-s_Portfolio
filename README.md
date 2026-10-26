@@ -9,6 +9,77 @@ A single-page, zero-dependency static site. No build step, no framework, no pack
 
 ---
 
+## Version history
+
+| Version | What changed |
+|---|---|
+| **V4** | Research and achievements redesign: Drudow "now" strip, headline-win cards, ORCID iD, dated filterable timeline of every event, certificate and photo slots in every detail panel, GitHub "Code" link slots on project cards |
+| **V3** | Projects rewritten with your names and subtitles, new Sanghamitra Ventures & YZ? card, separate Mousami web and Mousami App cards, 18 projects in total |
+| V2 | Co-curricular section (Toastmasters, arts, debate, events) and Start-up work section (10 internships, leadership) added before Contact |
+| V1 | Rebuild modelled on the reference site's opening sequence and navigation, in the cyan, lemon and lime palette |
+
+## Certificates, event photos and GitHub links
+
+Every detail panel (research, wins, timeline events, experience rows, internships, Toastmasters rows) looks for a certificate and photos by file name. **No code changes are needed**: add the files, commit, push.
+
+**Certificates.** Save as `certificates/<slug>.jpg`, `.png` or `.pdf`. A JPG or PNG shows inline with an "Open full certificate" button. A PDF shows an "Open certificate (PDF)" button. If no file exists, the certificate block simply doesn't appear.
+
+**Event photos.** Save as `events/<slug>/1.jpg`, `2.jpg`, `3.jpg` and so on, up to 12, in order and without gaps. They appear as a gallery in the panel, and `1.jpg` also becomes a soft cover on that event's card. Use JPG, roughly 1600 px wide and under 400 KB each.
+
+**The slug** is the lowercase title with every run of symbols and spaces turned into a single hyphen. The new section uses these fixed slugs:
+
+| Slug (file / folder name) | Item |
+|---|---|
+| `drudow-intern` | Intern at Drudow |
+| `windenergy-india` | Windenergy India |
+| `codesy-dhanalaxmi-shrinivasan-college` | Codesy |
+| `yuci-global-event-srm-easwari` | YUCI, Global Event |
+| `srm-kattankulathur` | SRM Kattankulathur |
+| `genesis-2026-srm-vadapalani` | Winner, GENESIS |
+| `clash-of-coders` | Winner, Clash of Coders |
+| `parts2power` | Parts2Power |
+| `seattle-global-social-business-pitch` | Winner, Global Social Business Pitch |
+| `makeai-and-medicall` | MakeAI & Medicall |
+| `ecokadai-market-survey` | Market Survey Intern |
+| `techgium-lnt` | Techgium at L&T |
+| `toastmasters-triple-crown-rockstar-pathway-champion` | Triple Crown, Rockstar & Pathway Champion |
+| `iit-madras-stem-research` | STEM Research, IIT Madras |
+| `area-a3-international-speech-contest` | Bronze Medalist, Area A3 Speech Contest |
+| `mind-2026-samarkand` | MIND-2026, Samarkand |
+| `iqac-ssn-2026` | Shirobedhas, IQAC SSN 2026 |
+| `icpc-2025-institute-rank-1` | ICPC 2025, Institute Rank 1 |
+| `start-up-tn-global-student-entrepreneurship-awards` | Finalist, Global Student Entrepreneurship Awards |
+| `peer-reviewer-journal-of-environmental-management` | Peer Reviewer |
+| `toastmasters-vp-memberships-oath` | Took the oath as Vice President, Memberships |
+| `entrepreneurship-development-cell` | Leading the Entrepreneurship Development Cell |
+| `recycle-2025-iit-guwahati` | RECYCLE 2025 |
+| `ideathon-pec-anna-university` | First Runner-up of 500+ teams |
+| `shuddh-provisional-patent` | Provisional Patent, SHUDDH |
+| `iit-madras-incubators-summit-founderx` | Ideas to Impact, Top 10 Start-ups |
+| `smart-india-hackathon` | Smart India Hackathon |
+| `isro-finalist` | Vayunetra for ISRO |
+| `cognizant-finalist` | Present, Proof! |
+| `multifunctional-materials-radiation-measurements` | Fin Dual-Doped RFET SRAM Circuit |
+| `asisc-and-memorial-debates` | ASISC, Clifford Hicks & Frank Anthony Debates |
+| `research-assistant-intern` | Research Assistant Intern |
+
+For experience, internship and Toastmasters rows, the slug is generated from the row's title in the same way (for example `vice-president-memberships`, `research-intern-at-ssn`).
+
+**GitHub "Code" links.** In the script, find `var REPOS = {` and add one line per project, using the project title exactly as it appears on the card:
+
+```js
+var REPOS = {
+  "Shuddh": "https://github.com/Sayantani9/your-repo",
+  "Rakshak": "https://github.com/Sayantani9/your-other-repo"
+};
+```
+
+A "Code ↗" link then appears beside "Open live site" on that card. Projects without a line show no Code link.
+
+**ORCID.** The iD is `0009-0009-7861-484X` and links to https://orcid.org/0009-0009-7861-484X. It appears in the research section and in Contact.
+
+---
+
 ## Contents
 
 1. [What's on the page](#whats-on-the-page)
@@ -35,8 +106,8 @@ A single-page, zero-dependency static site. No build step, no framework, no pack
 | **Stats** | Four count-up numbers: projects, research papers, merged PRs, ICPC institute rank |
 | **01 About** | Headline, short bio, core focus areas, collaborations, technical expertise, creative work |
 | **02 Experience** | Nine roles as large rows. Hover for a scrolling colour band, click for a full-screen detail panel |
-| **03 Projects** | 16 projects in a three-column grid, each linking to its live site or repository, plus a collaboration call-to-action |
-| **04 Research & achievements** | Four conference papers, peer review and research roles, competition results, skill chips |
+| **03 Projects** | 18 projects in a three-column grid, each linking to its live site or repository, plus a collaboration call-to-action |
+| **04 Research & achievements** | "Now" strip (Drudow), four headline-win cards, brag stats, ORCID iD, four paper cards, a dated filterable timeline of every event. Every item opens a detail panel with photos and a certificate |
 | **05 Co-curricular** | Toastmasters International (five rolling rows), dance, debate and writing (four rolling rows), then an events and competitions list in two columns |
 | **06 Start-up work** | Sits after the co-curriculars. "How did I complete 10 internships?", the ten internships as numbered rolling rows, then three leadership rows |
 | **07 Contact** | Email, location, large social-link rows, resume download and a contact form that opens your mail app |
@@ -66,8 +137,15 @@ your-repo/
 ├── README.md                               # this file
 ├── resume/
 │   └── Sayantani_Banerjee_Resume.pdf       # linked from the Download resume button
-└── photos/
-    └── shine.png                           # hero portrait (transparent PNG), you add this
+├── photos/
+│   └── shine.png                           # hero portrait (transparent PNG), you add this
+├── certificates/                           # certificates, named by slug (see below)
+│   └── seattle-global-social-business-pitch.jpg
+└── events/                                 # event photos, one folder per slug
+    └── seattle-global-social-business-pitch/
+        ├── 1.jpg
+        ├── 2.jpg
+        └── 3.jpg
 ```
 
 Keep these exact file names and folders. The page refers to them by path.
@@ -280,7 +358,7 @@ In the script, the line `var hue = 188 - (96 * idx / (total - 1))` sweeps from c
 
 ## Credits
 
-- Opening sequence, scroll behaviour and section structure with the code, content, colour palette and layout of this site are original.
+- Opening sequence, scroll behaviour and section structure are inspired by [akash-babu-portfolio.vercel.app](https://akash-babu-portfolio.vercel.app/). The code, content, colour palette and layout of this site are original.
 - Fonts: [Inter](https://rsms.me/inter/), Inter Tight and Source Serif 4 via Google Fonts (SIL Open Font License).
 
 © 2026 Sayantani Banerjee. All rights reserved.
