@@ -283,6 +283,46 @@ mark{background:linear-gradient(transparent 38%,var(--lemon) 38%);color:inherit;
 .links{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1.1rem}
 .gh{position:relative;z-index:2;font-size:.82rem;font-weight:600;text-decoration:none;border-bottom:2px solid var(--lime)}
 .gh:hover{background:var(--lime)}
+
+/* publications: written vs reviewed */
+.pubblock{margin-top:2.5rem;padding:2rem;border-radius:26px;background:rgba(166,225,227,.22)}
+.pubblock.rv-block{background:rgba(246,239,170,.38)}
+.pubhead{display:flex;align-items:center;gap:1.25rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.pbig{font-family:var(--display);font-weight:800;font-size:clamp(3.6rem,8vw,6rem);line-height:.85;letter-spacing:-.05em;color:var(--teal)}
+.pubhead h4{font-family:var(--display);font-weight:800;font-size:1.7rem;letter-spacing:-.025em;line-height:1}
+.pubhead p{color:var(--muted);max-width:34rem;margin-top:.35rem;font-size:.95rem}
+.wgrid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+.papers{display:none}
+.paper{position:relative;overflow:hidden;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:1.6rem;display:flex;flex-direction:column;gap:.6rem;transition:border-color .3s,transform .4s cubic-bezier(.2,.7,.2,1)}
+.paper:hover{border-color:var(--teal);transform:translateY(-4px)}
+.paper>*{position:relative;z-index:1}
+.paper.r .pn{color:var(--lemon);-webkit-text-stroke:1.5px #8a7d1d;font-size:1.9rem}
+.ptt{font-family:var(--display);font-weight:700;font-size:1.2rem;line-height:1.2;letter-spacing:-.015em}
+.stretchb{all:unset;cursor:pointer;display:inline}
+.stretchb::after{content:"";position:absolute;inset:0;z-index:1}
+.stretchb:focus-visible{outline:3px solid var(--teal);outline-offset:4px;border-radius:4px}
+.stretchb>.cover{position:absolute;inset:0;z-index:0}
+.pmeta{display:flex;flex-direction:column;gap:.45rem;margin-top:.25rem}
+.pmeta div{display:grid;grid-template-columns:6.2rem 1fr;gap:.75rem;font-size:.88rem}
+.pmeta dt{font-size:.66rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--teal);padding-top:.2rem}
+.pmeta dd{color:var(--ink)}
+.plinks{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem}
+.plinks a{position:relative;z-index:2;font-size:.82rem;font-weight:600;text-decoration:none;padding:.4rem .9rem;border-radius:999px;background:var(--lime);transition:background .3s}
+.plinks a:nth-child(2){background:var(--cyan)}
+.plinks a:hover{background:var(--lemon)}
+.abstrip{display:grid;grid-template-columns:1.3fr 1fr;gap:1.5rem;align-items:center;margin-top:1.1rem;padding:1.5rem 1.6rem;border-radius:20px;background:var(--card);border:1px dashed rgba(29,127,134,.45)}
+.abstrip.slim{grid-template-columns:1fr auto}
+.abt h5{font-family:var(--display);font-weight:700;font-size:1.15rem;margin:.2rem 0 .35rem;letter-spacing:-.01em}
+.abt p{font-size:.9rem;color:var(--muted)}
+.abl{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+.abl .plinks.inline{margin-top:0;flex-basis:100%}
+.mlinks{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem}
+.mlinks a.cbtn{font-weight:600;font-size:.88rem;text-decoration:none;padding:.55rem 1.1rem;border-radius:999px;background:var(--cyan);transition:background .3s}
+.mlinks a.cbtn:hover{background:var(--lime)}
+.mcert a.cimg+a.cimg{margin-top:.4rem}
+@media(max-width:900px){.wgrid{grid-template-columns:1fr}.abstrip{grid-template-columns:1fr}.pubblock{padding:1.25rem}}
+@media(max-width:700px){.pmeta div{grid-template-columns:1fr;gap:.1rem}}
+
 /* modal media */
 .modal{display:flex;overflow-y:auto;padding:4.5rem 2rem}
 .mbox{margin:auto}
@@ -362,7 +402,7 @@ mark{background:linear-gradient(transparent 38%,var(--lemon) 38%);color:inherit;
         <span class="ln" aria-hidden="true">Banerjee</span>
       </h1>
       <img class="portrait" src="photos/shine.png" alt="Sayantani Banerjee" onerror="this.remove()">
-      <div class="hero-copy"><p>Computer Science student at PEC Anna University building <strong>AI products, research and open source communities</strong>. ICPC 2025 Institute Rank 1, four research papers and one provisionally patented system.</p>
+      <div class="hero-copy"><p>Computer Science student at PEC Anna University building <strong>AI products, research and open source communities</strong>. ICPC 2025 Institute Rank 1, six research papers and one provisionally patented system.</p>
         <div class="soc">
           <a href="https://github.com/Sayantani9" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a href="https://www.linkedin.com/in/g-sayantani-mb-65337230b/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -376,7 +416,7 @@ mark{background:linear-gradient(transparent 38%,var(--lemon) 38%);color:inherit;
   <!-- STATS -->
   <div class="stats">
     <div class="stat"><h3 data-target="18" data-suffix="+">18+</h3><p>Projects built across AI, IoT, web and cyber security, each with a live link or repo.</p></div>
-    <div class="stat"><h3 data-target="4">4</h3><p>Research papers presented at conferences from IIT Guwahati to SSN and MIND-2026.</p></div>
+    <div class="stat"><h3 data-target="6">6</h3><p>Research papers written, from traffic AI and dance generation to radiation-hardened SRAM.</p></div>
     <div class="stat"><h3 data-target="20" data-suffix="+">20+</h3><p>Successful pull requests merged while mentoring contributors on CinderPeak.</p></div>
     <div class="stat"><h3 data-prefix="#" data-target="1">#1</h3><p>Institute rank at ICPC 2025 Amritapuri Regionals, South Asia Chapter.</p></div>
   </div>
@@ -488,31 +528,84 @@ mark{background:linear-gradient(transparent 38%,var(--lemon) 38%);color:inherit;
     <div class="bstats">
       <div><h3 data-target="17">17</h3><p>websites brought to life, this portfolio being one</p></div>
       <div><h3 data-target="10">10</h3><p>events attended or won since 25 July 2026</p></div>
-      <div><h3 data-target="4">4</h3><p>research papers across IIT Guwahati, SSN, MIND and radiation measurements</p></div>
-      <div><h3 data-target="1">1</h3><p>provisional patent, plus a peer-review seat at an Impact Factor 8.4 journal</p></div>
+      <div><h3 data-target="6">6</h3><p>research papers written, from traffic AI to dance generation, plus peer review for an Impact Factor 8.4 journal</p></div>
+      <div><h3 data-target="1">1</h3><p>provisional patent, with an abstract published at IIT Guwahati</p></div>
     </div>
 
     <h3 class="sh">Research &amp; publications</h3>
     <a class="orcid" href="https://orcid.org/0009-0009-7861-484X" target="_blank" rel="noopener noreferrer"><span class="oi">iD</span><span class="ot"><small>ORCID iD</small><b>0009-0009-7861-484X</b></span><i>↗</i></a>
-    <div class="papers">
-      <button class="paper" data-detail data-cover data-slug="recycle-2025-iit-guwahati" data-title="Shuddh: AI-driven waste segregator and waste-to-wealth generator" data-org="IIT Guwahati" data-date="Jun 2025"><span class="cover"></span>
-        <span class="pn">01</span><span class="pv">RECYCLE 2025 · IIT Guwahati</span><span class="ptt">Shuddh: AI-driven waste segregator and waste-to-wealth generator</span><span class="ps">Abstract published · Jun 2025</span>
-        <template><li>5th International Conference on Waste Management, IIT Guwahati.</li><li>Shortlisted presenter. Abstract titled SHUDDH published June 2025.</li><li>Provisionally patented, MVP stage (Feb 2025).</li></template></button>
-      <button class="paper" data-detail data-cover data-slug="iqac-ssn-2026" data-title="Computational identification and classification of Shirobedhas using temporal dance features" data-org="SSN Engineering College" data-date="2026"><span class="cover"></span>
-        <span class="pn">02</span><span class="pv">IQAC · SSN 2026</span><span class="ptt">Computational identification and classification of Shirobedhas using temporal dance features</span><span class="ps">Indian Knowledge Systems conference</span>
-        <template><li>International Conference on Indian Knowledge Systems, Tradition, Culture, Technology, IQAC, SSN 2026.</li><li>Research under Dr. R. Srinivasan and Dr. A. Karthika at SSN Engineering College.</li></template></button>
-      <button class="paper" data-detail data-cover data-slug="multifunctional-materials-radiation-measurements" data-title="Fin Dual-Doped RFET based SRAM circuit under heavy ion irradiation" data-org="Multifunctional Materials &amp; Radiation Measurements" data-date="Conference paper"><span class="cover"></span>
-        <span class="pn">03</span><span class="pv">Radiation Measurements</span><span class="ptt">Fin Dual-Doped RFET based SRAM circuit under heavy ion irradiation</span><span class="ps">International conference paper</span>
-        <template><li>International Conference on Multifunctional Materials &amp; Radiation Measurements.</li></template></button>
-      <button class="paper" data-detail data-cover data-slug="mind-2026-samarkand" data-title="Generative model for extended dance sequence generation from a video" data-org="Samarkand, Uzbekistan" data-date="2026"><span class="cover"></span>
-        <span class="pn">04</span><span class="pv">MIND-2026 · Samarkand</span><span class="ptt">Generative model for extended dance sequence generation from a video</span><span class="ps">8th International Conference, Uzbekistan</span>
-        <template><li>8th International Conference on ML, Internet Protocols, Network Systems &amp; DS, Samarkand, Uzbekistan.</li></template></button>
+
+    <div class="pubblock">
+      <div class="pubhead"><span class="pbig">6</span><div><h4>Written</h4><p>Papers I authored, and where each one lives.</p></div></div>
+      <div class="wgrid">
+      <article class="paper w">
+        <span class="pn">01</span><span class="pv">RECYCLE 2025 · IIT Guwahati</span>
+        <h5 class="ptt"><button class="stretchb" data-detail data-cover data-slug="recycle-2025-iit-guwahati" data-title="Shuddh: The Self-sustainable, Self-cleaning, Smart, AI-driven Waste Segregator and Waste to Wealth Generator for a Clean, Green Zero Waste Future" data-org="IIT Guwahati" data-date="5–6 Jun 2025" data-links='[{"t": "Official IIT Guwahati page", "u": "https://www.iitg.ac.in/iitg_events_details?p=2967/recycle-2025-5th-international-conference-on-waste-management"}, {"t": "Conference brochure (PDF)", "u": "https://www.iitg.ac.in/pdf/7d49f3678a774dfd1aed2edbdcc6e5de.pdf"}]'><span class="cover"></span>Shuddh: The Self-sustainable, Self-cleaning, Smart, AI-driven Waste Segregator and Waste to Wealth Generator for a Clean, Green Zero Waste Future
+          <template><li>Shortlisted presenter at RECYCLE 2025, the 5th International Conference on Waste Management, IIT Guwahati, 5–6 June 2025.</li><li>Organised by the Waste Management Research Group (WMRG), Department of Civil Engineering and School of Agro and Rural Technology, IIT Guwahati.</li><li>Abstract titled SHUDDH published June 2025.</li><li>SHUDDH is also provisionally patented, at MVP stage (Feb 2025).</li></template></button></h5>
+        <dl class="pmeta"><div><dt>Presented at</dt><dd>5th International Conference on Waste Management (RECYCLE 2025), IIT Guwahati</dd></div><div><dt>Organised by</dt><dd>Waste Management Research Group, Dept. of Civil Engineering and School of Agro and Rural Technology</dd></div><div><dt>Dates</dt><dd>5–6 June 2025</dd></div></dl>
+        <div class="plinks"><a href="https://www.iitg.ac.in/iitg_events_details?p=2967/recycle-2025-5th-international-conference-on-waste-management" target="_blank" rel="noopener noreferrer">Official IIT Guwahati page ↗</a><a href="https://www.iitg.ac.in/pdf/7d49f3678a774dfd1aed2edbdcc6e5de.pdf" target="_blank" rel="noopener noreferrer">Conference brochure (PDF) ↗</a></div>
+      </article>
+      <article class="paper w">
+        <span class="pn">02</span><span class="pv">IEEE journal format · Manuscript</span>
+        <h5 class="ptt"><button class="stretchb" data-detail data-cover data-slug="conceptual-prototype-design-of-the-shuddh-smart-waste-segregation-system" data-title="Conceptual Prototype Design of the SHUDDH Smart Waste Segregation System" data-org="Panimalar Engineering College, Chennai" data-date="Manuscript" data-links='[{"t": "Read the paper (PDF)", "u": "papers/conceptual-prototype-design-of-the-shuddh-smart-waste-segregation-system.pdf"}]'><span class="cover"></span>Conceptual Prototype Design of the SHUDDH Smart Waste Segregation System
+          <template><li>Authors: Sayantani Banerjee and Sanjay Shriram N, Department of Computer Science and Engineering, Panimalar Engineering College.</li><li>A conceptual prototype of SHUDDH, a self-sustainable, self-cleaning, AI-driven waste segregator and waste-to-wealth system.</li><li>Multi-level design: a conveyor feed, 20 sensor-gated sliding entrances, AI camera verification with a robotic error-correction arm, and sorting into 20 waste categories.</li><li>Self-cleaning with air jets, spray nozzles and rotating wipers, powered by a hybrid of solar, battery and grid, with kinetic recovery and water recycling planned.</li><li>Motivated by UNEP's projection that municipal solid waste grows from 2.1 billion tonnes in 2023 to 3.8 billion tonnes by 2050.</li><li>The comparison with conventional systems in the paper is conceptual, not experimentally validated.</li></template></button></h5>
+        <dl class="pmeta"><div><dt>Authors</dt><dd>Sayantani Banerjee, Sanjay Shriram N</dd></div><div><dt>Department</dt><dd>Computer Science and Engineering, Panimalar Engineering College</dd></div><div><dt>Status</dt><dd>Full manuscript available to read</dd></div></dl>
+        <div class="plinks"><a href="papers/conceptual-prototype-design-of-the-shuddh-smart-waste-segregation-system.pdf" target="_blank" rel="noopener noreferrer">Read the paper (PDF) ↗</a></div>
+      </article>
+      <article class="paper w">
+        <span class="pn">03</span><span class="pv">Panimalar Engineering College · Manuscript</span>
+        <h5 class="ptt"><button class="stretchb" data-detail data-cover data-slug="ai-driven-adaptive-traffic-signal-control" data-title="AI-Driven Adaptive Traffic Signal Control Using Computer Vision and Existing CCTV Infrastructure" data-org="Panimalar Engineering College, Chennai" data-date="Manuscript" data-links='[{"t": "Read the paper (PDF)", "u": "papers/ai-driven-adaptive-traffic-signal-control.pdf"}]'><span class="cover"></span>AI-Driven Adaptive Traffic Signal Control Using Computer Vision and Existing CCTV Infrastructure
+          <template><li>A three-tier framework: existing CCTV for junction control, drones for corridors without cameras, satellite imagery for mass gatherings.</li><li>A central escalation engine decides which tier is authoritative at each place and time, and hands control back down as conditions ease.</li><li>Reuses CCTV cameras cities already own instead of new sensors at every junction.</li><li>Planned with YOLO-family detection on edge devices and SUMO simulation. Performance figures quoted are literature-based expectations, not field results.</li><li>Authors: Sanjhana R S, Sayantani Banerjee and Shakeena Ellen Thalura A, guided by Mr. Prabhu Shankar P, Department of Computer Science and Engineering, Panimalar Engineering College.</li></template></button></h5>
+        <dl class="pmeta"><div><dt>Authors</dt><dd>Sanjhana R S, Sayantani Banerjee, Shakeena Ellen Thalura A</dd></div><div><dt>Guide</dt><dd>Mr. Prabhu Shankar P, Assistant Professor, CSE</dd></div><div><dt>Status</dt><dd>Full manuscript available to read</dd></div></dl>
+        <div class="plinks"><a href="papers/ai-driven-adaptive-traffic-signal-control.pdf" target="_blank" rel="noopener noreferrer">Read the paper (PDF) ↗</a></div>
+      </article>
+      <article class="paper w">
+        <span class="pn">04</span><span class="pv">MIND 2026 · Samarkand State University</span>
+        <h5 class="ptt"><button class="stretchb" data-detail data-cover data-slug="mind-2026-samarkand" data-title="Generative model for extended dance sequence generation from a video" data-org="Samarkand State University, Uzbekistan" data-date="19–21 Jun 2026" data-links='[{"t": "MIND 2026 call for papers (EasyChair)", "u": "https://easychair.org/cfp/MIND2026"}]'><span class="cover"></span>Generative model for extended dance sequence generation from a video
+          <template><li>Generative Model for Extended Dance Sequence Generation from a Video.</li><li>MIND 2026: Machine Learning, Image Processing, Network Security and Data Sciences, held at Samarkand State University, Uzbekistan, 19–21 June 2026.</li><li>The call for papers states that accepted and presented papers are published in the Springer CCIS series (Scopus indexed).</li></template></button></h5>
+        <dl class="pmeta"><div><dt>Conference</dt><dd>MIND 2026: Machine Learning, Image Processing, Network Security and Data Sciences</dd></div><div><dt>Venue</dt><dd>Samarkand State University, Uzbekistan</dd></div><div><dt>Dates</dt><dd>19–21 June 2026</dd></div><div><dt>Proceedings</dt><dd>Springer CCIS series (Scopus indexed), per the call for papers</dd></div></dl>
+        <div class="plinks"><a href="https://easychair.org/cfp/MIND2026" target="_blank" rel="noopener noreferrer">MIND 2026 call for papers (EasyChair) ↗</a></div>
+      </article>
+      <article class="paper w">
+        <span class="pn">05</span><span class="pv">IQAC · SSN 2026</span>
+        <h5 class="ptt"><button class="stretchb" data-detail data-cover data-slug="iqac-ssn-2026" data-title="Computational identification and classification of Shirobedhas using temporal dance features" data-org="SSN Engineering College" data-date="2026" ><span class="cover"></span>Computational identification and classification of Shirobedhas using temporal dance features
+          <template><li>Computational Identification and Classification of Shirobedhas using Temporal Dance Features.</li><li>International Conference on Indian Knowledge Systems, Tradition, Culture, Technology, IQAC, SSN 2026.</li><li>Research carried out as a research intern under Dr. R. Srinivasan and Dr. A. Karthika.</li></template></button></h5>
+        <dl class="pmeta"><div><dt>Published in</dt><dd>International Conference on Indian Knowledge Systems, Tradition, Culture, Technology</dd></div><div><dt>Host</dt><dd>IQAC, SSN Engineering College</dd></div><div><dt>Supervised by</dt><dd>Dr. R. Srinivasan and Dr. A. Karthika</dd></div></dl>
+        
+      </article>
+      <article class="paper w">
+        <span class="pn">06</span><span class="pv">Radiation Measurements</span>
+        <h5 class="ptt"><button class="stretchb" data-detail data-cover data-slug="multifunctional-materials-radiation-measurements" data-title="Fin Dual-Doped RFET based SRAM circuit under heavy ion irradiation" data-org="Multifunctional Materials &amp; Radiation Measurements" data-date="Conference paper" ><span class="cover"></span>Fin Dual-Doped RFET based SRAM circuit under heavy ion irradiation
+          <template><li>Numerical Investigation of Fin Dual-Doped RFET Based SRAM Circuit under the Effect of Heavy Ion-Irradiation.</li><li>International Conference on Multifunctional Materials &amp; Radiation Measurements.</li></template></button></h5>
+        <dl class="pmeta"><div><dt>Published in</dt><dd>International Conference on Multifunctional Materials &amp; Radiation Measurements</dd></div><div><dt>Topic</dt><dd>Numerical investigation of SRAM circuits under heavy ion irradiation</dd></div></dl>
+        
+      </article>
+      </div>
+    <div class="abstrip slim">
+      <div class="abt"><span class="pv">Also</span><h5>Provisional patent · SHUDDH</h5>
+        <p>Waste segregator and waste-to-wealth generator, provisionally patented at MVP stage (Feb 2025).</p></div>
+      <div class="abl"><button class="mini" data-detail data-slug="shuddh-provisional-patent" data-title="Provisional Patent, SHUDDH" data-org="Waste to Wealth Generator" data-date="Feb 2025">Patent details<template><li>Provisionally patented SHUDDH, a waste segregator and waste-to-wealth generator, at MVP stage.</li></template></button></div>
     </div>
-    <div class="minis">
-      <button class="mini" data-detail data-slug="shuddh-provisional-patent" data-title="Provisional Patent, SHUDDH" data-org="Waste to Wealth Generator" data-date="Feb 2025">Provisional patent · SHUDDH<template><li>Provisionally patented SHUDDH at MVP stage.</li></template></button>
-      <button class="mini" data-detail data-slug="peer-reviewer-journal-of-environmental-management" data-title="Peer Reviewer" data-org="Journal of Environmental Management" data-date="Nov 2025">Peer reviewer · Impact Factor 8.4<template><li>Peer reviewer for the Journal of Environmental Management (Impact Factor 8.4).</li><li>ORCID iD 0009-0009-7861-484X.</li></template></button>
-      <button class="mini" data-detail data-slug="iit-madras-stem-research" data-title="STEM Research, IIT Madras" data-org="Gopal Krishna Deshpande Centre" data-date="Mar – Apr 2026">STEM research · IIT Madras<template><li>Department of Science &amp; Technology, Gopal Krishna Deshpande Centre for Innovation and Entrepreneurship.</li></template></button>
-      <button class="mini" data-detail data-slug="research-assistant-intern" data-title="Research Assistant Intern" data-org="Under a Research Scholar" data-date="2020 – 2025">Research assistant · 2020 – 2025<template><li>Reviewed STEM journal and conference research papers, working independently under a Research Scholar.</li></template></button>
+    </div>
+
+    <div class="pubblock rv-block">
+      <div class="pubhead"><span class="pbig">2</span><div><h4>Reviewed</h4><p>Peer review for journals and conferences. Manuscripts under review are confidential, so venues and dates are listed rather than titles.</p></div></div>
+      <div class="wgrid">
+      <article class="paper r">
+        <span class="pn">R1</span><span class="pv">Elsevier · Impact Factor 8.4</span>
+        <h5 class="ptt"><button class="stretchb" data-detail data-cover data-slug="peer-reviewer-journal-of-environmental-management" data-title="Journal of Environmental Management" data-org="Elsevier" data-date="Nov 2025" data-links='[{"t": "Journal page", "u": "https://www.sciencedirect.com/journal/journal-of-environmental-management"}, {"t": "ORCID record", "u": "https://orcid.org/0009-0009-7861-484X"}]'><span class="cover"></span>Journal of Environmental Management
+          <template><li>Peer reviewer for the Journal of Environmental Management (Impact Factor 8.4).</li><li>Review completed November 2025.</li><li>Manuscripts under review are confidential, so the journal and date are listed rather than the paper.</li><li>ORCID iD 0009-0009-7861-484X.</li></template></button></h5>
+        <dl class="pmeta"><div><dt>Role</dt><dd>Peer reviewer</dd></div><div><dt>Completed</dt><dd>November 2025</dd></div><div><dt>Manuscript</dt><dd>Confidential, not disclosed</dd></div></dl>
+        <div class="plinks"><a href="https://www.sciencedirect.com/journal/journal-of-environmental-management" target="_blank" rel="noopener noreferrer">Journal page ↗</a><a href="https://orcid.org/0009-0009-7861-484X" target="_blank" rel="noopener noreferrer">ORCID record ↗</a></div>
+      </article>
+      <article class="paper r">
+        <span class="pn">R2</span><span class="pv">STEM journals &amp; conferences</span>
+        <h5 class="ptt"><button class="stretchb" data-detail data-cover data-slug="research-assistant-intern" data-title="Research Assistant Intern" data-org="Under a Research Scholar" data-date="2020 – 2025" ><span class="cover"></span>Research Assistant Intern
+          <template><li>Reviewed STEM journal and conference research papers, working independently under a Research Scholar.</li><li>Period: 2020 – 2025.</li></template></button></h5>
+        <dl class="pmeta"><div><dt>Role</dt><dd>Reviewer, working independently</dd></div><div><dt>Period</dt><dd>2020 – 2025</dd></div><div><dt>Scope</dt><dd>STEM journal and conference research papers</dd></div></dl>
+        
+      </article>
+      </div>
     </div>
 
     <h3 class="sh" id="events">Every event, dated</h3>
@@ -557,6 +650,9 @@ mark{background:linear-gradient(transparent 38%,var(--lemon) 38%);color:inherit;
         <li class="ev" data-cat="events"><button class="evb" data-detail data-cover data-slug="techgium-lnt" data-title="Techgium at L&amp;T" data-org="L&amp;T" data-date="2026">
           <span class="cover"></span><span class="evd"><b>2026</b><i></i></span><span class="evt"><strong>Techgium at L&amp;T</strong><small>L&amp;T</small></span><span class="evtag t-events">Event</span>
           <template><li>Techgium at L&amp;T, with Smart India Hackathon projects cooking alongside.</li></template></button></li>
+        <li class="ev" data-cat="lead"><button class="evb" data-detail data-cover data-slug="yz-sv-tif-unified" data-title="YZ × SV × TIF, unified" data-org="Sanghamitra Ventures · The Invincible Fire · WHY YZ?" data-date="2026" data-links='[{"t": "WHY YZ?", "u": "https://yz-five.vercel.app/"}, {"t": "Sanghamitra Ventures &amp; YZ?", "u": "https://sanghamitra-xi.vercel.app/"}]'>
+          <span class="cover"></span><span class="evd"><b>2026</b><i></i></span><span class="evt"><strong>YZ × SV × TIF, unified</strong><small>Sanghamitra Ventures · The Invincible Fire · WHY YZ?</small></span><span class="evtag t-lead">Leading</span>
+          <template><li>YZ Intern, Builder Class 2026, Level 1 verified.</li><li>Sanghamitra Ventures brings venture architecture and strategy. The Invincible Fire brings the technical engine and execution. WHY YZ? is where they meet.</li><li>Born out of leading the Entrepreneurship Development Cell: inputs, interactions, incubation and development.</li></template></button></li>
         <li class="ev" data-cat="wins"><button class="evb" data-detail data-cover data-slug="toastmasters-triple-crown-rockstar-pathway-champion" data-title="Triple Crown, Rockstar &amp; Pathway Champion" data-org="Toastmasters International" data-date="Apr 2026">
           <span class="cover"></span><span class="evd"><b>Apr</b><i>2026</i></span><span class="evt"><strong>Triple Crown, Rockstar &amp; Pathway Champion</strong><small>Toastmasters International</small></span><span class="evtag t-wins">Honour</span>
           <template><li>Honorary Triple Crown, Rockstar and Pathway Champion honours.</li><li>Presented by the CAO, principal, secretary and mentor.</li></template></button></li>
@@ -566,7 +662,7 @@ mark{background:linear-gradient(transparent 38%,var(--lemon) 38%);color:inherit;
         <li class="ev" data-cat="wins"><button class="evb" data-detail data-cover data-slug="area-a3-international-speech-contest" data-title="Bronze Medalist, Area A3 Speech Contest" data-org="Toastmasters International" data-date="Mar 2026">
           <span class="cover"></span><span class="evd"><b>Mar</b><i>2026</i></span><span class="evt"><strong>Bronze Medalist, Area A3 Speech Contest</strong><small>Toastmasters International</small></span><span class="evtag t-wins">Medal</span>
           <template><li>Bronze Medalist at the Area A3 International Speech Contest.</li></template></button></li>
-        <li class="ev" data-cat="research"><button class="evb" data-detail data-cover data-slug="mind-2026-samarkand" data-title="MIND-2026, Samarkand" data-org="Uzbekistan" data-date="2026">
+        <li class="ev" data-cat="research"><button class="evb" data-detail data-cover data-slug="mind-2026-samarkand" data-links='[{"t": "MIND 2026 call for papers (EasyChair)", "u": "https://easychair.org/cfp/MIND2026"}]' data-title="MIND-2026, Samarkand" data-org="Uzbekistan" data-date="2026">
           <span class="cover"></span><span class="evd"><b>2026</b><i></i></span><span class="evt"><strong>MIND-2026, Samarkand</strong><small>Uzbekistan</small></span><span class="evtag t-research">Paper</span>
           <template><li>Generative Model for Extended Dance Sequence Generation from a Video.</li><li>8th International Conference on ML, Internet Protocols, Network Systems &amp; DS.</li></template></button></li>
         <li class="ev" data-cat="research"><button class="evb" data-detail data-cover data-slug="iqac-ssn-2026" data-title="Shirobedhas, IQAC SSN 2026" data-org="SSN Engineering College" data-date="2026">
@@ -579,7 +675,7 @@ mark{background:linear-gradient(transparent 38%,var(--lemon) 38%);color:inherit;
         <li class="ev" data-cat="wins"><button class="evb" data-detail data-cover data-slug="start-up-tn-global-student-entrepreneurship-awards" data-title="Finalist, Global Student Entrepreneurship Awards" data-org="Start Up TN × EO" data-date="Top 80 Nov 2025">
           <span class="cover"></span><span class="evd"><b>Top 80</b><i>Nov 2025</i></span><span class="evt"><strong>Finalist, Global Student Entrepreneurship Awards</strong><small>Start Up TN × EO</small></span><span class="evtag t-wins">Finalist</span>
           <template><li>Top 80 of 300 start-ups from India.</li><li>Entrepreneurs' Organisation Global Student Entrepreneurship Awards.</li></template></button></li>
-        <li class="ev" data-cat="research"><button class="evb" data-detail data-cover data-slug="peer-reviewer-journal-of-environmental-management" data-title="Peer Reviewer" data-org="Journal of Environmental Management" data-date="Nov 2025">
+        <li class="ev" data-cat="research"><button class="evb" data-detail data-cover data-slug="peer-reviewer-journal-of-environmental-management" data-links='[{"t": "Journal page", "u": "https://www.sciencedirect.com/journal/journal-of-environmental-management"}, {"t": "ORCID record", "u": "https://orcid.org/0009-0009-7861-484X"}]' data-title="Peer Reviewer" data-org="Journal of Environmental Management" data-date="Nov 2025">
           <span class="cover"></span><span class="evd"><b>Nov</b><i>2025</i></span><span class="evt"><strong>Peer Reviewer</strong><small>Journal of Environmental Management</small></span><span class="evtag t-research">Review</span>
           <template><li>Peer reviewer for the Journal of Environmental Management (Impact Factor 8.4).</li><li>ORCID iD 0009-0009-7861-484X.</li></template></button></li>
         <li class="ev" data-cat="lead"><button class="evb" data-detail data-cover data-slug="toastmasters-vp-memberships-oath" data-title="Took the oath as Vice President, Memberships" data-org="Toastmasters International, PEC Chapter" data-date="Oct 2025">
@@ -588,7 +684,7 @@ mark{background:linear-gradient(transparent 38%,var(--lemon) 38%);color:inherit;
         <li class="ev" data-cat="lead"><button class="evb" data-detail data-cover data-slug="entrepreneurship-development-cell" data-title="Leading the Entrepreneurship Development Cell" data-org="NEC, IIT Bombay · Eureka &amp; Ignite" data-date="May–Dec 2025">
           <span class="cover"></span><span class="evd"><b>May–Dec</b><i>2025</i></span><span class="evt"><strong>Leading the Entrepreneurship Development Cell</strong><small>NEC, IIT Bombay · Eureka &amp; Ignite</small></span><span class="evtag t-lead">Leading</span>
           <template><li>Led the Entrepreneurship Development Cell through inputs, interactions, incubation and development.</li><li>Chief Operating Officer, EDC (NEC, IIT Bombay). IIT Bombay NEC Finalists, Top 100 Entrepreneurs.</li><li>Chief Coordinating Officer for Eureka and Ignite, IIT Bombay.</li><li>Invited as a Guest Speaker of Honour.</li></template></button></li>
-        <li class="ev" data-cat="research"><button class="evb" data-detail data-cover data-slug="recycle-2025-iit-guwahati" data-title="RECYCLE 2025" data-org="IIT Guwahati" data-date="Jun 2025">
+        <li class="ev" data-cat="research"><button class="evb" data-detail data-cover data-slug="recycle-2025-iit-guwahati" data-links='[{"t": "Official IIT Guwahati page", "u": "https://www.iitg.ac.in/iitg_events_details?p=2967/recycle-2025-5th-international-conference-on-waste-management"}, {"t": "Conference brochure (PDF)", "u": "https://www.iitg.ac.in/pdf/7d49f3678a774dfd1aed2edbdcc6e5de.pdf"}]' data-title="RECYCLE 2025" data-org="IIT Guwahati" data-date="Jun 2025">
           <span class="cover"></span><span class="evd"><b>Jun</b><i>2025</i></span><span class="evt"><strong>RECYCLE 2025</strong><small>IIT Guwahati</small></span><span class="evtag t-research">Paper</span>
           <template><li>Shortlisted presenter at the 5th International Conference on Waste Management.</li><li>Abstract on SHUDDH published.</li></template></button></li>
         <li class="ev" data-cat="wins"><button class="evb" data-detail data-cover data-slug="ideathon-pec-anna-university" data-title="First Runner-up of 500+ teams" data-org="Ideathon, PEC Anna University" data-date="15 Feb 2025">
@@ -610,6 +706,12 @@ mark{background:linear-gradient(transparent 38%,var(--lemon) 38%);color:inherit;
         <li class="ev" data-cat="wins"><button class="evb" data-detail data-cover data-slug="cognizant-finalist" data-title="Present, Proof!" data-org="Smart attendance system" data-date="Cognizant Finalist">
           <span class="cover"></span><span class="evd"><b>Cognizant</b><i>Finalist</i></span><span class="evt"><strong>Present, Proof!</strong><small>Smart attendance system</small></span><span class="evtag t-wins">Finalist</span>
           <template><li>OpenCV and IoT attendance with 95% accuracy, saving 70% of manual time.</li></template></button></li>
+        <li class="ev" data-cat="research"><button class="evb" data-detail data-cover data-slug="ai-driven-adaptive-traffic-signal-control" data-title="AI-Driven Adaptive Traffic Signal Control" data-org="Panimalar Engineering College" data-date="Paper" data-links='[{"t": "Read the paper (PDF)", "u": "papers/ai-driven-adaptive-traffic-signal-control.pdf"}]'>
+          <span class="cover"></span><span class="evd"><b>Paper</b><i></i></span><span class="evt"><strong>AI-Driven Adaptive Traffic Signal Control</strong><small>Panimalar Engineering College</small></span><span class="evtag t-research">Paper</span>
+          <template><li>Three-tier adaptive signal control: existing CCTV, drones and satellite imagery, tied together by a central escalation engine.</li><li>Co-authored with Sanjhana R S and Shakeena Ellen Thalura A.</li></template></button></li>
+        <li class="ev" data-cat="research"><button class="evb" data-detail data-cover data-slug="conceptual-prototype-design-of-the-shuddh-smart-waste-segregation-system" data-title="Conceptual Prototype Design of SHUDDH" data-org="Panimalar Engineering College" data-date="Paper" data-links='[{"t": "Read the paper (PDF)", "u": "papers/conceptual-prototype-design-of-the-shuddh-smart-waste-segregation-system.pdf"}]'>
+          <span class="cover"></span><span class="evd"><b>Paper</b><i></i></span><span class="evt"><strong>Conceptual Prototype Design of SHUDDH</strong><small>Panimalar Engineering College</small></span><span class="evtag t-research">Paper</span>
+          <template><li>Conceptual prototype of the SHUDDH smart waste segregation system, written with Sanjay Shriram N.</li></template></button></li>
         <li class="ev" data-cat="research"><button class="evb" data-detail data-cover data-slug="multifunctional-materials-radiation-measurements" data-title="Fin Dual-Doped RFET SRAM Circuit" data-org="Multifunctional Materials &amp; Radiation Measurements" data-date="Paper">
           <span class="cover"></span><span class="evd"><b>Paper</b><i></i></span><span class="evt"><strong>Fin Dual-Doped RFET SRAM Circuit</strong><small>Multifunctional Materials &amp; Radiation Measurements</small></span><span class="evtag t-research">Paper</span>
           <template><li>Numerical Investigation of Fin Dual-Doped RFET Based SRAM Circuit under the Effect of Heavy Ion-Irradiation.</li><li>International Conference on Multifunctional Materials &amp; Radiation Measurements.</li></template></button></li>
@@ -736,6 +838,7 @@ mark{background:linear-gradient(transparent 38%,var(--lemon) 38%);color:inherit;
     <h3 id="mTitle"></h3>
     <div class="morg" id="mOrg"></div>
     <ul id="mList"></ul>
+    <div class="mlinks" id="mLinks" hidden></div>
     <div class="mgallery" id="mGallery" hidden></div>
     <div class="mcert" id="mCert" hidden></div>
   </div>
@@ -921,20 +1024,28 @@ mark{background:linear-gradient(transparent 38%,var(--lemon) 38%);color:inherit;
       };
       im.src = url;
     })(1);
-    var exts = ['jpg','png','pdf'];
-    (function tryCert(k){
-      if (k >= exts.length || token !== mediaToken) return;
-      var url = 'certificates/' + slug + '.' + exts[k];
-      function show(html){ if (token !== mediaToken) return; cert.hidden = false; cert.setAttribute('data-h','Certificate'); cert.innerHTML = html; }
-      if (exts[k] === 'pdf') {
-        fetch(url, {method:'HEAD'}).then(function(r){ if (r.ok) show('<a class="cbtn" href="' + url + '" target="_blank" rel="noopener">Open certificate (PDF) ↗</a>'); }).catch(function(){});
-        return;
-      }
-      var im = new Image();
-      im.onload = function(){ show('<a class="cimg" href="' + url + '" target="_blank" rel="noopener"><img src="' + url + '" alt="Certificate"></a><a class="cbtn" href="' + url + '" target="_blank" rel="noopener">Open full certificate ↗</a>'); };
-      im.onerror = function(){ tryCert(k + 1); };
-      im.src = url;
-    })(0);
+    function probeImg(url){ return new Promise(function(res){ var im = new Image(); im.onload = function(){ res(true); }; im.onerror = function(){ res(false); }; im.src = url; }); }
+    function probePdf(url){ return fetch(url, {method:'HEAD'}).then(function(r){ return r.ok; }).catch(function(){ return false; }); }
+    function findCert(base){
+      return probeImg(base + '.jpg').then(function(ok){
+        if (ok) return { url: base + '.jpg', pdf: false };
+        return probeImg(base + '.png').then(function(ok2){
+          if (ok2) return { url: base + '.png', pdf: false };
+          return probePdf(base + '.pdf').then(function(ok3){ return ok3 ? { url: base + '.pdf', pdf: true } : null; });
+        });
+      });
+    }
+    (function loop(n){
+      if (n > 6 || token !== mediaToken) return;
+      findCert('certificates/' + slug + (n > 1 ? '-' + n : '')).then(function(c){
+        if (!c || token !== mediaToken) return;
+        if (cert.hidden) { cert.hidden = false; cert.setAttribute('data-h', 'Certificate'); }
+        cert.insertAdjacentHTML('beforeend', c.pdf
+          ? '<a class="cbtn" href="' + c.url + '" target="_blank" rel="noopener">Open certificate (PDF) ↗</a>'
+          : '<a class="cimg" href="' + c.url + '" target="_blank" rel="noopener"><img src="' + c.url + '" alt="Certificate ' + n + '"></a>');
+        loop(n + 1);
+      });
+    })(1);
   }
   function openModal(row){
     opener = row;
@@ -944,6 +1055,17 @@ mark{background:linear-gradient(transparent 38%,var(--lemon) 38%);color:inherit;
     var list = document.getElementById('mList'); list.innerHTML = '';
     var tpl = row.querySelector('template');
     if (tpl) list.appendChild(tpl.content.cloneNode(true));
+    var lk = document.getElementById('mLinks'); lk.innerHTML = ''; lk.hidden = true;
+    if (row.dataset.links) {
+      try {
+        JSON.parse(row.dataset.links).forEach(function(l){
+          var a = document.createElement('a'); a.className = 'cbtn'; a.href = l.u; a.textContent = l.t + ' ↗';
+          if (/^https?:/.test(l.u)) { a.target = '_blank'; a.rel = 'noopener noreferrer'; } else { a.target = '_blank'; }
+          lk.appendChild(a);
+        });
+        lk.hidden = false;
+      } catch (e) {}
+    }
     loadMedia(row.dataset.slug || slugify(row.dataset.title));
     modal.classList.add('open'); modal.setAttribute('aria-hidden', 'false');
     modal.scrollTop = 0;
