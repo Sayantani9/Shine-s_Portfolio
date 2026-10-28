@@ -13,6 +13,8 @@ A single-page, zero-dependency static site. No build step, no framework, no pack
 
 | Version | What changed |
 |---|---|
+| **V6** | Six written papers shown (SHUDDH RECYCLE 2025 paper and the Conceptual Prototype Design of SHUDDH added), updated traffic-signal PDF, removed a hijacked conference link, only verified links remain |
+| **V5** | Publications split into Written (4) and Reviewed blocks with venues and links, traffic-signal paper added with PDF, ECWoC and YZ × SV × TIF IDs added as certificates, several certificates per item |
 | **V4** | Research and achievements redesign: Drudow "now" strip, headline-win cards, ORCID iD, dated filterable timeline of every event, certificate and photo slots in every detail panel, GitHub "Code" link slots on project cards |
 | **V3** | Projects rewritten with your names and subtitles, new Sanghamitra Ventures & YZ? card, separate Mousami web and Mousami App cards, 18 projects in total |
 | V2 | Co-curricular section (Toastmasters, arts, debate, events) and Start-up work section (10 internships, leadership) added before Contact |
@@ -22,7 +24,7 @@ A single-page, zero-dependency static site. No build step, no framework, no pack
 
 Every detail panel (research, wins, timeline events, experience rows, internships, Toastmasters rows) looks for a certificate and photos by file name. **No code changes are needed**: add the files, commit, push.
 
-**Certificates.** Save as `certificates/<slug>.jpg`, `.png` or `.pdf`. A JPG or PNG shows inline with an "Open full certificate" button. A PDF shows an "Open certificate (PDF)" button. If no file exists, the certificate block simply doesn't appear.
+**Certificates.** Save as `certificates/<slug>.jpg`, `.png` or `.pdf`. For several certificates on one item, add `-2`, `-3` and so on (`<slug>-2.jpg`), up to six. A JPG or PNG shows inline with an "Open full certificate" button. A PDF shows an "Open certificate (PDF)" button. If no file exists, the certificate block simply doesn't appear.
 
 **Event photos.** Save as `events/<slug>/1.jpg`, `2.jpg`, `3.jpg` and so on, up to 12, in order and without gaps. They appear as a gallery in the panel, and `1.jpg` also becomes a soft cover on that event's card. Use JPG, roughly 1600 px wide and under 400 KB each.
 
@@ -30,38 +32,41 @@ Every detail panel (research, wins, timeline events, experience rows, internship
 
 | Slug (file / folder name) | Item |
 |---|---|
+| `seattle-global-social-business-pitch` | Won the Global Social Business Pitch |
+| `icpc-2025-institute-rank-1` | ICPC 2025, Institute Rank 1 |
+| `toastmasters-triple-crown-rockstar-pathway-champion` | Triple Crown, Rockstar & Pathway Champion |
+| `genesis-2026-srm-vadapalani` | Won GENESIS at SRM Vadapalani |
+| `recycle-2025-iit-guwahati` | Shuddh: The Self-sustainable, Self-cleaning, Smart, AI-driven Waste Segregator and Waste to Wealth Generator for a Clean, Green Zero Waste Future |
+| `conceptual-prototype-design-of-the-shuddh-smart-waste-segregation-system` | Conceptual Prototype Design of the SHUDDH Smart Waste Segregation System |
+| `ai-driven-adaptive-traffic-signal-control` | AI-Driven Adaptive Traffic Signal Control Using Computer Vision and Existing CCTV Infrastructure |
+| `mind-2026-samarkand` | Generative model for extended dance sequence generation from a video |
+| `iqac-ssn-2026` | Computational identification and classification of Shirobedhas using temporal dance features |
+| `multifunctional-materials-radiation-measurements` | Fin Dual-Doped RFET based SRAM circuit under heavy ion irradiation |
+| `shuddh-provisional-patent` | Provisional Patent, SHUDDH |
+| `peer-reviewer-journal-of-environmental-management` | Journal of Environmental Management |
+| `research-assistant-intern` | Research Assistant Intern |
 | `drudow-intern` | Intern at Drudow |
 | `windenergy-india` | Windenergy India |
 | `codesy-dhanalaxmi-shrinivasan-college` | Codesy |
 | `yuci-global-event-srm-easwari` | YUCI, Global Event |
 | `srm-kattankulathur` | SRM Kattankulathur |
-| `genesis-2026-srm-vadapalani` | Winner, GENESIS |
 | `clash-of-coders` | Winner, Clash of Coders |
 | `parts2power` | Parts2Power |
-| `seattle-global-social-business-pitch` | Winner, Global Social Business Pitch |
 | `makeai-and-medicall` | MakeAI & Medicall |
 | `ecokadai-market-survey` | Market Survey Intern |
 | `techgium-lnt` | Techgium at L&T |
-| `toastmasters-triple-crown-rockstar-pathway-champion` | Triple Crown, Rockstar & Pathway Champion |
+| `yz-sv-tif-unified` | YZ × SV × TIF, unified |
 | `iit-madras-stem-research` | STEM Research, IIT Madras |
 | `area-a3-international-speech-contest` | Bronze Medalist, Area A3 Speech Contest |
-| `mind-2026-samarkand` | MIND-2026, Samarkand |
-| `iqac-ssn-2026` | Shirobedhas, IQAC SSN 2026 |
-| `icpc-2025-institute-rank-1` | ICPC 2025, Institute Rank 1 |
 | `start-up-tn-global-student-entrepreneurship-awards` | Finalist, Global Student Entrepreneurship Awards |
-| `peer-reviewer-journal-of-environmental-management` | Peer Reviewer |
 | `toastmasters-vp-memberships-oath` | Took the oath as Vice President, Memberships |
 | `entrepreneurship-development-cell` | Leading the Entrepreneurship Development Cell |
-| `recycle-2025-iit-guwahati` | RECYCLE 2025 |
 | `ideathon-pec-anna-university` | First Runner-up of 500+ teams |
-| `shuddh-provisional-patent` | Provisional Patent, SHUDDH |
 | `iit-madras-incubators-summit-founderx` | Ideas to Impact, Top 10 Start-ups |
 | `smart-india-hackathon` | Smart India Hackathon |
 | `isro-finalist` | Vayunetra for ISRO |
 | `cognizant-finalist` | Present, Proof! |
-| `multifunctional-materials-radiation-measurements` | Fin Dual-Doped RFET SRAM Circuit |
 | `asisc-and-memorial-debates` | ASISC, Clifford Hicks & Frank Anthony Debates |
-| `research-assistant-intern` | Research Assistant Intern |
 
 For experience, internship and Toastmasters rows, the slug is generated from the row's title in the same way (for example `vice-president-memberships`, `research-intern-at-ssn`).
 
@@ -77,6 +82,17 @@ var REPOS = {
 A "Code ↗" link then appears beside "Open live site" on that card. Projects without a line show no Code link.
 
 **ORCID.** The iD is `0009-0009-7861-484X` and links to https://orcid.org/0009-0009-7861-484X. It appears in the research section and in Contact.
+
+## Publications: Written and Reviewed
+
+Section 04 splits publications into two blocks, **Written** and **Reviewed**. Each card is a block of HTML inside `<div class="wgrid">`. Copy an existing `<article class="paper w">` (written) or `<article class="paper r">` (reviewed), edit the text, and add links.
+
+- **Links** on a card live in two places that you keep in step: the visible pills in `<div class="plinks">`, and the `data-links='[{"t":"Label","u":"https://..."}]'` attribute on the card's button, which fills the detail panel.
+- **Six written papers** are shown: the SHUDDH paper at RECYCLE 2025 (IIT Guwahati), the Conceptual Prototype Design of SHUDDH, the traffic-signal paper, the MIND 2026 paper, the Shirobedhas paper (IQAC, SSN 2026) and the radiation-measurements paper. Update the big number at the top of the block when you add one.
+- **Full manuscripts** of the SHUDDH prototype paper and the traffic-signal paper live in `papers/` and are linked from their cards. Remove a link if a co-author or a venue doesn't want the full text public.
+- **Reviewed entries** list the journal or conference, the role and the date. Peer review is confidential, so manuscript titles are shown only where a paper is public and the journal allows it.
+- **Link policy.** Only links that were opened and checked, or that you supplied, are used. The official IIT Guwahati event page and brochure are used for RECYCLE 2025. The conference domain that IIT Guwahati's page points to (`recycleiitg25.com`) has been taken over by an unrelated spam site, so it is deliberately **not** linked. For MIND 2026 only the EasyChair listing is linked, because the conference's own domain could not be verified. Before adding any conference or journal link, open it and check what it shows today. Old conference domains often lapse and get reused.
+- **No public listing** was found for the IQAC SSN, radiation-measurements and traffic-signal papers, so those cards state the venue without a link. Add a proceedings or DOI link once one exists.
 
 ---
 
@@ -139,8 +155,13 @@ your-repo/
 │   └── Sayantani_Banerjee_Resume.pdf       # linked from the Download resume button
 ├── photos/
 │   └── shine.png                           # hero portrait (transparent PNG), you add this
-├── certificates/                           # certificates, named by slug (see below)
-│   └── seattle-global-social-business-pitch.jpg
+├── papers/
+│   ├── ai-driven-adaptive-traffic-signal-control.pdf
+│   └── conceptual-prototype-design-of-the-shuddh-smart-waste-segregation-system.pdf
+├── certificates/                           # certificates and IDs, named by slug (see below)
+│   ├── elite-coders-winter-of-code-developer.jpg
+│   ├── elite-coders-winter-of-code-developer-2.jpg     # second certificate for the same item
+│   └── yz-sv-tif-unified.jpg
 └── events/                                 # event photos, one folder per slug
     └── seattle-global-social-business-pitch/
         ├── 1.jpg
