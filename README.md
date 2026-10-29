@@ -1,6 +1,6 @@
-# Sayantani Banerjee | Portfolio
+# Sayantani | Portfolio
 
-Personal portfolio of **Sayantani Banerjee**: Computer Science student at PEC Anna University, Chennai, working across AI products, research, open source and entrepreneurship.
+Personal portfolio of **Sayantani**: Computer Science student at PEC Anna University, Chennai, working across AI products, research, open source and entrepreneurship.
 
 A single-page, zero-dependency static site. No build step, no framework, no package manager. One `index.html` file holds the markup, styles and scripts.
 
