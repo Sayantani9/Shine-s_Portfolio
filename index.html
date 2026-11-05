@@ -343,6 +343,35 @@ button.gh:hover{background:var(--lime)}
 @media(max-width:900px){.wins,.papers{grid-template-columns:1fr}.bstats{grid-template-columns:1fr 1fr}}
 @media(max-width:700px){.evb{grid-template-columns:5.5rem 1fr;gap:.9rem}.evtag{grid-column:2;justify-self:start}.wincard{min-height:250px;padding:1.6rem}.modal{padding:4.5rem 1.25rem}}
 
+
+/* detail panel v2: details left, certificate and photos right */
+.mbox{width:min(640px,100%)}
+.mbox.has-media{width:min(1100px,100%)}
+.mgrid{display:grid;grid-template-columns:minmax(0,1fr);gap:2rem}
+.mbox.has-media .mgrid{grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:3rem;align-items:start}
+.mmedia{display:flex;flex-direction:column;gap:1.75rem}
+.mbox.has-media .mmedia{position:sticky;top:1.5rem}
+.mmedia .mcert,.mmedia .mgallery{margin-top:0}
+.mmedia .mgallery.single{grid-template-columns:1fr}
+.mmedia .mgallery.single a{aspect-ratio:auto}
+.mmedia .mgallery.single img{height:auto;object-fit:contain}
+.mvideo video{width:100%;display:block;border-radius:16px;background:#0b1d20}
+.mfacts{margin-top:1.6rem;border-top:1px solid var(--line)}
+.mfacts>div{display:grid;grid-template-columns:8.2rem minmax(0,1fr);gap:1rem;padding:.7rem 0;border-bottom:1px solid var(--line);font-size:.92rem}
+.mfacts dt{font-size:.64rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--teal);padding-top:.25rem}
+.mfacts dd{color:var(--ink);overflow-wrap:anywhere}
+.modal{align-items:flex-start}
+@media(max-width:900px){.mbox.has-media .mgrid{grid-template-columns:minmax(0,1fr)}.mfacts>div{grid-template-columns:1fr;gap:.1rem}}
+/* speaking strip */
+.speak{padding:5rem var(--pad);border-bottom:1px solid var(--line);background:linear-gradient(180deg,rgba(166,225,227,.2),transparent 70%)}
+.speak-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:3.5rem;align-items:center}
+.speak h2{font-family:var(--display);font-weight:800;font-size:clamp(1.9rem,3.8vw,3rem);letter-spacing:-.03em;line-height:1.04;margin:.6rem 0 1rem}
+.speak p{color:var(--muted);max-width:27rem;margin-bottom:1.5rem}
+.speak-video video{width:100%;display:block;border-radius:22px;background:#0b1d20;aspect-ratio:16/9}
+.soc a.watch{background:var(--ink);color:#fff}
+.soc a.watch:hover{background:var(--teal);transform:translateY(-2px)}
+@media(max-width:900px){.speak-grid{grid-template-columns:1fr;gap:2rem}}
+
 /* ---------- RESPONSIVE ---------- */
 @media(max-width:900px){
   .about,.cols,.contact{grid-template-columns:1fr;gap:2.5rem}
@@ -412,6 +441,7 @@ button.gh:hover{background:var(--lime)}
           <a href="https://github.com/Sayantani9" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a href="https://www.linkedin.com/in/g-sayantani-mb-65337230b/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           <a href="https://www.instagram.com/the.invincible_fire/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a class="watch" href="#speaking" data-play>▶ Watch me speak</a>
         </div>
       </div>
     </div>
@@ -425,6 +455,23 @@ button.gh:hover{background:var(--lime)}
     <div class="stat"><h3 data-target="20" data-suffix="+">20+</h3><p>Successful pull requests merged while mentoring contributors on CinderPeak.</p></div>
     <div class="stat"><h3 data-prefix="#" data-target="1">#1</h3><p>Institute rank at ICPC 2025 Amritapuri Regionals, South Asia Chapter.</p></div>
   </div>
+
+  <!-- SPEAKING -->
+  <section class="speak" id="speaking" aria-label="Speaking">
+    <div class="speak-grid">
+      <div>
+        <span class="pv" style="font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal)">On stage · 9 Sep 2026</span>
+        <h2>Speaking at SRM Kattankulathur</h2>
+        <p>A short clip from the stage. I speak about building AI products, research and communities.</p>
+        <a class="btn fill" href="#events">See every event I have spoken at or attended</a>
+      </div>
+      <div class="speak-video">
+        <video id="speakVideo" controls playsinline preload="metadata" poster="videos/speaking-srm-kattankulathur-poster.jpg">
+          <source src="videos/speaking-srm-kattankulathur.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </section>
 
   <!-- ABOUT -->
   <section class="sec" id="about">
@@ -453,15 +500,15 @@ button.gh:hover{background:var(--lime)}
   <section class="sec" id="experience">
     <div class="lab"><span class="n">02</span><span class="t">Experience</span></div>
     <ul class="xlist">
-      <li><button class="xrow" data-slug="drudow-intern" data-title="Growth Intern" data-org="Drudow" data-date="From 28 Oct 2026"><span class="xt">Growth Intern</span><span class="xm">Drudow · From 28 Oct 2026</span><span class="band" aria-hidden="true"></span>
+      <li><button class="xrow" data-slug="drudow-intern" data-facts='[["Role", "Growth Intern"], ["Organisation", "Drudow"], ["Joined", "28 October 2026"], ["Programme length", "Up to three months"], ["Type", "Practical learning programme"]]' data-title="Growth Intern" data-org="Drudow" data-date="From 28 Oct 2026"><span class="xt">Growth Intern</span><span class="xm">Drudow · From 28 Oct 2026</span><span class="band" aria-hidden="true"></span>
         <template><li>Growth Intern at Drudow, an early-stage technology startup.</li><li>Joined 28 October 2026.</li></template></button></li>
-      <li><button class="xrow" data-slug="ecokadai-market-survey" data-title="Market Survey Intern" data-org="Circularbee Innovations · EcoKadai" data-date="Jun – Aug 2026"><span class="xt">Market Survey Intern</span><span class="xm">EcoKadai · Jun – Aug 2026</span><span class="band" aria-hidden="true"></span>
+      <li><button class="xrow" data-slug="ecokadai-market-survey" data-cert-label="Internship certificate" data-facts='[["Certificate No.", "CBI/INT/2026/003"], ["Issued to", "Ms. Sayantani Banerjee, Department of Computer Science and Engineering, Panimalar Engineering College, Chennai"], ["Organisation", "Circularbee Innovations Pvt. Ltd., Madurai, Tamil Nadu (EcoKadai, ecokadai.in)"], ["Internship period", "1 June 2026 to 31 August 2026"], ["Project", "Chennai Café Market Survey for Compostable Beverage Cups"], ["Domain", "B2B Market Research, Validation and Commercial Feasibility"], ["Team", "Four-member team project"], ["Date of issue", "2 September 2026"], ["Signed by", "Pushpalakshmi Mohan, M.E., Founder and Director"]]' data-title="Market Survey Intern" data-org="Circularbee Innovations · EcoKadai" data-date="Jun – Aug 2026"><span class="xt">Market Survey Intern</span><span class="xm">EcoKadai · Jun – Aug 2026</span><span class="band" aria-hidden="true"></span>
         <template><li>Chennai Café Market Survey for Compostable Beverage Cups.</li><li>B2B market research, validation and commercial feasibility with Circularbee Innovations Pvt. Ltd. (EcoKadai), Madurai.</li><li>Carried out 1 June to 31 August 2026 as part of a four-member team project.</li><li>Internship completion certificate issued 2 September 2026 by Pushpalakshmi Mohan, Founder and Director.</li></template></button></li>
       <li><button class="xrow" data-title="Junior Developer Intern" data-org="Nexus Spring of Code & EliteCoder" data-date="Dec 2025 – May 2026"><span class="xt">Junior Developer Intern</span><span class="xm">Nexus Spring of Code & EliteCoder · 2025 – 2026</span><span class="band" aria-hidden="true"></span>
         <template><li>Developer internship across Nexus Spring of Code and EliteCoder's Summer of Code and Winter of Code programs.</li></template></button></li>
       <li><button class="xrow" data-title="Research Intern" data-org="SSN Engineering College" data-date="Nov 2025 – Present"><span class="xt">Research Intern</span><span class="xm">SSN Engineering College · 2025 – Present</span><span class="band" aria-hidden="true"></span>
         <template><li>Working under Dr. R. Srinivasan and Dr. A. Karthika on Bharatnatyam anthropology, image and Shirovedhas processing.</li><li>Co-authored "Computational Identification and Classification of Shirobedhas using Temporal Dance Features", IQAC SSN 2026.</li></template></button></li>
-      <li><button class="xrow" data-slug="sanghamitra-ventures-junior-developer" data-title="Junior Developer" data-org="Sanghamitra Ventures" data-date="Sep – Dec 2025"><span class="xt">Junior Developer</span><span class="xm">Sanghamitra Ventures · 2025</span><span class="band" aria-hidden="true"></span>
+      <li><button class="xrow" data-slug="sanghamitra-ventures-junior-developer" data-photos-label="Logo" data-title="Junior Developer" data-org="Sanghamitra Ventures" data-date="Sep – Dec 2025"><span class="xt">Junior Developer</span><span class="xm">Sanghamitra Ventures · 2025</span><span class="band" aria-hidden="true"></span>
         <template><li>Worked on R&D and digital development of the start-up.</li><li>WHY YZ? is the Gen-Z flagship under Sanghamitra Ventures, connecting student interns with companies that need project ideation, AI solutions and digital development.</li></template></button></li>
       <li><button class="xrow" data-title="Vice President, Memberships" data-org="Toastmasters International, PEC" data-date="Oct 2025 – Mar 2026"><span class="xt">Vice President, Memberships</span><span class="xm">Toastmasters International, PEC · 2025 – 2026</span><span class="band" aria-hidden="true"></span>
         <template><li>Led membership for the Visionary Communication club.</li><li>Honorary Pathway Celebrity, Triple Crown and Rockstar (April 2026).</li><li>Bronze Medalist at the Area A3 International Speech Contest (March 2026).</li></template></button></li>
@@ -482,7 +529,7 @@ button.gh:hover{background:var(--lime)}
     <h2 class="lead rv">Products and hackathon builds with measurable results.</h2>
     <div class="pgrid">
       <article class="pi"><div class="ptag"><b>AI &amp; Innovation</b><span>Sanghamitra Ventures</span></div><h3><a class="stretch" href="https://yz-five.vercel.app/" target="_blank" rel="noopener noreferrer">WHY YZ?</a></h3><p>Gen-Z innovation and project network connecting student talent and corporates, building real-world AI, software and IoT.</p><div class="links"><span class="go">Open live site ↗</span></div></article>
-      <article class="pi"><div class="ptag"><b>Internship Platform</b><span>WHY YZ?</span></div><h3><a class="stretch" href="https://sanghamitra-xi.vercel.app/" target="_blank" rel="noopener noreferrer">Sanghamitra Ventures &amp; YZ?</a></h3><p>Internship program for the WHY YZ? flagship: ten focused tracks, strict shortlisting, a 15-day first level and a 30-day second level built around real deliverables.</p><div class="links"><span class="go">Open live site ↗</span><button class="gh vis" data-detail data-slug="project-sanghamitra-ventures-yz" data-title="Sanghamitra Ventures &amp; YZ?" data-org="Internship platform" data-date="WHY YZ?">Logos ↗<template><li>Internship program for the WHY YZ? flagship, with ten focused tracks and strict shortlisting.</li><li>Sanghamitra Ventures and the ?Z mark, side by side.</li></template></button></div></article>
+      <article class="pi"><div class="ptag"><b>Internship Platform</b><span>WHY YZ?</span></div><h3><a class="stretch" href="https://sanghamitra-xi.vercel.app/" target="_blank" rel="noopener noreferrer">Sanghamitra Ventures &amp; YZ?</a></h3><p>Internship program for the WHY YZ? flagship: ten focused tracks, strict shortlisting, a 15-day first level and a 30-day second level built around real deliverables.</p><div class="links"><span class="go">Open live site ↗</span><button class="gh vis" data-detail data-slug="project-sanghamitra-ventures-yz" data-photos-label="Logos" data-title="Sanghamitra Ventures &amp; YZ?" data-org="Internship platform" data-date="WHY YZ?">Logos ↗<template><li>Internship program for the WHY YZ? flagship, with ten focused tracks and strict shortlisting.</li><li>Sanghamitra Ventures and the ?Z mark, side by side.</li></template></button></div></article>
       <article class="pi"><div class="ptag"><b>Clean-Tech &amp; Sustainability</b><span>IIT Madras</span></div><h3><a class="stretch" href="https://shuddh-main-2.vercel.app/" target="_blank" rel="noopener noreferrer">Shuddh</a></h3><p>Self-sustainable, self-cleaning, AI-driven waste segregator and waste-to-wealth generator. Provisionally patented MVP, 79% accurate.</p><div class="links"><span class="go">Open live site ↗</span></div></article>
       <article class="pi"><div class="ptag"><b>Environmental Intelligence</b><span><mark>ISRO</mark></span></div><h3><a class="stretch" href="https://vayunetra-five.vercel.app/" target="_blank" rel="noopener noreferrer">Vayunetra</a></h3><p>Air quality forecasting from remote sensing datasets and ML regression models, reaching 87% accuracy, done for <mark>ISRO</mark>.</p><div class="links"><span class="go">Open live site ↗</span></div></article>
       <article class="pi"><div class="ptag"><b>Robotics</b><span>L&amp;T Project</span></div><h3><a class="stretch" href="https://tendrix-site.vercel.app/" target="_blank" rel="noopener noreferrer">Tendrix</a></h3><p>Bio tentacle gripper robotic arm with an ML emergency landing control system that enables safe descent at power loss.</p><div class="links"><span class="go">Open live site ↗</span></div></article>
@@ -493,8 +540,8 @@ button.gh:hover{background:var(--lime)}
       <article class="pi"><div class="ptag"><b>Delhi Police</b><span>Live project</span></div><h3><a class="stretch" href="https://rakshak-sand.vercel.app/" target="_blank" rel="noopener noreferrer">Raksha</a></h3><p>Cyber security project built for Delhi Police.</p><div class="links"><span class="go">Open live site ↗</span></div></article>
       <article class="pi"><div class="ptag"><b>Intelligent Safety &amp; Security</b><span>Bihar</span></div><h3><a class="stretch" href="https://rakshak-weld.vercel.app/" target="_blank" rel="noopener noreferrer">Rakshak</a></h3><p>Bihar cyber project for real-time cyber threat reporting with Python and Flask, reducing manual triage time by 40%.</p><div class="links"><span class="go">Open live site ↗</span></div></article>
       <article class="pi"><div class="ptag"><b>Sustainable Commerce</b><span>Client work</span></div><h3><a class="stretch" href="https://ecokadai.in/" target="_blank" rel="noopener noreferrer">EcoKadai</a></h3><p>Client digital development and market research: website build plus an AI and automation roadmap.</p><div class="links"><span class="go">Open live site ↗</span></div></article>
-      <article class="pi"><div class="ptag"><b>Intelligent Overtaking Safety System</b><span>L&amp;T TECHgium</span></div><h3><a class="stretch" href="https://runway-nine-green.vercel.app/" target="_blank" rel="noopener noreferrer">Runway</a></h3><p>Occlusion-aware overtaking advisory: fuses camera and radar into a lane-aligned map that marks the road ahead as free, occupied or unknown. Submitted to L&amp;T TECHgium.</p><div class="links"><span class="go">Open live site ↗</span><button class="gh vis" data-detail data-slug="project-runway" data-title="RUNWAY: Occlusion-Aware Overtaking Advisory" data-org="Occlusion-aware overtaking advisory" data-date="L&amp;T TECHgium">Abstract &amp; visuals ↗<template><li>Overtaking a truck on a highway is dangerous when a slow-moving vehicle ahead stays hidden until the overtaking car is already in the opposite lane. A conventional hazard detection system cannot guarantee that the unseen road is clear.</li><li>RUNWAY integrates radar observations with a camera, analysing vehicle speed and traffic movement to build a lane-aligned representation of the road ahead. The visible road is classified as free, occupied or unknown.</li><li>Areas blocked by the truck, or with unreliable sensor observations and conflicting measurements, stay tagged unknown rather than a vague safe.</li><li>Camera and radar together support stationary vehicle detection, hazard classification, required distance and time, and oncoming-traffic assessment, cleanly distinguishing parked vehicles from benign roadside objects.</li><li>RUNWAY estimates time and distance, vehicle dimensions, relative motion with driver reaction time, oncoming traffic, and the feasibility of returning to the original lane. When confidence is low it withholds a positive indication. It supports the driver's judgement and never controls the vehicle.</li><li>The proof of concept uses software-based traffic scenarios with a simulated driver interface, testing normal visibility, degraded sensing, approaching traffic, adverse illumination, parked vehicles, conflicting observations and unknown system failures. It is evaluated on hazard detection, incorrect warnings and uncertainty handling, with an explicit account of its limitations.</li><li>Keywords: ADAS, overtaking assistance, occlusion-aware perception, occupancy grid, camera-radar sensor fusion, hazard classification, uncertainty handling, fail-safe design, driver advisory HMI, proof of concept.</li></template></button></div></article>
-      <article class="pi"><div class="ptag"><b>AI-Powered Grocery Inventory Intelligence</b><span>Concept demo</span></div><h3><a class="stretch" href="https://freshy-alpha.vercel.app/" target="_blank" rel="noopener noreferrer">Freshy</a></h3><p>AI-powered grocery inventory and waste-prevention platform: multi-agent forecasting, orchestration and human-in-the-loop approval to cut spoilage and protect freshness.</p><div class="links"><span class="go">Open live site ↗</span><button class="gh vis" data-detail data-slug="project-freshy" data-title="FRESHY: AI-Powered Grocery Inventory Intelligence" data-org="AI-powered grocery inventory and waste prevention" data-date="Concept demo">Abstract &amp; workflow ↗<template><li>Perishable inventory inefficiencies and food waste cost retailers revenue while limiting product availability and freshness.</li><li>FRESHY acts as the CFO of grocery inventory management, moving from reactive replenishment to proactive, coordinated waste prevention. It is simulated on a multi-store grocery network using synthetic public datasets covering historic sales, inventory, deliveries, promotions, prices, product shelf life, weather, local events and recorded wastage.</li><li>A demand-forecasting engine predicts short-term sales, and freshness analytics estimate remaining shelf life and spoilage risk. Specialised agents for demand, freshness, dynamic markdowns, replenishment, inter-store transfers and corrective actions work independently and together.</li><li>An orchestration engine reconciles the agents' recommendations against inventory constraints, business rules, expiry windows and operational priorities to produce one evidence-backed action per affected SKU and store.</li><li>Each proposal specifies exact timing, quantity, markdown percentage, confidence and expected business impact with supporting evidence. Planners approve, modify or reject recommendations through a simulated retail-system interface before execution.</li><li>Evaluation is against baseline inventory policies on spoilage reduction, forecast accuracy, stock-up and stock-out rates, sell-through and gross margin.</li><li>The aim is a scalable pathway to lower food waste, higher inventory productivity, profitability and freshness-first grocery operations.</li></template></button></div></article>
+      <article class="pi"><div class="ptag"><b>Intelligent Overtaking Safety System</b><span>L&amp;T TECHgium</span></div><h3><a class="stretch" href="https://runway-nine-green.vercel.app/" target="_blank" rel="noopener noreferrer">Runway</a></h3><p>Occlusion-aware overtaking advisory: fuses camera and radar into a lane-aligned map that marks the road ahead as free, occupied or unknown. Submitted to L&amp;T TECHgium.</p><div class="links"><span class="go">Open live site ↗</span><button class="gh vis" data-detail data-slug="project-runway" data-photos-label="Poster" data-title="RUNWAY: Occlusion-Aware Overtaking Advisory" data-org="Occlusion-aware overtaking advisory" data-date="L&amp;T TECHgium">Abstract &amp; visuals ↗<template><li>Overtaking a truck on a highway is dangerous when a slow-moving vehicle ahead stays hidden until the overtaking car is already in the opposite lane. A conventional hazard detection system cannot guarantee that the unseen road is clear.</li><li>RUNWAY integrates radar observations with a camera, analysing vehicle speed and traffic movement to build a lane-aligned representation of the road ahead. The visible road is classified as free, occupied or unknown.</li><li>Areas blocked by the truck, or with unreliable sensor observations and conflicting measurements, stay tagged unknown rather than a vague safe.</li><li>Camera and radar together support stationary vehicle detection, hazard classification, required distance and time, and oncoming-traffic assessment, cleanly distinguishing parked vehicles from benign roadside objects.</li><li>RUNWAY estimates time and distance, vehicle dimensions, relative motion with driver reaction time, oncoming traffic, and the feasibility of returning to the original lane. When confidence is low it withholds a positive indication. It supports the driver's judgement and never controls the vehicle.</li><li>The proof of concept uses software-based traffic scenarios with a simulated driver interface, testing normal visibility, degraded sensing, approaching traffic, adverse illumination, parked vehicles, conflicting observations and unknown system failures. It is evaluated on hazard detection, incorrect warnings and uncertainty handling, with an explicit account of its limitations.</li><li>Keywords: ADAS, overtaking assistance, occlusion-aware perception, occupancy grid, camera-radar sensor fusion, hazard classification, uncertainty handling, fail-safe design, driver advisory HMI, proof of concept.</li></template></button></div></article>
+      <article class="pi"><div class="ptag"><b>AI-Powered Grocery Inventory Intelligence</b><span>Concept demo</span></div><h3><a class="stretch" href="https://freshy-alpha.vercel.app/" target="_blank" rel="noopener noreferrer">Freshy</a></h3><p>AI-powered grocery inventory and waste-prevention platform: multi-agent forecasting, orchestration and human-in-the-loop approval to cut spoilage and protect freshness.</p><div class="links"><span class="go">Open live site ↗</span><button class="gh vis" data-detail data-slug="project-freshy" data-photos-label="Workflow poster" data-title="FRESHY: AI-Powered Grocery Inventory Intelligence" data-org="AI-powered grocery inventory and waste prevention" data-date="Concept demo">Abstract &amp; workflow ↗<template><li>Perishable inventory inefficiencies and food waste cost retailers revenue while limiting product availability and freshness.</li><li>FRESHY acts as the CFO of grocery inventory management, moving from reactive replenishment to proactive, coordinated waste prevention. It is simulated on a multi-store grocery network using synthetic public datasets covering historic sales, inventory, deliveries, promotions, prices, product shelf life, weather, local events and recorded wastage.</li><li>A demand-forecasting engine predicts short-term sales, and freshness analytics estimate remaining shelf life and spoilage risk. Specialised agents for demand, freshness, dynamic markdowns, replenishment, inter-store transfers and corrective actions work independently and together.</li><li>An orchestration engine reconciles the agents' recommendations against inventory constraints, business rules, expiry windows and operational priorities to produce one evidence-backed action per affected SKU and store.</li><li>Each proposal specifies exact timing, quantity, markdown percentage, confidence and expected business impact with supporting evidence. Planners approve, modify or reject recommendations through a simulated retail-system interface before execution.</li><li>Evaluation is against baseline inventory policies on spoilage reduction, forecast accuracy, stock-up and stock-out rates, sell-through and gross margin.</li><li>The aim is a scalable pathway to lower food waste, higher inventory productivity, profitability and freshness-first grocery operations.</li></template></button></div></article>
       <article class="pi"><div class="ptag"><b>Smart Attendance System</b><span>Cognizant Finalist</span></div><h3><a class="stretch" href="https://sayantani9.github.io/SMART-ATTENDANCE-SYSTEM_COGNIZANT" target="_blank" rel="noopener noreferrer">Present, Proof!</a></h3><p>Smart attendance system using OpenCV and IoT with 95% accuracy, saving 70% of manual time.</p><div class="links"><span class="go">Open live site ↗</span></div></article>
       <article class="pi"><div class="ptag"><b>Weather Intelligence Webapp</b><span>India-focused</span></div><h3><a class="stretch" href="https://mausam-blond.vercel.app/" target="_blank" rel="noopener noreferrer">Mousami</a></h3><p>Next-generation weather intelligence web application built for India.</p><div class="links"><span class="go">Open live site ↗</span></div></article>
       <article class="pi"><div class="ptag"><b>Weather Intelligence Mobile App</b><span>Expo preview</span></div><h3><a class="stretch" href="https://app.emergent.sh/share-preview?app=exp%3A%2F%2Fmausam-family.preview.emergentagent.com%3Fexpo_go_prompt_device_auth%3D1%26expo_go_device_auth_verification_uri_override%3Dapp.emergent.sh&amp;job_id=6b70cfb8-bd7e-45c2-8d37-de104c44b559" target="_blank" rel="noopener noreferrer">Mousami App</a></h3><p>Mobile app version of Mousami, shared as an Expo preview.</p><div class="links"><span class="go">Open app preview ↗</span></div></article>
@@ -516,7 +563,7 @@ button.gh:hover{background:var(--lime)}
     </div>
 
     <div class="wins">
-      <button class="wincard c1" data-detail data-cover data-slug="seattle-global-social-business-pitch" data-title="Won the Global Social Business Pitch" data-org="The City University of Seattle" data-date="26 Jul 2026"><span class="cover"></span>
+      <button class="wincard c1" data-detail data-cover data-slug="seattle-global-social-business-pitch" data-photos-label="Poster" data-facts='[["Team", "Team Unpromptables"], ["Competition", "Global Social Business Pitch Competition 2026"], ["Host", "City University of Seattle"], ["Date", "26 July 2026"], ["Theme", "Entrepreneurship, innovation and social business"]]' data-title="Won the Global Social Business Pitch" data-org="The City University of Seattle" data-date="26 Jul 2026"><span class="cover"></span>
         <span class="wd"><b>26</b><i>July 2026</i></span><span class="wt">Won the Global Social Business Pitch</span><span class="wp">The City University of Seattle</span><span class="wtag">Winner · Global stage</span>
         <template><li>Competed as Team Unpromptables at the Global Social Business Pitch Competition 2026, The City University of Seattle.</li><li>Won the Global Social Business Pitch at The City University of Seattle.</li></template></button>
       <button class="wincard c2" data-detail data-cover data-slug="icpc-2025-institute-rank-1" data-title="ICPC 2025, Institute Rank 1" data-org="Amritapuri Regionals · South Asia Chapter" data-date="Nov 2025"><span class="cover"></span>
@@ -533,19 +580,19 @@ button.gh:hover{background:var(--lime)}
     <div class="bstats">
       <div><h3 data-target="17">17</h3><p>websites brought to life, this portfolio being one</p></div>
       <div><h3 data-target="10">10</h3><p>events attended or won since 25 July 2026</p></div>
-      <div><h3 data-target="6">6</h3><p>research papers written, from traffic AI to dance generation, plus peer review for an Impact Factor 8.4 journal</p></div>
+      <div><h3 data-target="6">6</h3><p>research papers written, from traffic AI to dance generation, plus four verified peer reviews</p></div>
       <div><h3 data-target="1">1</h3><p>provisional patent, with an abstract published at IIT Guwahati</p></div>
     </div>
 
     <h3 class="sh">Research &amp; publications</h3>
-    <a class="orcid" href="https://orcid.org/0009-0009-7861-484X" target="_blank" rel="noopener noreferrer"><span class="oi">iD</span><span class="ot"><small>ORCID iD</small><b>0009-0009-7861-484X</b></span><i>↗</i></a>
+    <a class="orcid" href="https://orcid.org/0009-0009-7861-484X" target="_blank" rel="noopener noreferrer"><span class="oi">iD</span><span class="ot"><small>ORCID iD · 4 peer reviews verified</small><b>0009-0009-7861-484X</b></span><i>↗</i></a>
 
     <div class="pubblock">
       <div class="pubhead"><span class="pbig">6</span><div><h4>Written</h4><p>Papers I authored, and where each one lives.</p></div></div>
       <div class="wgrid">
       <article class="paper w">
         <span class="pn">01</span><span class="pv">RECYCLE 2025 · IIT Guwahati</span>
-        <h5 class="ptt"><button class="stretchb" data-detail data-cover data-slug="recycle-2025-iit-guwahati" data-title="Shuddh: The Self-sustainable, Self-cleaning, Smart, AI-driven Waste Segregator and Waste to Wealth Generator for a Clean, Green Zero Waste Future" data-org="IIT Guwahati" data-date="5–6 Jun 2025" data-links='[{"t": "Official IIT Guwahati page", "u": "https://www.iitg.ac.in/iitg_events_details?p=2967/recycle-2025-5th-international-conference-on-waste-management"}, {"t": "Conference brochure (PDF)", "u": "https://www.iitg.ac.in/pdf/7d49f3678a774dfd1aed2edbdcc6e5de.pdf"}]'><span class="cover"></span>Shuddh: The Self-sustainable, Self-cleaning, Smart, AI-driven Waste Segregator and Waste to Wealth Generator for a Clean, Green Zero Waste Future
+        <h5 class="ptt"><button class="stretchb" data-detail data-cover data-slug="recycle-2025-iit-guwahati" data-facts='[["Paper", "Shuddh: The Self-sustainable, Self-cleaning, Smart, AI-driven Waste Segregator and Waste to Wealth Generator for a Clean, Green Zero Waste Future"], ["Conference", "RECYCLE 2025, 5th International Conference on Waste Management"], ["Venue", "IIT Guwahati"], ["Dates", "5–6 June 2025"], ["Organised by", "Waste Management Research Group, Dept. of Civil Engineering and School of Agro and Rural Technology"], ["Outcome", "Shortlisted presenter, abstract published June 2025"]]' data-title="Shuddh: The Self-sustainable, Self-cleaning, Smart, AI-driven Waste Segregator and Waste to Wealth Generator for a Clean, Green Zero Waste Future" data-org="IIT Guwahati" data-date="5–6 Jun 2025" data-links='[{"t": "Official IIT Guwahati page", "u": "https://www.iitg.ac.in/iitg_events_details?p=2967/recycle-2025-5th-international-conference-on-waste-management"}, {"t": "Conference brochure (PDF)", "u": "https://www.iitg.ac.in/pdf/7d49f3678a774dfd1aed2edbdcc6e5de.pdf"}]'><span class="cover"></span>Shuddh: The Self-sustainable, Self-cleaning, Smart, AI-driven Waste Segregator and Waste to Wealth Generator for a Clean, Green Zero Waste Future
           <template><li>Shortlisted presenter at RECYCLE 2025, the 5th International Conference on Waste Management, IIT Guwahati, 5–6 June 2025.</li><li>Organised by the Waste Management Research Group (WMRG), Department of Civil Engineering and School of Agro and Rural Technology, IIT Guwahati.</li><li>Abstract titled SHUDDH published June 2025.</li><li>SHUDDH is also provisionally patented, at MVP stage (Feb 2025).</li></template></button></h5>
         <dl class="pmeta"><div><dt>Presented at</dt><dd>5th International Conference on Waste Management (RECYCLE 2025), IIT Guwahati</dd></div><div><dt>Organised by</dt><dd>Waste Management Research Group, Dept. of Civil Engineering and School of Agro and Rural Technology</dd></div><div><dt>Dates</dt><dd>5–6 June 2025</dd></div></dl>
         <div class="plinks"><a href="https://www.iitg.ac.in/iitg_events_details?p=2967/recycle-2025-5th-international-conference-on-waste-management" target="_blank" rel="noopener noreferrer">Official IIT Guwahati page ↗</a><a href="https://www.iitg.ac.in/pdf/7d49f3678a774dfd1aed2edbdcc6e5de.pdf" target="_blank" rel="noopener noreferrer">Conference brochure (PDF) ↗</a></div>
@@ -566,7 +613,7 @@ button.gh:hover{background:var(--lime)}
       </article>
       <article class="paper w">
         <span class="pn">04</span><span class="pv">MIND 2026 · Samarkand State University</span>
-        <h5 class="ptt"><button class="stretchb" data-detail data-cover data-slug="mind-2026-samarkand" data-title="Generative model for extended dance sequence generation from a video" data-org="Samarkand State University, Uzbekistan" data-date="19–21 Jun 2026" data-links='[{"t": "MIND 2026 call for papers (EasyChair)", "u": "https://easychair.org/cfp/MIND2026"}]'><span class="cover"></span>Generative model for extended dance sequence generation from a video
+        <h5 class="ptt"><button class="stretchb" data-detail data-cover data-slug="mind-2026-samarkand" data-facts='[["Paper", "Generative Model for Extended Dance Sequence Generation from a Video"], ["Conference", "MIND 2026: Machine Learning, Image Processing, Network Security and Data Sciences"], ["Venue", "Samarkand State University, Uzbekistan"], ["Dates", "19–21 June 2026"], ["Proceedings", "Springer CCIS series (Scopus indexed), per the call for papers"]]' data-title="Generative model for extended dance sequence generation from a video" data-org="Samarkand State University, Uzbekistan" data-date="19–21 Jun 2026" data-links='[{"t": "MIND 2026 call for papers (EasyChair)", "u": "https://easychair.org/cfp/MIND2026"}]'><span class="cover"></span>Generative model for extended dance sequence generation from a video
           <template><li>Generative Model for Extended Dance Sequence Generation from a Video.</li><li>MIND 2026: Machine Learning, Image Processing, Network Security and Data Sciences, held at Samarkand State University, Uzbekistan, 19–21 June 2026.</li><li>The call for papers states that accepted and presented papers are published in the Springer CCIS series (Scopus indexed).</li></template></button></h5>
         <dl class="pmeta"><div><dt>Conference</dt><dd>MIND 2026: Machine Learning, Image Processing, Network Security and Data Sciences</dd></div><div><dt>Venue</dt><dd>Samarkand State University, Uzbekistan</dd></div><div><dt>Dates</dt><dd>19–21 June 2026</dd></div><div><dt>Proceedings</dt><dd>Springer CCIS series (Scopus indexed), per the call for papers</dd></div></dl>
         <div class="plinks"><a href="https://easychair.org/cfp/MIND2026" target="_blank" rel="noopener noreferrer">MIND 2026 call for papers (EasyChair) ↗</a></div>
@@ -594,23 +641,42 @@ button.gh:hover{background:var(--lime)}
     </div>
 
     <div class="pubblock rv-block">
-      <div class="pubhead"><span class="pbig">2</span><div><h4>Reviewed</h4><p>Peer review for journals and conferences. Manuscripts under review are confidential, so venues and dates are listed rather than titles.</p></div></div>
+      <div class="pubhead"><span class="pbig">4</span><div><h4>Reviewed</h4><p>Four peer reviews for the Journal of Environmental Management, verified on my ORCID record with Elsevier Editorial as the source. Manuscripts under review are confidential, so titles are not shown.</p></div></div>
       <div class="wgrid">
       <article class="paper r">
-        <span class="pn">R1</span><span class="pv">Elsevier · Impact Factor 8.4</span>
-        <h5 class="ptt"><button class="stretchb" data-detail data-cover data-slug="peer-reviewer-journal-of-environmental-management" data-title="Journal of Environmental Management" data-org="Elsevier" data-date="Nov 2025" data-links='[{"t": "Journal page", "u": "https://www.sciencedirect.com/journal/journal-of-environmental-management"}, {"t": "ORCID record", "u": "https://orcid.org/0009-0009-7861-484X"}]'><span class="cover"></span>Journal of Environmental Management
-          <template><li>Peer reviewer for the Journal of Environmental Management (Impact Factor 8.4).</li><li>Review completed November 2025.</li><li>Manuscripts under review are confidential, so the journal and date are listed rather than the paper.</li><li>ORCID iD 0009-0009-7861-484X.</li></template></button></h5>
-        <dl class="pmeta"><div><dt>Role</dt><dd>Peer reviewer</dd></div><div><dt>Completed</dt><dd>November 2025</dd></div><div><dt>Manuscript</dt><dd>Confidential, not disclosed</dd></div></dl>
-        <div class="plinks"><a href="https://www.sciencedirect.com/journal/journal-of-environmental-management" target="_blank" rel="noopener noreferrer">Journal page ↗</a><a href="https://orcid.org/0009-0009-7861-484X" target="_blank" rel="noopener noreferrer">ORCID record ↗</a></div>
+        <span class="pn">R1</span><span class="pv">Elsevier · Review 2026</span>
+        <h5 class="ptt"><button class="stretchb" data-detail data-cover data-slug="peer-review-2026-1" data-title="Peer review 1 of 4, Journal of Environmental Management" data-org="Elsevier, Inc." data-date="2026" data-links='[{"t": "ORCID peer review record", "u": "https://orcid.org/0009-0009-7861-484X"}, {"t": "Journal page", "u": "https://www.sciencedirect.com/journal/journal-of-environmental-management"}]' data-facts='[["Journal", "Journal of Environmental Management (ISSN 0301-4797)"], ["Role", "Reviewer"], ["Type", "Review"], ["Review date", "2026"], ["Convening organisation", "Elsevier, Inc. (New York, US)"], ["Source", "Elsevier Editorial, verified on ORCID"], ["Manuscript", "Confidential, not disclosed"]]' data-cert-label="Reviewer certificate"><span class="cover"></span>Journal of Environmental Management
+          <template><li>Peer review for the Journal of Environmental Management (ISSN 0301-4797, Impact Factor 8.4).</li><li>Role: Reviewer. Review date: 2026. Convening organisation: Elsevier, Inc. (New York, US).</li><li>Listed on my ORCID record with Elsevier Editorial as the verified source.</li><li>Manuscript titles and authors are confidential, so they are not shown.</li></template></button></h5>
+        <dl class="pmeta"><div><dt>Role</dt><dd>Reviewer</dd></div><div><dt>Review date</dt><dd>2026</dd></div><div><dt>Source</dt><dd>Elsevier Editorial, verified on ORCID</dd></div><div><dt>Manuscript</dt><dd>Confidential, not disclosed</dd></div></dl>
+        <div class="plinks"><a href="https://orcid.org/0009-0009-7861-484X" target="_blank" rel="noopener noreferrer">ORCID record ↗</a><a href="https://www.sciencedirect.com/journal/journal-of-environmental-management" target="_blank" rel="noopener noreferrer">Journal page ↗</a></div>
       </article>
       <article class="paper r">
-        <span class="pn">R2</span><span class="pv">STEM journals &amp; conferences</span>
-        <h5 class="ptt"><button class="stretchb" data-detail data-cover data-slug="research-assistant-intern" data-title="Research Assistant Intern" data-org="Under a Research Scholar" data-date="2020 – 2025" ><span class="cover"></span>Research Assistant Intern
-          <template><li>Reviewed STEM journal and conference research papers, working independently under a Research Scholar.</li><li>Period: 2020 – 2025.</li></template></button></h5>
-        <dl class="pmeta"><div><dt>Role</dt><dd>Reviewer, working independently</dd></div><div><dt>Period</dt><dd>2020 – 2025</dd></div><div><dt>Scope</dt><dd>STEM journal and conference research papers</dd></div></dl>
-        
+        <span class="pn">R2</span><span class="pv">Elsevier · Review 2026</span>
+        <h5 class="ptt"><button class="stretchb" data-detail data-cover data-slug="peer-review-2026-2" data-title="Peer review 2 of 4, Journal of Environmental Management" data-org="Elsevier, Inc." data-date="2026" data-links='[{"t": "ORCID peer review record", "u": "https://orcid.org/0009-0009-7861-484X"}, {"t": "Journal page", "u": "https://www.sciencedirect.com/journal/journal-of-environmental-management"}]' data-facts='[["Journal", "Journal of Environmental Management (ISSN 0301-4797)"], ["Role", "Reviewer"], ["Type", "Review"], ["Review date", "2026"], ["Convening organisation", "Elsevier, Inc. (New York, US)"], ["Source", "Elsevier Editorial, verified on ORCID"], ["Manuscript", "Confidential, not disclosed"]]' data-cert-label="Reviewer certificate"><span class="cover"></span>Journal of Environmental Management
+          <template><li>Peer review for the Journal of Environmental Management (ISSN 0301-4797, Impact Factor 8.4).</li><li>Role: Reviewer. Review date: 2026. Convening organisation: Elsevier, Inc. (New York, US).</li><li>Listed on my ORCID record with Elsevier Editorial as the verified source.</li><li>Manuscript titles and authors are confidential, so they are not shown.</li></template></button></h5>
+        <dl class="pmeta"><div><dt>Role</dt><dd>Reviewer</dd></div><div><dt>Review date</dt><dd>2026</dd></div><div><dt>Source</dt><dd>Elsevier Editorial, verified on ORCID</dd></div><div><dt>Manuscript</dt><dd>Confidential, not disclosed</dd></div></dl>
+        <div class="plinks"><a href="https://orcid.org/0009-0009-7861-484X" target="_blank" rel="noopener noreferrer">ORCID record ↗</a><a href="https://www.sciencedirect.com/journal/journal-of-environmental-management" target="_blank" rel="noopener noreferrer">Journal page ↗</a></div>
+      </article>
+      <article class="paper r">
+        <span class="pn">R3</span><span class="pv">Elsevier · Review 2025</span>
+        <h5 class="ptt"><button class="stretchb" data-detail data-cover data-slug="peer-review-2025-1" data-title="Peer review 3 of 4, Journal of Environmental Management" data-org="Elsevier, Inc." data-date="2025" data-links='[{"t": "ORCID peer review record", "u": "https://orcid.org/0009-0009-7861-484X"}, {"t": "Journal page", "u": "https://www.sciencedirect.com/journal/journal-of-environmental-management"}]' data-facts='[["Journal", "Journal of Environmental Management (ISSN 0301-4797)"], ["Role", "Reviewer"], ["Type", "Review"], ["Review date", "2025"], ["Convening organisation", "Elsevier, Inc. (New York, US)"], ["Source", "Elsevier Editorial, verified on ORCID"], ["Manuscript", "Confidential, not disclosed"]]' data-cert-label="Reviewer certificate"><span class="cover"></span>Journal of Environmental Management
+          <template><li>Peer review for the Journal of Environmental Management (ISSN 0301-4797, Impact Factor 8.4).</li><li>Role: Reviewer. Review date: 2025. Convening organisation: Elsevier, Inc. (New York, US).</li><li>Listed on my ORCID record with Elsevier Editorial as the verified source.</li><li>Manuscript titles and authors are confidential, so they are not shown.</li></template></button></h5>
+        <dl class="pmeta"><div><dt>Role</dt><dd>Reviewer</dd></div><div><dt>Review date</dt><dd>2025</dd></div><div><dt>Source</dt><dd>Elsevier Editorial, verified on ORCID</dd></div><div><dt>Manuscript</dt><dd>Confidential, not disclosed</dd></div></dl>
+        <div class="plinks"><a href="https://orcid.org/0009-0009-7861-484X" target="_blank" rel="noopener noreferrer">ORCID record ↗</a><a href="https://www.sciencedirect.com/journal/journal-of-environmental-management" target="_blank" rel="noopener noreferrer">Journal page ↗</a></div>
+      </article>
+      <article class="paper r">
+        <span class="pn">R4</span><span class="pv">Elsevier · Review 2025</span>
+        <h5 class="ptt"><button class="stretchb" data-detail data-cover data-slug="peer-review-2025-2" data-title="Peer review 4 of 4, Journal of Environmental Management" data-org="Elsevier, Inc." data-date="2025" data-links='[{"t": "ORCID peer review record", "u": "https://orcid.org/0009-0009-7861-484X"}, {"t": "Journal page", "u": "https://www.sciencedirect.com/journal/journal-of-environmental-management"}]' data-facts='[["Journal", "Journal of Environmental Management (ISSN 0301-4797)"], ["Role", "Reviewer"], ["Type", "Review"], ["Review date", "2025"], ["Convening organisation", "Elsevier, Inc. (New York, US)"], ["Source", "Elsevier Editorial, verified on ORCID"], ["Manuscript", "Confidential, not disclosed"]]' data-cert-label="Reviewer certificate"><span class="cover"></span>Journal of Environmental Management
+          <template><li>Peer review for the Journal of Environmental Management (ISSN 0301-4797, Impact Factor 8.4).</li><li>Role: Reviewer. Review date: 2025. Convening organisation: Elsevier, Inc. (New York, US).</li><li>Listed on my ORCID record with Elsevier Editorial as the verified source.</li><li>Manuscript titles and authors are confidential, so they are not shown.</li></template></button></h5>
+        <dl class="pmeta"><div><dt>Role</dt><dd>Reviewer</dd></div><div><dt>Review date</dt><dd>2025</dd></div><div><dt>Source</dt><dd>Elsevier Editorial, verified on ORCID</dd></div><div><dt>Manuscript</dt><dd>Confidential, not disclosed</dd></div></dl>
+        <div class="plinks"><a href="https://orcid.org/0009-0009-7861-484X" target="_blank" rel="noopener noreferrer">ORCID record ↗</a><a href="https://www.sciencedirect.com/journal/journal-of-environmental-management" target="_blank" rel="noopener noreferrer">Journal page ↗</a></div>
       </article>
       </div>
+    <div class="abstrip slim">
+      <div class="abt"><span class="pv">Also</span><h5>Research Assistant Intern · 2020 – 2025</h5>
+        <p>Reviewed STEM journal and conference research papers, working independently under a Research Scholar.</p></div>
+      <div class="abl"><button class="mini" data-detail data-slug="research-assistant-intern" data-title="Research Assistant Intern" data-org="Under a Research Scholar" data-date="2020 – 2025">Details<template><li>Reviewed STEM journal and conference research papers, working independently under a Research Scholar.</li><li>Period: 2020 – 2025.</li></template></button></div>
+    </div>
     </div>
 
     <h3 class="sh" id="events">Every event, dated</h3>
@@ -619,13 +685,13 @@ button.gh:hover{background:var(--lime)}
     </div>
     <ol class="tl" id="tl">
         <li class="yr">2026</li>
-        <li class="ev" data-cat="lead"><button class="evb" data-detail data-cover data-slug="drudow-intern" data-title="Growth Intern at Drudow" data-org="Drudow" data-date="28 Oct 2026" >
+        <li class="ev" data-cat="lead"><button class="evb" data-detail data-cover data-slug="drudow-intern" data-facts='[["Role", "Growth Intern"], ["Organisation", "Drudow"], ["Joined", "28 October 2026"], ["Programme length", "Up to three months"], ["Type", "Practical learning programme"]]' data-title="Growth Intern at Drudow" data-org="Drudow" data-date="28 Oct 2026" >
           <span class="cover"></span><span class="evd"><b>28</b><i>Oct 2026</i></span><span class="evt"><strong>Growth Intern at Drudow</strong><small>Drudow</small></span><span class="evtag t-lead">Now</span>
           <template><li>Growth Intern at Drudow, an early-stage technology startup.</li><li>Joined 28 October 2026.</li></template></button></li>
-        <li class="ev" data-cat="events"><button class="evb" data-detail data-cover data-slug="windenergy-india" data-title="Windenergy India" data-org="Chennai Trade Centre" data-date="08 Oct 2026">
-          <span class="cover"></span><span class="evd"><b>08</b><i>Oct 2026</i></span><span class="evt"><strong>Windenergy India</strong><small>Chennai Trade Centre</small></span><span class="evtag t-events">Guest</span>
-          <template><li>Attended as a guest at Chennai Trade Centre.</li></template></button></li>
-        <li class="ev" data-cat="cert"><button class="evb" data-detail data-cover data-slug="cii-foundational-applied-machine-learning-and-ai" data-title="Foundational Course on Applied Machine Learning and AI" data-org="Confederation of Indian Industry (CII)" data-date="26 Sep 2026" >
+        <li class="ev" data-cat="events"><button class="evb" data-detail data-cover data-slug="windergy-india" data-title="Windergy India 2026" data-org="Chennai Trade Centre" data-date="08 Oct 2026" data-links='[{"t": "Windergy India 2026 announcement", "u": "https://www.windtech-international.com/company-announcement/windergy-india-2026-where-the-forces-accelerating-wind-energy-converge"}]' data-facts='[["Event", "Windergy India 2026, 8th edition"], ["Fair dates", "7–9 October 2026"], ["Visited", "8 October 2026 (inauguration day)"], ["Venue", "Chennai Trade Centre, Nandambakkam, Chennai"], ["Format", "Three-day trade fair with a two-day conference"]]'>
+          <span class="cover"></span><span class="evd"><b>08</b><i>Oct 2026</i></span><span class="evt"><strong>Windergy India 2026</strong><small>Chennai Trade Centre</small></span><span class="evtag t-events">Guest</span>
+          <template><li>Visited the 8th edition of Windergy India, India's trade fair and conference for the wind energy sector, at Chennai Trade Centre.</li><li>The fair ran 7–9 October 2026. News reports say Union Minister Pralhad Joshi inaugurated it on 8 October, the day of this visit.</li></template></button></li>
+        <li class="ev" data-cat="cert"><button class="evb" data-detail data-cover data-slug="cii-foundational-applied-machine-learning-and-ai" data-cert-label="Certification" data-facts='[["Certificate No.", "23CII-FJ26-71158"], ["Issued to", "Sayantani Banerjee"], ["Course", "Foundational Course on Applied Machine Learning and AI"], ["Issued by", "Confederation of Indian Industry (CII), recognised by NCVET"], ["Place of issue", "Delhi"], ["Date of issue", "26 September 2026"], ["Signed by", "Sougata Roy Choudhury, Executive Director, Confederation of Indian Industry"], ["Shown on certificate", "MeitY, India AI Impact Summit, IndiaAI, CII Centre for AI, CII Centre of Excellence on Skills"]]' data-title="Foundational Course on Applied Machine Learning and AI" data-org="Confederation of Indian Industry (CII)" data-date="26 Sep 2026" >
           <span class="cover"></span><span class="evd"><b>26</b><i>Sep 2026</i></span><span class="evt"><strong>Foundational Course on Applied Machine Learning and AI</strong><small>Confederation of Indian Industry (CII)</small></span><span class="evtag t-cert">Certified</span>
           <template><li>Cleared the assessment of the Foundational Course on Applied Machine Learning and AI.</li><li>Issued by the Confederation of Indian Industry (CII), recognised by NCVET, at Delhi on 26 September 2026.</li><li>Certificate No. 23CII-FJ26-71158.</li></template></button></li>
         <li class="ev" data-cat="events"><button class="evb" data-detail data-cover data-slug="codesy-dhanalaxmi-shrinivasan-college" data-title="Codesy" data-org="Dhanalaxmi Shrinivasan College" data-date="18 Sep 2026">
@@ -634,31 +700,31 @@ button.gh:hover{background:var(--lime)}
         <li class="ev" data-cat="events"><button class="evb" data-detail data-cover data-slug="yuci-global-event-srm-easwari" data-title="YUCI, Global Event" data-org="SRM Easwari" data-date="11 Sep 2026">
           <span class="cover"></span><span class="evd"><b>11</b><i>Sep 2026</i></span><span class="evt"><strong>YUCI, Global Event</strong><small>SRM Easwari</small></span><span class="evtag t-events">Event</span>
           <template><li>Global event YUCI at SRM Easwari.</li></template></button></li>
-        <li class="ev" data-cat="events"><button class="evb" data-detail data-cover data-slug="srm-kattankulathur" data-title="SRM Kattankulathur" data-org="SRM Kattankulathur" data-date="09 Sep 2026">
-          <span class="cover"></span><span class="evd"><b>09</b><i>Sep 2026</i></span><span class="evt"><strong>SRM Kattankulathur</strong><small>SRM Kattankulathur</small></span><span class="evtag t-events">Event</span>
-          <template><li>Event at SRM Kattankulathur.</li></template></button></li>
+        <li class="ev" data-cat="events"><button class="evb" data-detail data-cover data-slug="srm-kattankulathur" data-title="SRM Kattankulathur" data-org="On stage" data-date="09 Sep 2026"  data-facts='[["Event", "SRM Kattankulathur"], ["Date", "9 September 2026"], ["Format", "Speaking, with the audience seated in front"]]' data-video="videos/speaking-srm-kattankulathur.mp4" data-poster="videos/speaking-srm-kattankulathur-poster.jpg">
+          <span class="cover"></span><span class="evd"><b>09</b><i>Sep 2026</i></span><span class="evt"><strong>SRM Kattankulathur</strong><small>On stage</small></span><span class="evtag t-events">Speaking</span>
+          <template><li>Spoke on stage at SRM Kattankulathur on 9 September 2026. Watch the clip.</li></template></button></li>
         <li class="ev" data-cat="wins"><button class="evb" data-detail data-cover data-slug="genesis-2026-srm-vadapalani" data-title="Winner, GENESIS" data-org="SRM Vadapalani" data-date="02–03 Sep 2026">
           <span class="cover"></span><span class="evd"><b>02–03</b><i>Sep 2026</i></span><span class="evt"><strong>Winner, GENESIS</strong><small>SRM Vadapalani</small></span><span class="evtag t-wins">Winner</span>
           <template><li>First place at GENESIS 2026, SRM Vadapalani.</li><li>Won the day after placing 2nd at Clash of Coders.</li></template></button></li>
-        <li class="ev" data-cat="wins"><button class="evb" data-detail data-cover data-slug="clash-of-coders" data-title="2nd Position, Clash of Coders" data-org="Coders Forum · Panimalar Engineering College" data-date="01 Sep 2026" >
+        <li class="ev" data-cat="wins"><button class="evb" data-detail data-cover data-slug="clash-of-coders" data-cert-label="Certificate of appreciation" data-facts='[["Awarded to", "Sayantani Banerjee"], ["Position", "2nd"], ["Contest", "CLASH OF CODERS&#39;26, an interdepartmental coding contest"], ["Organised by", "Coders Forum"], ["Institution", "Panimalar Engineering College, Department of Computer Science and Engineering (autonomous, affiliated to Anna University), Varadharajapuram, Poonamallee, Chennai"], ["Partner shown", "GeeksforGeeks"], ["Signed by", "Dr. K. Mani (Principal), Dr. S. Prasanna Devi (Chief Academic Officer), Dr. L. Jabasheela (HOD, CSE), Dr. V. Anitha Moses (Convenor)"], ["Date", "1 September 2026"]]' data-title="2nd Position, Clash of Coders" data-org="Coders Forum · Panimalar Engineering College" data-date="01 Sep 2026" >
           <span class="cover"></span><span class="evd"><b>01</b><i>Sep 2026</i></span><span class="evt"><strong>2nd Position, Clash of Coders</strong><small>Coders Forum · Panimalar Engineering College</small></span><span class="evtag t-wins">2nd place</span>
           <template><li>Secured the 2nd position in CLASH OF CODERS'26, an interdepartmental coding contest organised by the Coders Forum.</li><li>Certificate of appreciation signed by the Principal, Chief Academic Officer, Head of the CSE Department and the convenor.</li></template></button></li>
         <li class="ev" data-cat="events"><button class="evb" data-detail data-cover data-slug="parts2power" data-title="Parts2Power" data-org="Chennai Trade Centre" data-date="01 Aug 2026">
           <span class="cover"></span><span class="evd"><b>01</b><i>Aug 2026</i></span><span class="evt"><strong>Parts2Power</strong><small>Chennai Trade Centre</small></span><span class="evtag t-events">Guest</span>
           <template><li>Attended as a guest at Chennai Trade Centre.</li></template></button></li>
-        <li class="ev" data-cat="wins"><button class="evb" data-detail data-cover data-slug="seattle-global-social-business-pitch" data-title="Winner, Global Social Business Pitch" data-org="The City University of Seattle" data-date="26 Jul 2026">
+        <li class="ev" data-cat="wins"><button class="evb" data-detail data-cover data-slug="seattle-global-social-business-pitch" data-photos-label="Poster" data-facts='[["Team", "Team Unpromptables"], ["Competition", "Global Social Business Pitch Competition 2026"], ["Host", "City University of Seattle"], ["Date", "26 July 2026"], ["Theme", "Entrepreneurship, innovation and social business"]]' data-title="Winner, Global Social Business Pitch" data-org="The City University of Seattle" data-date="26 Jul 2026">
           <span class="cover"></span><span class="evd"><b>26</b><i>Jul 2026</i></span><span class="evt"><strong>Winner, Global Social Business Pitch</strong><small>The City University of Seattle</small></span><span class="evtag t-wins">Winner</span>
           <template><li>Competed as Team Unpromptables at the Global Social Business Pitch Competition 2026, The City University of Seattle.</li><li>Won the Global Social Business Pitch at The City University of Seattle.</li></template></button></li>
-        <li class="ev" data-cat="events"><button class="evb" data-detail data-cover data-slug="makeai-and-medicall" data-title="MakeAI &amp; Medicall" data-org="Chennai Trade Centre" data-date="25 Jul 2026">
+        <li class="ev" data-cat="events"><button class="evb" data-detail data-cover data-slug="makeai-and-medicall" data-title="MakeAI &amp; Medicall" data-org="Chennai Trade Centre" data-date="25 Jul 2026"  data-facts='[["Medicall", "47th edition, 24–26 July 2026"], ["About", "India&#39;s B2B medical equipment show"], ["Organiser", "Medexpert Business Consultants Pvt Ltd, Chennai"], ["Venue", "Chennai Trade Centre, Nandambakkam, Chennai"], ["Visited", "25 July 2026"]]'>
           <span class="cover"></span><span class="evd"><b>25</b><i>Jul 2026</i></span><span class="evt"><strong>MakeAI &amp; Medicall</strong><small>Chennai Trade Centre</small></span><span class="evtag t-events">Guest</span>
-          <template><li>Attended MakeAI and Medicall as a guest at Chennai Trade Centre.</li><li>The first of four Chennai Trade Centre events in under three months.</li></template></button></li>
-        <li class="ev" data-cat="lead"><button class="evb" data-detail data-cover data-slug="ecokadai-market-survey" data-title="Market Survey Intern" data-org="EcoKadai · Circularbee Innovations" data-date="Jun–Aug 2026" data-links='[{"t": "EcoKadai", "u": "https://ecokadai.in/"}]'>
+          <template><li>Visited MakeAI and Medicall as a guest at Chennai Trade Centre on 25 July 2026.</li><li>Medicall is India's B2B medical equipment show. Its 47th edition ran 24–26 July 2026.</li></template></button></li>
+        <li class="ev" data-cat="lead"><button class="evb" data-detail data-cover data-slug="ecokadai-market-survey" data-cert-label="Internship certificate" data-facts='[["Certificate No.", "CBI/INT/2026/003"], ["Issued to", "Ms. Sayantani Banerjee, Department of Computer Science and Engineering, Panimalar Engineering College, Chennai"], ["Organisation", "Circularbee Innovations Pvt. Ltd., Madurai, Tamil Nadu (EcoKadai, ecokadai.in)"], ["Internship period", "1 June 2026 to 31 August 2026"], ["Project", "Chennai Café Market Survey for Compostable Beverage Cups"], ["Domain", "B2B Market Research, Validation and Commercial Feasibility"], ["Team", "Four-member team project"], ["Date of issue", "2 September 2026"], ["Signed by", "Pushpalakshmi Mohan, M.E., Founder and Director"]]' data-title="Market Survey Intern" data-org="EcoKadai · Circularbee Innovations" data-date="Jun–Aug 2026" data-links='[{"t": "EcoKadai", "u": "https://ecokadai.in/"}]'>
           <span class="cover"></span><span class="evd"><b>Jun–Aug</b><i>2026</i></span><span class="evt"><strong>Market Survey Intern</strong><small>EcoKadai · Circularbee Innovations</small></span><span class="evtag t-lead">Work</span>
           <template><li>Chennai Café Market Survey for Compostable Beverage Cups.</li><li>B2B market research, validation and commercial feasibility with Circularbee Innovations Pvt. Ltd. (EcoKadai), Madurai.</li><li>Carried out 1 June to 31 August 2026 as part of a four-member team project.</li><li>Internship completion certificate issued 2 September 2026 by Pushpalakshmi Mohan, Founder and Director.</li></template></button></li>
-        <li class="ev" data-cat="events"><button class="evb" data-detail data-cover data-slug="techgium-lnt" data-title="TECHgium, L&amp;T Technology Services" data-org="RUNWAY abstract submitted" data-date="Oct 2026" data-links='[{"t": "RUNWAY live site", "u": "https://runway-nine-green.vercel.app/"}]'>
+        <li class="ev" data-cat="events"><button class="evb" data-detail data-cover data-slug="techgium-lnt" data-photos-label="Poster and submission" data-facts='[["Portal", "TECHgium, L&amp;T Technology Services"], ["Abstract ID", "TG0924203"], ["Status", "Submitted"], ["Challenge", "Real Time ADAS To Detect Parked Vehicle to overtake another vehicle (Mobility)"], ["Concept title", "RUNWAY: Occlusion-Aware Overtaking Advisory Using Verified Road Visibility and Manoeuvre Feasibility"], ["Team", "Four students with a faculty guide"], ["Approach", "Camera and radar fusion into a lane-aligned occupancy grid (free, occupied, unknown), advisory only"]]' data-title="TECHgium, L&amp;T Technology Services" data-org="RUNWAY abstract submitted" data-date="Oct 2026" data-links='[{"t": "RUNWAY live site", "u": "https://runway-nine-green.vercel.app/"}]'>
           <span class="cover"></span><span class="evd"><b>Oct</b><i>2026</i></span><span class="evt"><strong>TECHgium, L&amp;T Technology Services</strong><small>RUNWAY abstract submitted</small></span><span class="evtag t-events">Submitted</span>
           <template><li>Submitted the abstract RUNWAY: Occlusion-Aware Overtaking Advisory Using Verified Road Visibility and Manoeuvre Feasibility to TECHgium, L&amp;T Technology Services (PID TG0924203).</li><li>Challenge: Real Time ADAS to detect a parked vehicle to overtake another vehicle (Mobility).</li><li>RUNWAY fuses camera and radar into a lane-aligned map that marks the road ahead as free, occupied or unknown, and advises the driver without controlling the vehicle.</li><li>A team of four, with Smart India Hackathon projects being built alongside.</li></template></button></li>
-        <li class="ev" data-cat="lead"><button class="evb" data-detail data-cover data-slug="yz-sv-tif-unified" data-title="YZ × SV × TIF, unified" data-org="Sanghamitra Ventures · The Invincible Fire · WHY YZ?" data-date="2026" data-links='[{"t": "WHY YZ?", "u": "https://yz-five.vercel.app/"}, {"t": "Sanghamitra Ventures &amp; YZ?", "u": "https://sanghamitra-xi.vercel.app/"}]'>
+        <li class="ev" data-cat="lead"><button class="evb" data-detail data-cover data-slug="yz-sv-tif-unified" data-photos-label="Cards and logos" data-cert-label="ID card" data-facts='[["Card", "YZ Intern, Builder Class 2026, Level 1 verified"], ["ID code", "YZ-SV-TIF-2026-UNIFIED"], ["Sanghamitra Ventures", "Venture architecture and strategy"], ["The Invincible Fire", "Technical engine and execution"], ["Validity", "Program valid for 2026 only"], ["Platform", "yz-five.vercel.app"]]' data-title="YZ × SV × TIF, unified" data-org="Sanghamitra Ventures · The Invincible Fire · WHY YZ?" data-date="2026" data-links='[{"t": "WHY YZ?", "u": "https://yz-five.vercel.app/"}, {"t": "Sanghamitra Ventures &amp; YZ?", "u": "https://sanghamitra-xi.vercel.app/"}]'>
           <span class="cover"></span><span class="evd"><b>2026</b><i></i></span><span class="evt"><strong>YZ × SV × TIF, unified</strong><small>Sanghamitra Ventures · The Invincible Fire · WHY YZ?</small></span><span class="evtag t-lead">Leading</span>
           <template><li>YZ Intern, Builder Class 2026, Level 1 verified.</li><li>Sanghamitra Ventures brings venture architecture and strategy. The Invincible Fire brings the technical engine and execution. WHY YZ? is where they meet.</li><li>Born out of leading the Entrepreneurship Development Cell: inputs, interactions, incubation and development.</li></template></button></li>
         <li class="ev" data-cat="wins"><button class="evb" data-detail data-cover data-slug="toastmasters-triple-crown-rockstar-pathway-champion" data-title="Triple Crown, Rockstar &amp; Pathway Champion" data-org="Toastmasters International" data-date="Apr 2026">
@@ -670,29 +736,32 @@ button.gh:hover{background:var(--lime)}
         <li class="ev" data-cat="wins"><button class="evb" data-detail data-cover data-slug="area-a3-international-speech-contest" data-title="Bronze Medalist, Area A3 Speech Contest" data-org="Toastmasters International" data-date="Mar 2026">
           <span class="cover"></span><span class="evd"><b>Mar</b><i>2026</i></span><span class="evt"><strong>Bronze Medalist, Area A3 Speech Contest</strong><small>Toastmasters International</small></span><span class="evtag t-wins">Medal</span>
           <template><li>Bronze Medalist at the Area A3 International Speech Contest.</li></template></button></li>
-        <li class="ev" data-cat="research"><button class="evb" data-detail data-cover data-slug="mind-2026-samarkand" data-links='[{"t": "MIND 2026 call for papers (EasyChair)", "u": "https://easychair.org/cfp/MIND2026"}]' data-title="MIND-2026, Samarkand" data-org="Uzbekistan" data-date="2026">
+        <li class="ev" data-cat="research"><button class="evb" data-detail data-cover data-slug="mind-2026-samarkand" data-facts='[["Paper", "Generative Model for Extended Dance Sequence Generation from a Video"], ["Conference", "MIND 2026: Machine Learning, Image Processing, Network Security and Data Sciences"], ["Venue", "Samarkand State University, Uzbekistan"], ["Dates", "19–21 June 2026"], ["Proceedings", "Springer CCIS series (Scopus indexed), per the call for papers"]]' data-links='[{"t": "MIND 2026 call for papers (EasyChair)", "u": "https://easychair.org/cfp/MIND2026"}]' data-title="MIND-2026, Samarkand" data-org="Uzbekistan" data-date="2026">
           <span class="cover"></span><span class="evd"><b>2026</b><i></i></span><span class="evt"><strong>MIND-2026, Samarkand</strong><small>Uzbekistan</small></span><span class="evtag t-research">Paper</span>
           <template><li>Generative Model for Extended Dance Sequence Generation from a Video.</li><li>8th International Conference on ML, Internet Protocols, Network Systems &amp; DS.</li></template></button></li>
         <li class="ev" data-cat="research"><button class="evb" data-detail data-cover data-slug="iqac-ssn-2026" data-title="Shirobedhas, IQAC SSN 2026" data-org="SSN Engineering College" data-date="2026">
           <span class="cover"></span><span class="evd"><b>2026</b><i></i></span><span class="evt"><strong>Shirobedhas, IQAC SSN 2026</strong><small>SSN Engineering College</small></span><span class="evtag t-research">Paper</span>
           <template><li>Computational Identification and Classification of Shirobedhas using Temporal Dance Features.</li><li>International Conference on Indian Knowledge Systems, Tradition, Culture, Technology.</li></template></button></li>
         <li class="yr">2025</li>
+        <li class="ev" data-cat="lead"><button class="evb" data-detail data-cover data-slug="elite-coders-winter-of-code-developer" data-cert-label="Participant IDs" data-facts='[["Program", "Elite Coders Winter of Code (ECWoC)"], ["Participant pass", "Verified ECWoC participant, issued for learning, collaboration and open-source contribution"], ["Digital ID", "Contributor, ECWoC 2026"], ["GitHub", "@Sayantani9"], ["Signed by", "Nishant Rana, Program Lead, Organizing Team, Elite Coders"], ["Program website", "code.elitecoders.xyz"]]' data-title="Elite Coders Winter of Code" data-org="Elite Coders" data-date="Dec–May 2025–26"  >
+          <span class="cover"></span><span class="evd"><b>Dec–May</b><i>2025–26</i></span><span class="evt"><strong>Elite Coders Winter of Code</strong><small>Elite Coders</small></span><span class="evtag t-lead">Program</span>
+          <template><li>Developer in Elite Coders Winter of Code (ECWoC).</li><li>Holds the verified ECWoC participant pass and the ECWoC 2026 contributor ID.</li></template></button></li>
         <li class="ev" data-cat="wins"><button class="evb" data-detail data-cover data-slug="icpc-2025-institute-rank-1" data-title="ICPC 2025, Institute Rank 1" data-org="Amritapuri Regionals" data-date="#1 Nov 2025">
           <span class="cover"></span><span class="evd"><b>#1</b><i>Nov 2025</i></span><span class="evt"><strong>ICPC 2025, Institute Rank 1</strong><small>Amritapuri Regionals</small></span><span class="evtag t-wins">Winner</span>
           <template><li>Institute Rank 1 at the ICPC 2025 Amritapuri Regionals, South Asia Chapter.</li></template></button></li>
         <li class="ev" data-cat="wins"><button class="evb" data-detail data-cover data-slug="start-up-tn-global-student-entrepreneurship-awards" data-title="Finalist, Global Student Entrepreneurship Awards" data-org="Start Up TN × EO" data-date="Top 80 Nov 2025">
           <span class="cover"></span><span class="evd"><b>Top 80</b><i>Nov 2025</i></span><span class="evt"><strong>Finalist, Global Student Entrepreneurship Awards</strong><small>Start Up TN × EO</small></span><span class="evtag t-wins">Finalist</span>
           <template><li>Top 80 of 300 start-ups from India.</li><li>Entrepreneurs' Organisation Global Student Entrepreneurship Awards.</li></template></button></li>
-        <li class="ev" data-cat="research"><button class="evb" data-detail data-cover data-slug="peer-reviewer-journal-of-environmental-management" data-links='[{"t": "Journal page", "u": "https://www.sciencedirect.com/journal/journal-of-environmental-management"}, {"t": "ORCID record", "u": "https://orcid.org/0009-0009-7861-484X"}]' data-title="Peer Reviewer" data-org="Journal of Environmental Management" data-date="Nov 2025">
-          <span class="cover"></span><span class="evd"><b>Nov</b><i>2025</i></span><span class="evt"><strong>Peer Reviewer</strong><small>Journal of Environmental Management</small></span><span class="evtag t-research">Review</span>
-          <template><li>Peer reviewer for the Journal of Environmental Management (Impact Factor 8.4).</li><li>ORCID iD 0009-0009-7861-484X.</li></template></button></li>
+        <li class="ev" data-cat="research"><button class="evb" data-detail data-cover data-slug="peer-reviewer-journal-of-environmental-management" data-title="Peer Reviewer, Journal of Environmental Management" data-org="Elsevier · Impact Factor 8.4" data-date="4× 2025–26" data-links='[{"t": "ORCID peer review record", "u": "https://orcid.org/0009-0009-7861-484X"}, {"t": "Journal page", "u": "https://www.sciencedirect.com/journal/journal-of-environmental-management"}]' data-facts='[["Journal", "Journal of Environmental Management (ISSN 0301-4797)"], ["Reviews", "4 (two in 2025, two in 2026)"], ["Role", "Reviewer"], ["Convening organisation", "Elsevier, Inc. (New York, US)"], ["Source", "Elsevier Editorial, verified on ORCID"], ["ORCID iD", "0009-0009-7861-484X"]]'>
+          <span class="cover"></span><span class="evd"><b>4×</b><i>2025–26</i></span><span class="evt"><strong>Peer Reviewer, Journal of Environmental Management</strong><small>Elsevier · Impact Factor 8.4</small></span><span class="evtag t-research">Review</span>
+          <template><li>Four peer reviews for the Journal of Environmental Management, two in 2025 and two in 2026.</li><li>Verified on my ORCID record, with Elsevier Editorial as the source.</li><li>Manuscripts are confidential, so titles are not shown.</li></template></button></li>
         <li class="ev" data-cat="lead"><button class="evb" data-detail data-cover data-slug="toastmasters-vp-memberships-oath" data-title="Took the oath as Vice President, Memberships" data-org="Toastmasters International, PEC Chapter" data-date="Oct 2025">
           <span class="cover"></span><span class="evd"><b>Oct</b><i>2025</i></span><span class="evt"><strong>Took the oath as Vice President, Memberships</strong><small>Toastmasters International, PEC Chapter</small></span><span class="evtag t-lead">Leading</span>
           <template><li>Vice President of Memberships for the PEC chapter, Oct 2025 – Mar 2026.</li></template></button></li>
         <li class="ev" data-cat="lead"><button class="evb" data-detail data-cover data-slug="entrepreneurship-development-cell" data-title="Leading the Entrepreneurship Development Cell" data-org="NEC, IIT Bombay · Eureka &amp; Ignite" data-date="May–Dec 2025">
           <span class="cover"></span><span class="evd"><b>May–Dec</b><i>2025</i></span><span class="evt"><strong>Leading the Entrepreneurship Development Cell</strong><small>NEC, IIT Bombay · Eureka &amp; Ignite</small></span><span class="evtag t-lead">Leading</span>
           <template><li>Led the Entrepreneurship Development Cell through inputs, interactions, incubation and development.</li><li>Chief Operating Officer, EDC (NEC, IIT Bombay). IIT Bombay NEC Finalists, Top 100 Entrepreneurs.</li><li>Chief Coordinating Officer for Eureka and Ignite, IIT Bombay.</li><li>Invited as a Guest Speaker of Honour.</li></template></button></li>
-        <li class="ev" data-cat="research"><button class="evb" data-detail data-cover data-slug="recycle-2025-iit-guwahati" data-links='[{"t": "Official IIT Guwahati page", "u": "https://www.iitg.ac.in/iitg_events_details?p=2967/recycle-2025-5th-international-conference-on-waste-management"}, {"t": "Conference brochure (PDF)", "u": "https://www.iitg.ac.in/pdf/7d49f3678a774dfd1aed2edbdcc6e5de.pdf"}]' data-title="RECYCLE 2025" data-org="IIT Guwahati" data-date="Jun 2025">
+        <li class="ev" data-cat="research"><button class="evb" data-detail data-cover data-slug="recycle-2025-iit-guwahati" data-facts='[["Paper", "Shuddh: The Self-sustainable, Self-cleaning, Smart, AI-driven Waste Segregator and Waste to Wealth Generator for a Clean, Green Zero Waste Future"], ["Conference", "RECYCLE 2025, 5th International Conference on Waste Management"], ["Venue", "IIT Guwahati"], ["Dates", "5–6 June 2025"], ["Organised by", "Waste Management Research Group, Dept. of Civil Engineering and School of Agro and Rural Technology"], ["Outcome", "Shortlisted presenter, abstract published June 2025"]]' data-links='[{"t": "Official IIT Guwahati page", "u": "https://www.iitg.ac.in/iitg_events_details?p=2967/recycle-2025-5th-international-conference-on-waste-management"}, {"t": "Conference brochure (PDF)", "u": "https://www.iitg.ac.in/pdf/7d49f3678a774dfd1aed2edbdcc6e5de.pdf"}]' data-title="RECYCLE 2025" data-org="IIT Guwahati" data-date="Jun 2025">
           <span class="cover"></span><span class="evd"><b>Jun</b><i>2025</i></span><span class="evt"><strong>RECYCLE 2025</strong><small>IIT Guwahati</small></span><span class="evtag t-research">Paper</span>
           <template><li>Shortlisted presenter at the 5th International Conference on Waste Management.</li><li>Abstract on SHUDDH published.</li></template></button></li>
         <li class="ev" data-cat="wins"><button class="evb" data-detail data-cover data-slug="ideathon-pec-anna-university" data-title="First Runner-up of 500+ teams" data-org="Ideathon, Panimalar Engineering College" data-date="15 Feb 2025">
@@ -770,7 +839,7 @@ button.gh:hover{background:var(--lime)}
     </ul>
     <h3 class="sh">The ten</h3>
     <ul class="xlist num">
-      <li><button class="xrow" data-slug="ecokadai-market-survey" data-title="EcoKadai Market Survey Intern" data-org="Circularbee Innovations · EcoKadai" data-date="Jun – Aug 2026"><span class="xt">EcoKadai Market Survey Intern</span><span class="xm">EcoKadai · Jun – Aug 2026</span><span class="band" aria-hidden="true"></span>
+      <li><button class="xrow" data-slug="ecokadai-market-survey" data-cert-label="Internship certificate" data-facts='[["Certificate No.", "CBI/INT/2026/003"], ["Issued to", "Ms. Sayantani Banerjee, Department of Computer Science and Engineering, Panimalar Engineering College, Chennai"], ["Organisation", "Circularbee Innovations Pvt. Ltd., Madurai, Tamil Nadu (EcoKadai, ecokadai.in)"], ["Internship period", "1 June 2026 to 31 August 2026"], ["Project", "Chennai Café Market Survey for Compostable Beverage Cups"], ["Domain", "B2B Market Research, Validation and Commercial Feasibility"], ["Team", "Four-member team project"], ["Date of issue", "2 September 2026"], ["Signed by", "Pushpalakshmi Mohan, M.E., Founder and Director"]]' data-title="EcoKadai Market Survey Intern" data-org="Circularbee Innovations · EcoKadai" data-date="Jun – Aug 2026"><span class="xt">EcoKadai Market Survey Intern</span><span class="xm">EcoKadai · Jun – Aug 2026</span><span class="band" aria-hidden="true"></span>
         <template><li>Chennai Café Market Survey for Compostable Beverage Cups.</li><li>B2B market research, validation and commercial feasibility with Circularbee Innovations Pvt. Ltd. (EcoKadai), Madurai.</li><li>Carried out 1 June to 31 August 2026 as part of a four-member team project.</li><li>Internship completion certificate issued 2 September 2026 by Pushpalakshmi Mohan, Founder and Director.</li></template></button></li>
       <li><button class="xrow" data-title="Elite Coders Summer of Code Mentor" data-org="EliteCoders" data-date="2025 – 2026"><span class="xt">Elite Coders Summer of Code Mentor</span><span class="xm">EliteCoders · Summer of Code</span><span class="band" aria-hidden="true"></span>
         <template><li>Mentor in EliteCoders' Summer of Code program.</li></template></button></li>
@@ -841,14 +910,22 @@ button.gh:hover{background:var(--lime)}
 <!-- EXPERIENCE DETAIL -->
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle" aria-hidden="true">
   <button class="mclose" id="mClose" aria-label="Close">×</button>
-  <div class="mbox">
-    <div class="mdate" id="mDate"></div>
-    <h3 id="mTitle"></h3>
-    <div class="morg" id="mOrg"></div>
-    <ul id="mList"></ul>
-    <div class="mlinks" id="mLinks" hidden></div>
-    <div class="mgallery" id="mGallery" hidden></div>
-    <div class="mcert" id="mCert" hidden></div>
+  <div class="mbox" id="mBox">
+    <div class="mgrid">
+      <div class="mtext">
+        <div class="mdate" id="mDate"></div>
+        <h3 id="mTitle"></h3>
+        <div class="morg" id="mOrg"></div>
+        <ul id="mList"></ul>
+        <dl class="mfacts" id="mFacts" hidden></dl>
+        <div class="mlinks" id="mLinks" hidden></div>
+      </div>
+      <div class="mmedia" id="mMedia" hidden>
+        <div class="mvideo" id="mVideo" hidden></div>
+        <div class="mcert" id="mCert" hidden></div>
+        <div class="mgallery" id="mGallery" hidden></div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -1016,19 +1093,22 @@ button.gh:hover{background:var(--lime)}
   var opener = null;
   function slugify(t){ return t.toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,''); }
   var mediaToken = 0;
-  function loadMedia(slug){
+  var mBox = document.getElementById('mBox'), mMedia = document.getElementById('mMedia');
+  function showMedia(){ mMedia.hidden = false; mBox.classList.add('has-media'); }
+  function loadMedia(slug, row){
     var token = ++mediaToken;
     var gal = document.getElementById('mGallery'), cert = document.getElementById('mCert');
-    gal.innerHTML = ''; gal.hidden = true; cert.innerHTML = ''; cert.hidden = true;
+    gal.innerHTML = ''; gal.hidden = true; gal.classList.remove('single'); cert.innerHTML = ''; cert.hidden = true;
+    var pl = row.dataset.photosLabel || 'Photos', cl = row.dataset.certLabel || 'Certificate';
     (function next(i){
       if (i > 12 || token !== mediaToken) return;
       var url = 'events/' + slug + '/' + i + '.jpg', im = new Image();
-      im.alt = 'Photo ' + i;
+      im.alt = pl + ' ' + i;
       im.onload = function(){
         if (token !== mediaToken) return;
-        if (gal.hidden) { gal.hidden = false; gal.setAttribute('data-h', 'Photos'); }
+        showMedia(); gal.hidden = false; gal.setAttribute('data-h', pl);
         var a = document.createElement('a'); a.href = url; a.target = '_blank'; a.rel = 'noopener'; a.appendChild(im);
-        gal.appendChild(a); next(i + 1);
+        gal.appendChild(a); gal.classList.toggle('single', gal.children.length === 1); next(i + 1);
       };
       im.src = url;
     })(1);
@@ -1047,10 +1127,11 @@ button.gh:hover{background:var(--lime)}
       if (n > 6 || token !== mediaToken) return;
       findCert('certificates/' + slug + (n > 1 ? '-' + n : '')).then(function(c){
         if (!c || token !== mediaToken) return;
-        if (cert.hidden) { cert.hidden = false; cert.setAttribute('data-h', 'Certificate'); }
+        showMedia();
+        if (cert.hidden) { cert.hidden = false; cert.setAttribute('data-h', cl); }
         cert.insertAdjacentHTML('beforeend', c.pdf
-          ? '<a class="cbtn" href="' + c.url + '" target="_blank" rel="noopener">Open certificate (PDF) ↗</a>'
-          : '<a class="cimg" href="' + c.url + '" target="_blank" rel="noopener"><img src="' + c.url + '" alt="Certificate ' + n + '"></a>');
+          ? '<a class="cbtn" href="' + c.url + '" target="_blank" rel="noopener">Open ' + cl.toLowerCase() + ' (PDF) ↗</a>'
+          : '<a class="cimg" href="' + c.url + '" target="_blank" rel="noopener"><img src="' + c.url + '" alt="' + cl + ' ' + n + '"></a>');
         loop(n + 1);
       });
     })(1);
@@ -1063,24 +1144,42 @@ button.gh:hover{background:var(--lime)}
     var list = document.getElementById('mList'); list.innerHTML = '';
     var tpl = row.querySelector('template');
     if (tpl) list.appendChild(tpl.content.cloneNode(true));
+    var fd = document.getElementById('mFacts'); fd.innerHTML = ''; fd.hidden = true;
+    if (row.dataset.facts) {
+      try {
+        JSON.parse(row.dataset.facts).forEach(function(f){
+          var d = document.createElement('div'), dt = document.createElement('dt'), dd = document.createElement('dd');
+          dt.textContent = f[0]; dd.textContent = f[1]; d.appendChild(dt); d.appendChild(dd); fd.appendChild(d);
+        });
+        fd.hidden = false;
+      } catch (e) {}
+    }
     var lk = document.getElementById('mLinks'); lk.innerHTML = ''; lk.hidden = true;
     if (row.dataset.links) {
       try {
         JSON.parse(row.dataset.links).forEach(function(l){
-          var a = document.createElement('a'); a.className = 'cbtn'; a.href = l.u; a.textContent = l.t + ' ↗';
-          if (/^https?:/.test(l.u)) { a.target = '_blank'; a.rel = 'noopener noreferrer'; } else { a.target = '_blank'; }
+          var a = document.createElement('a'); a.className = 'cbtn'; a.href = l.u; a.textContent = l.t + ' ↗'; a.target = '_blank';
+          if (/^https?:/.test(l.u)) a.rel = 'noopener noreferrer';
           lk.appendChild(a);
         });
         lk.hidden = false;
       } catch (e) {}
     }
-    loadMedia(row.dataset.slug || slugify(row.dataset.title));
+    mMedia.hidden = true; mBox.classList.remove('has-media');
+    var mv = document.getElementById('mVideo'); mv.innerHTML = ''; mv.hidden = true;
+    if (row.dataset.video) {
+      var v = document.createElement('video'); v.controls = true; v.playsInline = true; v.preload = 'metadata';
+      if (row.dataset.poster) v.poster = row.dataset.poster;
+      v.src = row.dataset.video; mv.appendChild(v); mv.hidden = false; showMedia();
+    }
+    loadMedia(row.dataset.slug || slugify(row.dataset.title), row);
     modal.classList.add('open'); modal.setAttribute('aria-hidden', 'false');
     modal.scrollTop = 0;
     body.classList.add('locked');
     setTimeout(function(){ mClose.focus(); }, 60);
   }
   function closeModal(){
+    var vv = document.querySelector('#mVideo video'); if (vv) vv.pause();
     modal.classList.remove('open'); modal.setAttribute('aria-hidden', 'true');
     body.classList.remove('locked');
     if (opener) opener.focus({preventScroll:true});
@@ -1131,6 +1230,12 @@ button.gh:hover{background:var(--lime)}
       a.className = 'gh'; a.href = REPOS[key]; a.target = '_blank'; a.rel = 'noopener noreferrer'; a.textContent = 'Code ↗';
       card.querySelector('.links').appendChild(a);
     }
+  });
+
+  /* ---- watch me speak: scroll to the clip, then play it ---- */
+  var watchBtn = document.querySelector('[data-play]'), speakVid = document.getElementById('speakVideo');
+  if (watchBtn && speakVid) watchBtn.addEventListener('click', function(){
+    setTimeout(function(){ var pr = speakVid.play(); if (pr && pr.catch) pr.catch(function(){}); }, 1000);
   });
 
   /* ---- giant footer name fits the page width ---- */
