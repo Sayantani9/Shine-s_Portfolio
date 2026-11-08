@@ -1,6 +1,6 @@
-# Sayantani | Portfolio
+# Sayantani Banerjee | Portfolio
 
-Personal portfolio of **Sayantani**: Computer Science student at PEC Anna University, Chennai, working across AI products, research, open source and entrepreneurship.
+Personal portfolio of **Sayantani Banerjee**: Computer Science student at Anna University, Chennai, working across AI products, research, open source and entrepreneurship.
 
 A single-page, zero-dependency static site. No build step, no framework, no package manager. One `index.html` file holds the markup, styles and scripts.
 
@@ -13,6 +13,9 @@ A single-page, zero-dependency static site. No build step, no framework, no pack
 
 | Version | What changed |
 |---|---|
+| **V9** | Mentorship section (1:1 booking card, GSSoC'25 mentor card, 15 contributor cards), every mention of the college changed to Anna University, college name removed from text transcribed off certificates |
+| **V8** | Detail panels redesigned (certificate beside full certificate data), four ORCID-verified peer reviews, speaking video in the opening and in the SRM Kattankulathur panel, Windergy India and Medicall details verified, Elite Coders timeline entry |
+| **V7** | Real cut-out portrait in the hero, Drudow Growth Intern role, EcoKadai (Circularbee) internship certificate, Clash of Coders corrected to 2nd position, CII ML and AI certification and a Certifications filter, TECHgium (L&T) RUNWAY abstract, Runway and Freshy abstracts and visuals, Seattle team photo, college shown as Anna University |
 | **V6** | Six written papers shown (SHUDDH RECYCLE 2025 paper and the Conceptual Prototype Design of SHUDDH added), updated traffic-signal PDF, removed a hijacked conference link, only verified links remain |
 | **V5** | Publications split into Written (4) and Reviewed blocks with venues and links, traffic-signal paper added with PDF, ECWoC and YZ × SV × TIF IDs added as certificates, several certificates per item |
 | **V4** | Research and achievements redesign: Drudow "now" strip, headline-win cards, ORCID iD, dated filterable timeline of every event, certificate and photo slots in every detail panel, GitHub "Code" link slots on project cards |
@@ -32,6 +35,12 @@ Every detail panel (research, wins, timeline events, experience rows, internship
 
 | Slug (file / folder name) | Item |
 |---|---|
+| `drudow-intern` | Growth Intern |
+| `ecokadai-market-survey` | Market Survey Intern |
+| `sanghamitra-ventures-junior-developer` | Junior Developer |
+| `project-sanghamitra-ventures-yz` | Sanghamitra Ventures & YZ? |
+| `project-runway` | RUNWAY: Occlusion-Aware Overtaking Advisory |
+| `project-freshy` | FRESHY: AI-Powered Grocery Inventory Intelligence |
 | `seattle-global-social-business-pitch` | Won the Global Social Business Pitch |
 | `icpc-2025-institute-rank-1` | ICPC 2025, Institute Rank 1 |
 | `toastmasters-triple-crown-rockstar-pathway-champion` | Triple Crown, Rockstar & Pathway Champion |
@@ -43,30 +52,49 @@ Every detail panel (research, wins, timeline events, experience rows, internship
 | `iqac-ssn-2026` | Computational identification and classification of Shirobedhas using temporal dance features |
 | `multifunctional-materials-radiation-measurements` | Fin Dual-Doped RFET based SRAM circuit under heavy ion irradiation |
 | `shuddh-provisional-patent` | Provisional Patent, SHUDDH |
-| `peer-reviewer-journal-of-environmental-management` | Journal of Environmental Management |
+| `peer-review-2026-1` | Peer review 1 of 4, Journal of Environmental Management |
+| `peer-review-2026-2` | Peer review 2 of 4, Journal of Environmental Management |
+| `peer-review-2025-1` | Peer review 3 of 4, Journal of Environmental Management |
+| `peer-review-2025-2` | Peer review 4 of 4, Journal of Environmental Management |
 | `research-assistant-intern` | Research Assistant Intern |
-| `drudow-intern` | Intern at Drudow |
-| `windenergy-india` | Windenergy India |
+| `windergy-india` | Windergy India 2026 |
+| `cii-foundational-applied-machine-learning-and-ai` | Foundational Course on Applied Machine Learning and AI |
 | `codesy-dhanalaxmi-shrinivasan-college` | Codesy |
 | `yuci-global-event-srm-easwari` | YUCI, Global Event |
 | `srm-kattankulathur` | SRM Kattankulathur |
-| `clash-of-coders` | Winner, Clash of Coders |
+| `clash-of-coders` | 2nd Position, Clash of Coders |
 | `parts2power` | Parts2Power |
 | `makeai-and-medicall` | MakeAI & Medicall |
-| `ecokadai-market-survey` | Market Survey Intern |
-| `techgium-lnt` | Techgium at L&T |
+| `techgium-lnt` | TECHgium, L&T Technology Services |
 | `yz-sv-tif-unified` | YZ × SV × TIF, unified |
 | `iit-madras-stem-research` | STEM Research, IIT Madras |
 | `area-a3-international-speech-contest` | Bronze Medalist, Area A3 Speech Contest |
+| `elite-coders-winter-of-code-developer` | Elite Coders Winter of Code |
 | `start-up-tn-global-student-entrepreneurship-awards` | Finalist, Global Student Entrepreneurship Awards |
+| `peer-reviewer-journal-of-environmental-management` | Peer Reviewer, Journal of Environmental Management |
 | `toastmasters-vp-memberships-oath` | Took the oath as Vice President, Memberships |
 | `entrepreneurship-development-cell` | Leading the Entrepreneurship Development Cell |
-| `ideathon-pec-anna-university` | First Runner-up of 500+ teams |
+| `ideathon-anna-university` | First Runner-up of 500+ teams |
 | `iit-madras-incubators-summit-founderx` | Ideas to Impact, Top 10 Start-ups |
 | `smart-india-hackathon` | Smart India Hackathon |
 | `isro-finalist` | Vayunetra for ISRO |
 | `cognizant-finalist` | Present, Proof! |
 | `asisc-and-memorial-debates` | ASISC, Clifford Hicks & Frank Anthony Debates |
+| `mentee-elakkiya-esakkiappan` | Elakkiya Esakkiappan |
+| `mentee-navya-siyyadula` | Navya Siyyadula |
+| `mentee-kammineni-gangothri` | Kammineni Gangothri |
+| `mentee-doddi-moukthika-reddy` | Doddi Moukthika Reddy |
+| `mentee-madhuri-mylu` | Madhuri Mylu |
+| `mentee-micheal-anto-jerrish` | Micheal Anto Jerrish |
+| `mentee-sherlin-r` | Sherlin R |
+| `mentee-jessica-rachel-s` | Jessica Rachel S |
+| `mentee-kevin-james` | Kevin James |
+| `mentee-hemanth-karal-varmaa-m` | Hemanth Karal Varmaa M |
+| `mentee-sujithra-s-v` | Sujithra S V |
+| `mentee-shraddha-r` | Shraddha R |
+| `mentee-ashwini-s` | Ashwini S |
+| `mentee-krishna-kumar-p` | Krishna Kumar P |
+| `mentee-dhanyatha-d` | Dhanyatha D |
 
 For experience, internship and Toastmasters rows, the slug is generated from the row's title in the same way (for example `vice-president-memberships`, `research-intern-at-ssn`).
 
@@ -93,6 +121,28 @@ Section 04 splits publications into two blocks, **Written** and **Reviewed**. Ea
 - **Reviewed entries** list the journal or conference, the role and the date. Peer review is confidential, so manuscript titles are shown only where a paper is public and the journal allows it.
 - **Link policy.** Only links that were opened and checked, or that you supplied, are used. The official IIT Guwahati event page and brochure are used for RECYCLE 2025. The conference domain that IIT Guwahati's page points to (`recycleiitg25.com`) has been taken over by an unrelated spam site, so it is deliberately **not** linked. For MIND 2026 only the EasyChair listing is linked, because the conference's own domain could not be verified. Before adding any conference or journal link, open it and check what it shows today. Old conference domains often lapse and get reused.
 - **No public listing** was found for the IQAC SSN, radiation-measurements and traffic-signal papers, so those cards state the venue without a link. Add a proceedings or DOI link once one exists.
+
+## Project visuals, privacy and confidentiality
+
+- **Project "Abstract & visuals" buttons.** Some project cards (Runway, Freshy, Sanghamitra Ventures & YZ?) have a small button beside "Open live site" that opens a panel with the abstract and images. To add one to another project, copy that button's markup inside the card's `<div class="links">`, give it a `data-slug="project-<name>"`, and put images in `events/project-<name>/1.jpg`, `2.jpg`.
+- **Redacted certificates.** The CII certificate is published with the date of birth, father's name and enrolment number blanked out, and the ECWoC contributor ID has its authenticity key blurred. Keep any new certificate redacted the same way before committing it, because GitHub history is permanent.
+- **Left out on purpose.** The Drudow offer letter and NDA are **not** in this repository. The NDA is marked confidential, restricts sharing internal documents publicly, and contains a home address. The site states only the role and start date. Check with Drudow before publishing anything more.
+- **Phone number.** The page does not show it, but `resume/Sayantani_Banerjee_Resume.pdf` does. Replace the PDF with a version without the phone number if you want it fully private.
+
+## Detail panels, video and verified data
+
+- **Layout.** Every detail panel shows the written details on the left and, when files exist, the certificate (then photos or posters) on the right. The certificate stays in view while the details scroll.
+- **Certificate data.** Each panel can carry a full data table taken from the document itself (certificate number, issuer, dates, signatories). It lives in the element's `data-facts='[["Label","Value"],...]'` attribute. Edit the label and value pairs to change what shows.
+- **Labels.** `data-cert-label="Internship certificate"` and `data-photos-label="Poster"` rename the headings above the certificate and the photos.
+- **Video.** Add `data-video="videos/<file>.mp4"` and `data-poster="videos/<file>.jpg"` to any timeline entry to play a clip inside its panel. Compress clips first (about 720p, under 10 MB). The hero's "Watch me speak" button scrolls to the Speaking strip and plays `videos/speaking-srm-kattankulathur.mp4`.
+- **Peer reviews.** The four Journal of Environmental Management reviews come from the public ORCID record (two dated 2026, two dated 2025, source Elsevier Editorial). ORCID gives only the year, so only the year is shown. Manuscript titles are confidential and are not shown.
+- **Event details** for Windergy India (7–9 October 2026, Chennai Trade Centre) and Medicall (47th edition, 24–26 July 2026) were checked against news reports and trade listings. MakeAI and Parts2Power could not be found in any listing, so they carry only your own dates.
+
+## Mentorship section and institution name
+
+- **Mentorship (section 07).** A 1:1 booking card, the GSSoC'25 Campus Ambassador and Project Mentor card, three stats, and one card per contributor who publicly credited you. Each contributor card is a `<button class="mentee" data-detail ...>`; copy one to add another. Names and summaries come from their public LinkedIn posts. Ask a contributor before listing them, and delete their card if they prefer not to appear. No screenshots of their posts are used, because those show their faces and ID numbers.
+- **Booking link.** The "Book a 1:1 session" button currently opens an email. Replace its `href` with your Topmate link when you have one.
+- **Institution name.** The site says **Anna University** everywhere, including "Toastmasters International, Anna University" and "EDC at Anna University". The original certificates, papers and ECWoC IDs in `certificates/`, `papers/` and `events/` still print the wording issued on them, because official documents should not be edited. Re-export or replace those files if you want them to match.
 
 ---
 
@@ -162,7 +212,10 @@ your-repo/
 │   ├── elite-coders-winter-of-code-developer.jpg
 │   ├── elite-coders-winter-of-code-developer-2.jpg     # second certificate for the same item
 │   └── yz-sv-tif-unified.jpg
-└── events/                                 # event photos, one folder per slug
+├── videos/
+│   ├── speaking-srm-kattankulathur.mp4         # 4 MB web version, plays in the Speaking strip
+│   └── speaking-srm-kattankulathur-poster.jpg
+└── events/                                 # event photos and posters, one folder per slug
     └── seattle-global-social-business-pitch/
         ├── 1.jpg
         ├── 2.jpg
@@ -191,9 +244,9 @@ Google Fonts load from the internet. Offline, the page still works with system f
 
 ---
 
-## Add your photo
+## Your photo (already included)
 
-The portrait sits **in front of** the giant name, so it must be a cut-out with a transparent background.
+`photos/shine.png` is already a transparent cut-out made from your brick-wall photo, so it sits in front of the giant name. To replace it later, the new portrait must also be a cut-out with a transparent background.
 
 1. Remove the background (for example with [remove.bg](https://www.remove.bg/)) and export as **PNG**.
 2. Use a head-and-shoulders or chest-up crop, roughly **1200 to 1600 px tall**.
