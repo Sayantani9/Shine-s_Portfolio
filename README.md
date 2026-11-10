@@ -1,4 +1,4 @@
-# Sayantani Banerjee | Portfolio
+# Sayantani | Portfolio
 
 Personal portfolio of **Sayantani Banerjee**: Computer Science student at Anna University, Chennai, working across AI products, research, open source and entrepreneurship.
 
@@ -432,7 +432,7 @@ In the script, the line `var hue = 188 - (96 * idx / (total - 1))` sweeps from c
 
 ## Credits
 
-- Opening sequence, scroll behaviour and section structure are inspired by [akash-babu-portfolio.vercel.app](https://akash-babu-portfolio.vercel.app/). The code, content, colour palette and layout of this site are original.
+-  The code, content, colour palette and layout of this site are original.
 - Fonts: [Inter](https://rsms.me/inter/), Inter Tight and Source Serif 4 via Google Fonts (SIL Open Font License).
 
 © 2026 Sayantani Banerjee. All rights reserved.
