@@ -1,4 +1,4 @@
-# Personal portfolio of **Sayantani Banerjee**: Computer Science student at Anna University, Chennai, working across AI products, research, open source and entrepreneurship.
+# Personal portfolio of **Sayantani Banerjee**
 
 A single-page, zero-dependency static site. No build step, no framework, no package manager. One `index.html` file holds the markup, styles and scripts.
 
