@@ -3,7 +3,9 @@
 A single-page, zero-dependency static site. No build step, no framework, no package manager. One `index.html` file holds the markup, styles and scripts.
 
 **Live site:** https://shine-sportfolio.vercel.app/
-**GitHub:** [@Sayantani9](https://github.com/Sayantani9) · **LinkedIn:** [Sayantani Banerjee](https://www.linkedin.com/in/g-sayantani-mb-65337230b/) · **Instagram:** [@the.invincible_fire](https://www.instagram.com/the.invincible_fire/)
+**GitHub:** [@Sayantani9](https://github.com/Sayantani9) · 
+**LinkedIn:** [Sayantani Banerjee](https://www.linkedin.com/in/g-sayantani-mb-65337230b/) · 
+**Instagram:** [@the.invincible_fire](https://www.instagram.com/the.invincible_fire/)
 
 ---
 
