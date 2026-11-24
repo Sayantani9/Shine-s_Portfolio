@@ -1,4 +1,4 @@
-# Personal portfolio of **Sayantani Banerjee**
+# Personal portfolio of **Sayantani**
 
 A single-page, zero-dependency static site. No build step, no framework, no package manager. One `index.html` file holds the markup, styles and scripts.
 
